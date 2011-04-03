@@ -34,7 +34,7 @@ alias gd='git diff'
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
 
 # SSH
-function ssh-agent-start () {
+function ssh-agent-start() {
     # Starting ssh-agent with bash shell
     eval `ssh-agent -s`
     # Adding our key(s)
@@ -43,14 +43,14 @@ function ssh-agent-start () {
     ssh-add -l
 }
 
-function ssh-agent-stop () {
+function ssh-agent-stop() {
     # Kill the current ssh-agent
     ssh-agent -k
 }
 
 alias portsupdate="sudo port selfupdate; sudo port upgrade installed"
 
-function pwdcopy () {
+function pwdcopy() {
     pwd | tr -d '\n' | pbcopy
 }
 
