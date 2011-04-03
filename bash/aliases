@@ -1,0 +1,56 @@
+alias ..='cd ..'
+alias ls='ls -G'
+alias l='ls -lhG'
+alias ll='ls -lahG'
+alias c='clear'
+
+function cl() {
+    cd $1; l
+}
+
+function take() { 
+    mkdir -p "$1"
+    cd "$1"
+}
+
+# Processes
+alias tu='top -o cpu' # cpu
+alias tm='top -o vsize' # memory
+
+# Text editors
+alias m='mate'
+alias mm='mate .'
+alias e="open -a Emacs"
+alias ee="open -a Emacs ."
+
+# Git
+alias g='git'
+alias gs='git status'
+alias gg='git status'
+alias gd='git diff'
+alias ungit="find . -name '.git' -exec rm -rf {} \;"
+
+# SSH
+function ssh-agent-start () {
+    # Starting ssh-agent with bash shell
+    eval `ssh-agent -s`
+    # Adding our key(s)
+    ssh-add -k ~/.ssh/id_dsa_bpc
+    # Listing keys currently represented by the agent
+    ssh-add -l
+}
+
+function ssh-agent-stop () {
+    # Kill the current ssh-agent
+    ssh-agent -k
+}
+
+alias portsupdate="sudo port selfupdate; sudo port upgrade installed"
+
+function pwdcopy () {
+    pwd | tr -d '\n' | pbcopy
+}
+
+
+alias p='python'
+alias tracdev="cd ~/Work/BPC/Projects/Trac/trac-dev; . bin/activate"

@@ -1,0 +1,24 @@
+# Macports
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
+# Default editor
+export EDITOR="mate -w"
+export VISUAL="mate -w"
+export SVN_EDITOR="mate -w"
+
+# Oracle
+export DYLD_LIBRARY_PATH="/usr/local/oracle/instantclient_10_2"
+export SQLPATH="/usr/local/oracle/instantclient_10_2"
+export TNS_ADMIN="/usr/local/oracle/network/admin"
+export NLS_LANG="AMERICAN_AMERICA.UTF8"
+export PATH=$PATH:$DYLD_LIBRARY_PATH
+
+# MySQL
+export PATH=$PATH:/usr/local/mysql/bin
+
+# Groovy
+export GROOVY_HOME=~/groovy
+export PATH=$PATH:$GROOVY_HOME/bin
+
+# RVM
+if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
