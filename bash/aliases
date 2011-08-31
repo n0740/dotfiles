@@ -32,6 +32,7 @@ alias gs='git status'
 alias gg='git status'
 alias gd='git diff'
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
+alias gx='gitx'
 
 # SSH
 function ssh-agent-start() {
