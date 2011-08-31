@@ -56,4 +56,6 @@ function pwdcopy() {
 
 
 alias p='python'
+alias pp='ipython'
+
 alias tracdev="cd ~/Work/BPC/Projects/Trac/trac-dev; . bin/activate"
