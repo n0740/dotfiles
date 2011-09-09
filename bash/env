@@ -16,9 +16,5 @@ export PATH=$PATH:$DYLD_LIBRARY_PATH
 # MySQL
 export PATH=$PATH:/usr/local/mysql/bin
 
-# Groovy
-export GROOVY_HOME=~/groovy
-export PATH=$PATH:$GROOVY_HOME/bin
-
 # RVM
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
