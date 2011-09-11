@@ -22,6 +22,7 @@ alias tm='top -o vsize' # memory
 alias m='mate'
 alias mm='mate .'
 alias e='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n'
+alias ee='e .'
 alias em='open -a Emacs'
 
 # Git
