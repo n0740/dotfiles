@@ -47,8 +47,6 @@ function ssh-agent-stop() {
     ssh-agent -k
 }
 
-alias portsupdate="sudo port selfupdate; sudo port upgrade installed"
-
 function pwdcopy() {
     pwd | tr -d '\n' | pbcopy
 }
