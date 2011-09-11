@@ -21,8 +21,8 @@ alias tm='top -o vsize' # memory
 # Text editors
 alias m='mate'
 alias mm='mate .'
-alias e="open -a Emacs"
-alias ee="open -a Emacs ."
+alias e='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n'
+alias em='open -a Emacs'
 
 # Git
 alias g='git'
