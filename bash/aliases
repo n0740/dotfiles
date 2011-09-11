@@ -14,8 +14,6 @@ function take() {
     cd "$1"
 }
 
-alias reload='. ~/.bash_profile'
-
 # Processes
 alias tu='top -o cpu' # cpu
 alias tm='top -o vsize' # memory
