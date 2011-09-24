@@ -55,8 +55,14 @@ function ssh-agent-stop() {
     ssh-agent -k
 }
 
+# Copy current dir path to system clipboard
 function pwdcopy() {
     pwd | tr -d '\n' | pbcopy
+}
+
+# Copy current dir name to system clipboard.
+function dircopyname() {
+    basename $(pwd) | tr -d '\n' | pbcopy
 }
 
 
