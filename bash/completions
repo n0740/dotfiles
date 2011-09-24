@@ -5,15 +5,15 @@ __source_if_exists "/usr/local/etc/bash_completion.d/git-completion.bash"
 complete -o bashdefault -o default -o nospace -F _git g
 
 # Completion for alias "c".
-__code_dir__complete () {
+__code_dir_complete() {
     local cur="$2"
     COMPREPLY=( $(cd ~/code && compgen -d -- "${cur}" ) )
 }
-complete -o default -o nospace -F __code_dir__complete c
+complete -o default -o nospace -F __code_dir_complete c
 
 # Completion for alias "ce".
-__code_ext_dir__complete () {
+__code_ext_dir_complete() {
     local cur="$2"
     COMPREPLY=( $(cd ~/code_ext && compgen -d -- "${cur}" ) )
 }
-complete -o default -o nospace -F __code_ext_dir__complete ce
+complete -o default -o nospace -F __code_ext_dir_complete ce
