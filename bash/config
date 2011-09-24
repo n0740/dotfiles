@@ -51,4 +51,5 @@ function __parse_git_dirty {
 }
 
 # Set prompt
+# To fix: __git_ps1 will appear only after we source completions file
 export PS1='\h:\W$(__git_ps1 "[\[\e[0;32m\]%s\[\e[0m\]\[\e[0;33m\]$(__parse_git_dirty)\[\e[0m\]]")$ '

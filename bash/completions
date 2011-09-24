@@ -1,0 +1,5 @@
+# Git completion
+__source_if_exists "/usr/local/etc/bash_completion.d/git-completion.bash"
+
+# Git completion for alias "g"
+complete -o bashdefault -o default -o nospace -F _git g

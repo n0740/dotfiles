@@ -18,9 +18,6 @@ export PATH=$PATH:/usr/local/mysql/bin
 # RVM
 __source_if_exists "$HOME/.rvm/scripts/rvm"
 
-# Git completion
-__source_if_exists "/usr/local/etc/bash_completion.d/git-completion.bash"
-
 # Python virtualenvwrapper
 export WORKON_HOME="$HOME/.virtualenvs"
 __source_if_exists "/usr/local/share/python/virtualenvwrapper.sh"
