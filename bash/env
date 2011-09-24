@@ -1,3 +1,7 @@
+function source_if_exists() {
+    [[ -s "$1" ]] && . "$1"
+}
+
 
 # Oracle
 # export DYLD_LIBRARY_PATH="/usr/local/oracle/instantclient_10_2"
@@ -10,7 +14,7 @@
 export PATH=$PATH:/usr/local/mysql/bin
 
 # RVM
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+source_if_exists "$HOME/.rvm/scripts/rvm"
 
 # Git completion
-. /usr/local/etc/bash_completion.d/git-completion.bash
+source_if_exists "/usr/local/etc/bash_completion.d/git-completion.bash"
