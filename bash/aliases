@@ -60,7 +60,7 @@ function pwdcopy() {
     pwd | tr -d '\n' | pbcopy
 }
 
-# Copy current dir name to system clipboard.
+# Copy name of current dir to system clipboard.
 function dircopyname() {
     basename $(pwd) | tr -d '\n' | pbcopy
 }
