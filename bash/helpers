@@ -1,0 +1,4 @@
+# Source file only if it exists
+function __source_if_exists() {
+    [[ -s "$1" ]] && . "$1"
+}
