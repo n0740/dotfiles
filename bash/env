@@ -2,7 +2,7 @@ function __source_if_exists() {
     [[ -s "$1" ]] && . "$1"
 }
 
-# Fix PATH for homebrew's python
+# Fix PATH for homebrew python's scripts
 export PATH="/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
 
 # Oracle
