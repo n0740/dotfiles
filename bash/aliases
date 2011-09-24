@@ -4,15 +4,6 @@ alias ls='ls -G'
 alias l='ls -lhG'
 alias ll='ls -lahG'
 
-function cl() {
-    cd $1; l
-}
-
-function take() { 
-    mkdir -p "$1"
-    cd "$1"
-}
-
 # Processes
 alias tu='top -o cpu' # cpu
 alias tm='top -o vsize' # memory
@@ -32,6 +23,19 @@ alias gd='git diff'
 alias gl='git lg'
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
 alias gx='gitx'
+
+# Python
+alias p='python'
+alias pp='ipython'
+
+function cl() {
+    cd $1; l
+}
+
+function take() {
+    mkdir -p "$1"
+    cd "$1"
+}
 
 # Start ssh-agent and load key(s).
 # May be useful when our key uses passphrase.
@@ -74,7 +78,5 @@ function github() {
     open "https://github.com/$user"
 }
 
-alias p='python'
-alias pp='ipython'
 
 alias tracdev="cd ~/Work/BPC/Projects/Trac/trac-dev; . bin/activate"
