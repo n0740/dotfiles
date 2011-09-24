@@ -1,16 +1,19 @@
+if ( __is_osx ); then
+    # Fix PATH for homebrew's python
+    PATH=`python -S -c "import sys; from os import environ as e; p = e['PATH'].split(':'); p.insert(0, p.pop(p.index('/usr/local/bin'))); sys.stdout.write(':'.join(p))"`
+    export PATH="/usr/local/share/python:$PATH"
 
-# Fix PATH for homebrew python's scripts
-export PATH="/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
+    # MySQL
+    export PATH=$PATH:/usr/local/mysql/bin
 
-# Oracle
-# export DYLD_LIBRARY_PATH="/usr/local/oracle/instantclient_10_2"
-# export SQLPATH="/usr/local/oracle/instantclient_10_2"
-# export TNS_ADMIN="/usr/local/oracle/network/admin"
-# export NLS_LANG="AMERICAN_AMERICA.UTF8"
-# export PATH=$PATH:$DYLD_LIBRARY_PATH
+    # Oracle
+    # export DYLD_LIBRARY_PATH="/usr/local/oracle/instantclient_10_2"
+    # export SQLPATH="/usr/local/oracle/instantclient_10_2"
+    # export TNS_ADMIN="/usr/local/oracle/network/admin"
+    # export NLS_LANG="AMERICAN_AMERICA.UTF8"
+    # export PATH=$PATH:$DYLD_LIBRARY_PATH
+fi
 
-# MySQL
-export PATH=$PATH:/usr/local/mysql/bin
 
 # RVM
 __source_if_exists "$HOME/.rvm/scripts/rvm"
@@ -18,4 +21,4 @@ __source_if_exists "$HOME/.rvm/scripts/rvm"
 # Python virtualenvwrapper
 export WORKON_HOME="$HOME/.virtualenvs"
 export PROJECT_HOME="$HOME/code"
-__source_if_exists "/usr/local/share/python/virtualenvwrapper.sh"
+__source_if_exists "`which virtualenvwrapper.sh`"

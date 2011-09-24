@@ -1,3 +1,9 @@
+# Check if current OS is Mac OS X
+[[ `uname` == "Darwin" ]] && _IS_DARWIN_RETVAL=0 || _IS_DARWIN_RETVAL=1
+function __is_osx() {
+    return $_IS_DARWIN_RETVAL
+}
+
 # Source file only if it exists
 function __source_if_exists() {
     [[ -s "$1" ]] && . "$1"

@@ -1,19 +1,30 @@
 alias ..='cd ..'
 alias ...='cd ../..'
-alias ls='ls -G'
-alias l='ls -lhG'
-alias ll='ls -lahG'
+if ( __is_osx ); then
+    alias ls='ls -G'
+else
+    alias ls='ls --color=auto'
+fi
+alias l='ls -lh'
+alias ll='ls -lha'
+
+alias grep='grep --color=auto'
 
 # Processes
 alias tu='top -o cpu' # cpu
 alias tm='top -o vsize' # memory
 
 # Text editors
-alias m='mate'
-alias mm='mate .'
-alias e='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n'
+if ( __is_osx ); then
+    alias m='mate'
+    alias mm='mate .'
+    alias e='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n'
+    alias em='open -a Emacs'
+else
+    alias e='emacsclient -n -a emacs'
+    alias em='emacs'
+fi
 alias ee='e .'
-alias em='open -a Emacs'
 
 # Git
 alias g='git'
@@ -22,7 +33,9 @@ alias gg='git status'
 alias gd='git diff'
 alias gl='git lg'
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
-alias gx='gitx'
+if ( __is_osx ); then
+    alias gx='gitx'
+fi
 
 # Python
 alias p='python'
@@ -59,24 +72,26 @@ function ssh-agent-stop() {
     ssh-agent -k
 }
 
-# Copy current dir path to system clipboard
-function pwdcopy() {
-    pwd | tr -d '\n' | pbcopy
-}
+if ( __is_osx ); then
+    # Copy current dir path to system clipboard
+    function pwdcopy() {
+        pwd | tr -d '\n' | pbcopy
+    }
 
-# Copy name of current dir to system clipboard
-function dircopyname() {
-    basename $(pwd) | tr -d '\n' | pbcopy
-}
+    # Copy name of current dir to system clipboard
+    function dircopyname() {
+        basename $(pwd) | tr -d '\n' | pbcopy
+    }
 
-# Open github page for specified user.
-function github() {
-    local user=$1
-    if [ -z "$1" ]; then
-        user="underself"
-    fi
-    open "https://github.com/$user"
-}
+    # Open github page for specified user.
+    function github() {
+        local user=$1
+        if [ -z "$1" ]; then
+            user="underself"
+        fi
+        open "https://github.com/$user"
+    }
+fi
 
 # Changing directory to code project
 function c() {

@@ -1,8 +1,6 @@
 # Dotfiles
 
-These are my personal dotfiles.
-
-OS X only for today.
+My personal dotfiles.
 
 
 ## Installation

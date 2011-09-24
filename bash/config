@@ -40,10 +40,11 @@ BWHITE='\e[47m'
 
 
 # Default editor
-export EDITOR="mate -w"
-export VISUAL="mate -w"
-export SVN_EDITOR="mate -w"
-
+if ( __is_osx ); then
+    export EDITOR="mate -w"
+    export VISUAL="mate -w"
+    export SVN_EDITOR="mate -w"
+fi
 
 # Git status in current dir for prompt
 function __parse_git_dirty {
