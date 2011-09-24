@@ -17,3 +17,8 @@ __code_ext_dir_complete() {
     COMPREPLY=( $(cd ~/code_ext && compgen -d -- "${cur}" ) )
 }
 complete -o default -o nospace -F __code_ext_dir_complete ce
+
+# pip completion
+# TODO: move it to $VIRTUALENVWRAPPER_HOOK_DIR/postactivate
+#       and add removing completion to postdeactivate hook
+# [[ -n `which pip` ]] && eval "`pip completion --bash`"
