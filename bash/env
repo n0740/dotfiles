@@ -20,4 +20,5 @@ __source_if_exists "$HOME/.rvm/scripts/rvm"
 
 # Python virtualenvwrapper
 export WORKON_HOME="$HOME/.virtualenvs"
+export PROJECT_HOME="$HOME/code"
 __source_if_exists "/usr/local/share/python/virtualenvwrapper.sh"
