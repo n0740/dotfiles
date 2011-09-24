@@ -20,3 +20,7 @@ source_if_exists "$HOME/.rvm/scripts/rvm"
 
 # Git completion
 source_if_exists "/usr/local/etc/bash_completion.d/git-completion.bash"
+
+# Python virtualenvwrapper
+export WORKON_HOME="$HOME/.virtualenvs"
+source_if_exists "/usr/local/share/python/virtualenvwrapper.sh"
