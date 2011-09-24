@@ -45,10 +45,10 @@ export VISUAL="mate -w"
 export SVN_EDITOR="mate -w"
 
 
-# Return current git branch for prompt
-function parse_git_dirty {
+# Git status in current dir for prompt
+function __parse_git_dirty {
   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
 }
 
 # Set prompt
-export PS1='\h:\W$(__git_ps1 "[\[\e[0;32m\]%s\[\e[0m\]\[\e[0;33m\]$(parse_git_dirty)\[\e[0m\]]")$ '
+export PS1='\h:\W$(__git_ps1 "[\[\e[0;32m\]%s\[\e[0m\]\[\e[0;33m\]$(__parse_git_dirty)\[\e[0m\]]")$ '

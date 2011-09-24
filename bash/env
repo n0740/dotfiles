@@ -1,4 +1,4 @@
-function source_if_exists() {
+function __source_if_exists() {
     [[ -s "$1" ]] && . "$1"
 }
 
@@ -16,11 +16,11 @@ export PATH="/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbi
 export PATH=$PATH:/usr/local/mysql/bin
 
 # RVM
-source_if_exists "$HOME/.rvm/scripts/rvm"
+__source_if_exists "$HOME/.rvm/scripts/rvm"
 
 # Git completion
-source_if_exists "/usr/local/etc/bash_completion.d/git-completion.bash"
+__source_if_exists "/usr/local/etc/bash_completion.d/git-completion.bash"
 
 # Python virtualenvwrapper
 export WORKON_HOME="$HOME/.virtualenvs"
-source_if_exists "/usr/local/share/python/virtualenvwrapper.sh"
+__source_if_exists "/usr/local/share/python/virtualenvwrapper.sh"
