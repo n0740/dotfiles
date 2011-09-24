@@ -33,18 +33,25 @@ alias gl='git lg'
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
 alias gx='gitx'
 
-# SSH
+# Start ssh-agent and load key(s).
+# May be useful when our key uses passphrase.
 function ssh-agent-start() {
-    # Starting ssh-agent with bash shell
+    # Start ssh-agent with bash shell
     eval `ssh-agent -s`
-    # Adding our key(s)
-    ssh-add -k ~/.ssh/id_dsa_bpc
+
+    # Add key(s). Will ask for passphrase if needed
+    for f in `ls ~/.ssh | grep -e "^id_[r|d]sa[^.]*$"`
+    do
+        ssh-add -k "~/.ssh/$f"
+    done
+
     # Listing keys currently represented by the agent
     ssh-add -l
 }
 
+
+# Kill the current ssh-agent
 function ssh-agent-stop() {
-    # Kill the current ssh-agent
     ssh-agent -k
 }
 
