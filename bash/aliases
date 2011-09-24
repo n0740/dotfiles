@@ -78,5 +78,9 @@ function github() {
     open "https://github.com/$user"
 }
 
+# Changing directory to code project
+function c() {
+    cd ~/code/$1;
+}
 
 alias tracdev="cd ~/Work/BPC/Projects/Trac/trac-dev; . bin/activate"
