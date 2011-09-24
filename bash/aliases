@@ -3,7 +3,6 @@ alias ...='cd ../..'
 alias ls='ls -G'
 alias l='ls -lhG'
 alias ll='ls -lahG'
-alias c='clear'
 
 function cl() {
     cd $1; l
