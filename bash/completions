@@ -10,3 +10,10 @@ __code_dir__complete () {
     COMPREPLY=( $(cd ~/code && compgen -d -- "${cur}" ) )
 }
 complete -o default -o nospace -F __code_dir__complete c
+
+# Completion for alias "ce".
+__code_ext_dir__complete () {
+    local cur="$2"
+    COMPREPLY=( $(cd ~/code_ext && compgen -d -- "${cur}" ) )
+}
+complete -o default -o nospace -F __code_ext_dir__complete ce
