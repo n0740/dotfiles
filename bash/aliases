@@ -110,5 +110,3 @@ function mkvirtualenv-no-site-packages() {
 function mkproject-no-site-packages() {
     mkproject --no-site-packages $*
 }
-
-alias tracdev="cd ~/Work/BPC/Projects/Trac/trac-dev; . bin/activate"
