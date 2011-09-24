@@ -60,11 +60,19 @@ function pwdcopy() {
     pwd | tr -d '\n' | pbcopy
 }
 
-# Copy name of current dir to system clipboard.
+# Copy name of current dir to system clipboard
 function dircopyname() {
     basename $(pwd) | tr -d '\n' | pbcopy
 }
 
+# Open github page for specified user.
+function github() {
+    local user=$1
+    if [ -z "$1" ]; then
+        user="underself"
+    fi
+    open "https://github.com/$user"
+}
 
 alias p='python'
 alias pp='ipython'
