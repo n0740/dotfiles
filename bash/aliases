@@ -118,5 +118,9 @@ function mkproject-no-site-packages() {
 
 # Set the terminal's title
 function title() {
-    echo -ne '\033]0;'"$@"'\a'
+    case $TERM in
+        *xterm*|ansi)
+            echo -ne '\033]0;'"$@"'\a'
+            ;;
+    esac
 }
