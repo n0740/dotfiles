@@ -115,6 +115,6 @@ function mkproject-no-site-packages() {
 }
 
 # Set the terminal's title
-title() {
-    echo -ne '\033]0;'"$@"'\a';
+function title() {
+    echo -ne '\033]0;'"$@"'\a'
 }
