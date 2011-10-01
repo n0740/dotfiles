@@ -29,7 +29,6 @@ alias ee='e .'
 
 # Git
 alias g='git'
-alias gs='git status'
 alias gg='git status'
 alias gd='git diff'
 alias gl='git lg'
