@@ -31,7 +31,9 @@ alias ee='e .'
 alias g='git'
 alias gg='git status -sb'
 alias gd='git diff'
+alias gdc='git diff --cached'
 alias gl='git lg'
+alias gco='git checkout'
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
 if ( __is_osx ); then
     alias gx='gitx'

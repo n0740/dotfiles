@@ -1,8 +1,11 @@
 # Git completion
 __source_if_exists "/usr/local/etc/bash_completion.d/git-completion.bash"
 
-# Git completion for alias "g"
-complete -o bashdefault -o default -o nospace -F _git g
+# Git completions for our aliases
+complete -o default -o nospace -F _git g
+complete -o default -o nospace -F _git_diff gd
+complete -o default -o nospace -F _git_log gl
+complete -o default -o nospace -F _git_checkout gco
 
 # Completion for alias "c".
 __code_dir_complete() {
