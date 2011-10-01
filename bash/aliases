@@ -93,20 +93,23 @@ if ( __is_osx ); then
     }
 fi
 
-# Changing directory to code project
+# Change directory to code project
 function c() {
     cd ~/code/$1;
 }
 
-# Changing directory to code external project
+# Change directory to code external project
 function ce() {
     cd ~/code_ext/$1;
 }
 
+# Create virtualenv with --no-site-packages option by default
 function mkvirtualenv-no-site-packages() {
     mkvirtualenv --no-site-packages $*
 }
 
+# Create virtualenv and project for it with --no-site-packages option
+# by default
 function mkproject-no-site-packages() {
     mkproject --no-site-packages $*
 }
