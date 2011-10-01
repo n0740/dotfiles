@@ -22,3 +22,7 @@ complete -o default -o nospace -F __code_ext_dir_complete ce
 # TODO: move it to $VIRTUALENVWRAPPER_HOOK_DIR/postactivate
 #       and add removing completion to postdeactivate hook
 # [[ -n `which pip` ]] && eval "`pip completion --bash`"
+# Completion for Homebrew
+if ( __is_osx ); then
+    __source_if_exists "`brew --prefix`/Library/Contributions/brew_bash_completion.sh"
+fi
