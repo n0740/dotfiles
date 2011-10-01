@@ -18,11 +18,18 @@ __code_ext_dir_complete() {
 }
 complete -o default -o nospace -F __code_ext_dir_complete ce
 
-# pip completion
-# TODO: move it to $VIRTUALENVWRAPPER_HOOK_DIR/postactivate
-#       and add removing completion to postdeactivate hook
-# [[ -n `which pip` ]] && eval "`pip completion --bash`"
 # Completion for Homebrew
 if ( __is_osx ); then
     __source_if_exists "`brew --prefix`/Library/Contributions/brew_bash_completion.sh"
 fi
+
+# Completion for pip
+# You can also use command like:
+#   [[ -n `which pip` ]] && eval "`pip completion --bash`"
+# But it's too slow for me.
+_pip_completion() {
+    COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
+                   COMP_CWORD=$COMP_CWORD \
+                   PIP_AUTO_COMPLETE=1 $1 ) )
+}
+complete -o default -F _pip_completion pip
