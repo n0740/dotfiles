@@ -54,3 +54,8 @@ function __parse_git_dirty {
 # Set prompt
 # To fix: __git_ps1 will appear only after we source completions file
 export PS1='\h:\W$(__git_ps1 "[\[$GREEN\]%s\[$NO_COLOR\]\[$YELLOW\]$(__parse_git_dirty)\[$NO_COLOR\]]")$ '
+
+# History
+export HISTCONTROL=erasedups
+export HISTSIZE=1000
+shopt -s histappend
