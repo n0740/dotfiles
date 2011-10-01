@@ -29,7 +29,7 @@ alias ee='e .'
 
 # Git
 alias g='git'
-alias gg='git status'
+alias gg='git status -sb'
 alias gd='git diff'
 alias gl='git lg'
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
