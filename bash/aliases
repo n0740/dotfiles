@@ -10,6 +10,8 @@ alias ll='ls -lha'
 
 alias grep='grep --color=auto'
 alias tree='tree -Ca -I "*.pyc"'
+alias G='grep'
+alias M='more'
 
 # Processes
 alias tu='top -o cpu' # cpu
