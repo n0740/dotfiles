@@ -113,3 +113,8 @@ function mkvirtualenv-no-site-packages() {
 function mkproject-no-site-packages() {
     mkproject --no-site-packages $*
 }
+
+# Set the terminal's title
+title() {
+    echo -ne '\033]0;'"$@"'\a';
+}
