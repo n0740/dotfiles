@@ -23,7 +23,9 @@ complete -o default -o nospace -F __code_ext_dir_complete ce
 
 # Completion for Homebrew
 if ( __is_osx ); then
-    __source_if_exists "`brew --prefix`/Library/Contributions/brew_bash_completion.sh"
+    if [[ -n `which brew` ]]; then
+        __source_if_exists "`brew --prefix`/Library/Contributions/brew_bash_completion.sh"
+    fi
 fi
 
 # Completion for pip
