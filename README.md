@@ -5,22 +5,21 @@ My config files for comfortable work.
 
 ## Contents
 
-* Aliases for
+Aliases for
 
-    * usual commands like ls, cd, etc.
-    * git
-    * editors
-        * TextMate: `m <file>` – open file/dir, `mm` – open current dir
-        * Emacs: `e <file>` – open file/dir, `ee` – open current dir
-    * others, see `bash/aliases`
+* usual commands like ls, cd, etc.
+* git
+* editors (TextMate, Emacs)
+* others, see `bash/aliases`
 
-* Tab completions for
-    * git
-    * git aliases
-    * homebrew
-    * pip
+Tab completions for
 
-* Other configs for PATH, prompt, history, etc.
+* git
+* git aliases
+* homebrew
+* pip
+
+Other configs for PATH, prompt, history, etc.
 
 
 ## Installation
