@@ -35,3 +35,6 @@ __source_if_exists "$HOME/.rvm/scripts/rvm"
 export WORKON_HOME="$HOME/.virtualenvs"
 export PROJECT_HOME="$HOME/code"
 __source_if_exists "`which virtualenvwrapper.sh`"
+
+# Prevent re-downloading the same packages repeatedly for pip
+export PIP_DOWNLOAD_CACHE="$HOME/.pip_download_cache"
