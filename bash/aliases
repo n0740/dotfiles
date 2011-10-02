@@ -44,7 +44,11 @@ fi
 # Python
 alias p='python'
 alias pp='ipython'
-
+if ( __is_osx ); then
+    alias lssitepackages='lssitepackages -lhG'
+else
+    alias lssitepackages='lssitepackages -lh --color=auto'
+fi
 alias rmpyc='find . -type f -name "*.pyc" -print0 | xargs -0 rm'
 
 function cl() {
