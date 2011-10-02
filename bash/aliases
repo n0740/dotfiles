@@ -78,27 +78,6 @@ function ssh-agent-stop() {
     ssh-agent -k
 }
 
-if ( __is_osx ); then
-    # Copy current dir path to system clipboard
-    function pwdcopy() {
-        pwd | tr -d '\n' | pbcopy
-    }
-
-    # Copy name of current dir to system clipboard
-    function dircopyname() {
-        basename $(pwd) | tr -d '\n' | pbcopy
-    }
-
-    # Open github page for specified user.
-    function github() {
-        local user=$1
-        if [ -z "$1" ]; then
-            user="underself"
-        fi
-        open "https://github.com/$user"
-    }
-fi
-
 # Change directory to code project
 function c() {
     cd ~/code/$1;
@@ -128,3 +107,28 @@ function title() {
             ;;
     esac
 }
+
+#
+# Mac OS X specific
+#
+if ( __is_osx ); then
+    # Copy current dir path to system clipboard
+    function pwdcopy() {
+        pwd | tr -d '\n' | pbcopy
+    }
+
+    # Copy name of current dir to system clipboard
+    function dircopyname() {
+        basename $(pwd) | tr -d '\n' | pbcopy
+    }
+
+    # Open github page for specified user.
+    function github() {
+        local user=$1
+        if [ -z "$1" ]; then
+            user="underself"
+        fi
+        open "https://github.com/$user"
+    }
+
+fi
