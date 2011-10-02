@@ -131,4 +131,13 @@ if ( __is_osx ); then
         open "https://github.com/$user"
     }
 
+    # Open a manpage in Preview, which can be saved to PDF
+    function pman() {
+       man -t "${1}" | open -f -a "/Applications/Preview.app"
+    }
+
+    # Open a manpage in the browser
+    function bman() {
+      man "${1}" | man2html | browser
+    }
 fi
