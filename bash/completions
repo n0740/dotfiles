@@ -7,20 +7,6 @@ complete -o default -o nospace -F _git_diff gd
 complete -o default -o nospace -F _git_log gl
 complete -o default -o nospace -F _git_checkout gco
 
-# Completion for alias "c".
-__code_dir_complete() {
-    local cur="$2"
-    COMPREPLY=( $(cd ~/code && compgen -d -- "${cur}" ) )
-}
-complete -o default -o nospace -F __code_dir_complete c
-
-# Completion for alias "ce".
-__code_ext_dir_complete() {
-    local cur="$2"
-    COMPREPLY=( $(cd ~/code_ext && compgen -d -- "${cur}" ) )
-}
-complete -o default -o nospace -F __code_ext_dir_complete ce
-
 # Completion for Homebrew
 if ( __is_osx ); then
     if [[ -n `which brew` ]]; then
@@ -38,3 +24,17 @@ _pip_completion() {
                    PIP_AUTO_COMPLETE=1 $1 ) )
 }
 complete -o default -F _pip_completion pip
+
+# Completion for alias "c".
+__code_dir_complete() {
+    local cur="$2"
+    COMPREPLY=( $(cd ~/code && compgen -d -- "${cur}" ) )
+}
+complete -o default -o nospace -F __code_dir_complete c
+
+# Completion for alias "ce".
+__code_ext_dir_complete() {
+    local cur="$2"
+    COMPREPLY=( $(cd ~/code_ext && compgen -d -- "${cur}" ) )
+}
+complete -o default -o nospace -F __code_ext_dir_complete ce
