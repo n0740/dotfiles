@@ -31,7 +31,7 @@ Other configs for PATH, prompt, history, etc.
 
 ## Environment
 
-I'm using it on Mac OS X, but it should work on Linux properly.
+I use it on Mac OS X, but it should work on Linux properly.
 
 
 ## Thanks to
