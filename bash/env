@@ -1,7 +1,16 @@
 if ( __is_osx ); then
-    # Fix PATH for homebrew's python
-    PATH=`python -S -c "import sys; from os import environ as e; p = e['PATH'].split(':'); p.insert(0, p.pop(p.index('/usr/local/bin'))); sys.stdout.write(':'.join(p))"`
-    export PATH="/usr/local/share/python:$PATH"
+    # Fix PATH for homebrew's python: move /usr/local/bin at first position.
+    # But it's ugly. Use another varian below.
+    # PATH=`python -S -c "import sys; from os import environ as e; p = e['PATH'].split(':'); p.insert(0, p.pop(p.index('/usr/local/bin'))); sys.stdout.write(':'.join(p))"`
+    # __unshift_to_path_if_exists "/usr/local/share/python"
+
+    if [[ -n `which brew` ]]; then
+        # Find a Homebrew-built Python
+        local python_bin=$(brew --cellar python)/*/bin
+        python_bin=`echo $python_bin`
+        __unshift_to_path_if_exists $python_bin
+        __unshift_to_path_if_exists "/usr/local/share/python"
+    fi
 
     # MySQL
     __append_to_path_if_exists "/usr/local/mysql/bin"
@@ -13,7 +22,6 @@ if ( __is_osx ); then
     # export NLS_LANG="AMERICAN_AMERICA.UTF8"
     # __append_to_path_if_exists $DYLD_LIBRARY_PATH
 fi
-
 
 # RVM
 __source_if_exists "$HOME/.rvm/scripts/rvm"
