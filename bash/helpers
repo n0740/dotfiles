@@ -8,3 +8,13 @@ function __is_osx() {
 function __source_if_exists() {
     [[ -s "$1" ]] && . "$1"
 }
+
+# Insert dir to front of PATH if exists
+function __unshift_to_path_if_exists() {
+    [[ -e "$1" ]] && export PATH="$1:$PATH"
+}
+
+# Append dir to end of PATH if exists
+function __append_to_path_if_exists() {
+    [[ -e "$1" ]] && export PATH="$PATH:$1"
+}

@@ -4,14 +4,14 @@ if ( __is_osx ); then
     export PATH="/usr/local/share/python:$PATH"
 
     # MySQL
-    export PATH=$PATH:/usr/local/mysql/bin
+    __append_to_path_if_exists "/usr/local/mysql/bin"
 
     # Oracle
     # export DYLD_LIBRARY_PATH="/usr/local/oracle/instantclient_10_2"
     # export SQLPATH="/usr/local/oracle/instantclient_10_2"
     # export TNS_ADMIN="/usr/local/oracle/network/admin"
     # export NLS_LANG="AMERICAN_AMERICA.UTF8"
-    # export PATH=$PATH:$DYLD_LIBRARY_PATH
+    # __append_to_path_if_exists $DYLD_LIBRARY_PATH
 fi
 
 
