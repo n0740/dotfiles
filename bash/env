@@ -10,6 +10,11 @@ if ( __is_osx ); then
         python_bin=`echo $python_bin`
         __unshift_to_path_if_exists $python_bin
         __unshift_to_path_if_exists "/usr/local/share/python"
+
+        # Find a Homebrew-built Ruby
+        # local ruby_bin=$(brew --cellar ruby)/*/bin
+        # ruby_bin=`echo $ruby_bin`
+        # __unshift_to_path_if_exists $ruby_bin
     fi
 
     # MySQL
