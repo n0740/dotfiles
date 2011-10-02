@@ -1,1 +1,5 @@
+# Enable ignore case
 set completion-ignore-case On
+
+# Enable single tab completion
+set show-all-if-ambiguous on
