@@ -41,3 +41,4 @@ I'm using it on Mac OS X, but it should work on Linux properly.
 * [Enrico Batista da Luz](https://github.com/ricobl/dotfiles)
 * [Gianni Chiappetta](https://github.com/gf3/dotfiles)
 * [Mathias Bynens](https://github.com/mathiasbynens/dotfiles)
+* [Rifat Nabi](https://gist.github.com/1254570)
