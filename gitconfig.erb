@@ -1,0 +1,42 @@
+[user]
+    name = <%= print("Your name: "); STDOUT.flush; STDIN.gets.chomp %>
+    email = <%= print("Your email: "); STDOUT.flush; STDIN.gets.chomp %>
+[alias]
+    s = status
+    st = status -sb
+    ci = commit
+    cv = commit -v
+    b = branch
+    ba = branch -a
+    co = checkout
+    df = diff
+    d = diff
+    a = add
+    l = log
+    lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%%an>%Creset' --abbrev-commit --date=relative
+    lp = log -p
+[color]
+    ui = auto
+    diff = auto
+    status = auto
+    branch = auto
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[color "branch"]
+    current = yellow reverse
+    local = green
+    remote = red
+[color "diff"]
+    meta = yellow
+    frag = cyan
+    old = red
+    new = green
+[core]
+    excludesfile = <%= ENV['HOME'] %>/.gitignore
+[merge]
+    tool = opendiff
+[github]
+    user = <%= print("Github username: "); STDOUT.flush; STDIN.gets.chomp %>
+    token = <%= print("Github API token: "); STDOUT.flush; STDIN.gets.chomp %>
