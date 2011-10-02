@@ -140,4 +140,15 @@ if ( __is_osx ); then
     function bman() {
       man "${1}" | man2html | browser
     }
+
+    # Reveal current or provided folder in Path Finder
+    function pf() {
+      local target_path="$(cd ${1:-"$PWD"} && PWD)"
+      osascript 2>/dev/null <<-END
+        tell app "Path Finder"
+          reveal POSIX file("$target_path")
+          activate
+        end tell
+END
+    }
 fi
