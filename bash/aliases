@@ -112,6 +112,11 @@ function title() {
     esac
 }
 
+# Set terminal's title to current dir name
+function dirname_to_title() {
+    title $(basename $(pwd))
+}
+
 #
 # Mac OS X specific
 #
