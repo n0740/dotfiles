@@ -132,7 +132,7 @@ if ( __is_osx ); then
     }
 
     # Open github page for specified user.
-    function github() {
+    function ghub() {
         local user=$1
         if [ -z "$1" ]; then
             user="underself"
