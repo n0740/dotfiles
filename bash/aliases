@@ -10,6 +10,7 @@ alias ll='ls -lha'
 
 alias grep='grep --color=auto'
 alias tree='tree -Ca -I "*.pyc"'
+alias egrep='egrep --color=auto'
 alias G='egrep'
 alias M='more'
 
