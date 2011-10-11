@@ -13,7 +13,7 @@ alias egrep='egrep --color=auto'
 alias tree='tree -Ca -I ".git|.svn|CVS|.DS_Store|*.pyc"'
 alias t='tree'
 alias G='egrep'
-alias M='more'
+alias L='less'
 
 # Processes
 alias tu='top -o cpu' # cpu
