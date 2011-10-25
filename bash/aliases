@@ -39,6 +39,8 @@ alias gd='git diff'
 alias gdc='git diff --cached'
 alias gl='git lg'
 alias gco='git checkout'
+alias gb='git branch'
+alias gba='git branch -a'
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
 if ( __is_osx ); then
     alias gx='gitx'
