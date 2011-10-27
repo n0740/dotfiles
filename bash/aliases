@@ -118,7 +118,7 @@ function title() {
 }
 
 # Set terminal's title to current dir name
-function dirname_to_title() {
+function dirname-to-title() {
     title $(basename $(pwd))
 }
 
