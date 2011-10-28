@@ -1,5 +1,4 @@
 # Colors from http://wiki.archlinux.org/index.php/Color_Bash_Prompt
-# misc
 NO_COLOR='\e[0m' #disable any colors
 # regular colors
 COLOR_BLACK='\e[0;30m'
@@ -38,6 +37,16 @@ COLOR_BMAGENTA='\e[45m'
 COLOR_BCYAN='\e[46m'
 COLOR_BWHITE='\e[47m'
 
+# Symbols
+SYMBOL_TEST='▶'
+SYMBOL_LIGHTNING_BOLT="⚡"
+SYMBOL_UP_ARROW="↑"
+SYMBOL_DOWN_ARROW="↓"
+SYMBOL_UD_ARROW="↕"
+SYMBOL_FF_ARROW="→"
+SYMBOL_RECYCLE="♺"
+SYMBOL_MIDDOT="•"
+SYMBOL_PLUSMINUS="±"
 
 # Default editor
 if ( __is_osx ); then
