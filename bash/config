@@ -70,4 +70,6 @@ export HISTSIZE=1000
 shopt -s histappend
 
 # No ._ files in archives
-export COPYFILE_DISABLE=true
+if ( __is_osx ); then
+   export COPYFILE_DISABLE=true
+fi
