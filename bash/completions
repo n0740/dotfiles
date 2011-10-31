@@ -9,7 +9,7 @@ complete -o default -o nospace -F _git_checkout gco
 
 # Completion for Homebrew
 if ( __is_osx ); then
-    if [[ -n `which brew` ]]; then
+    if [[ -n `__which brew` ]]; then
         __source_if_exists "`brew --prefix`/Library/Contributions/brew_bash_completion.sh"
     fi
 fi
