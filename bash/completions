@@ -1,5 +1,5 @@
-# Git completion
 __source_if_exists "/usr/local/etc/bash_completion.d/git-completion.bash"
+__add_completion "fabric-completion/fabric-completion.bash"
 
 # Git completions for our aliases
 complete -o default -o nospace -F _git g

@@ -23,3 +23,9 @@ function __unshift_to_path_if_exists() {
 function __append_to_path_if_exists() {
     [[ -e "$1" ]] && export PATH="$PATH:$1"
 }
+
+# Source script from completion_scripts dir
+function __add_completion() {
+    local completion_dir="$HOME/.bash/completion_scripts"
+    __source_if_exists "$completion_dir/$1"
+}
