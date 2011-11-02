@@ -2,11 +2,8 @@ __source_if_exists "/usr/local/etc/bash_completion.d/git-completion.bash"
 __add_completion "fabric-completion/fabric-completion.bash"
 __add_completion "django_bash_completion"
 
-# Git completions for our aliases
+# Completion for our git alias
 complete -o default -o nospace -F _git g
-complete -o default -o nospace -F _git_diff gd
-complete -o default -o nospace -F _git_log gl
-complete -o default -o nospace -F _git_checkout gco
 
 # Completion for Homebrew
 if ( __is_osx ); then
