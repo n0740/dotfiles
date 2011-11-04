@@ -126,6 +126,7 @@ function title() {
 function dirname-to-title() {
     title $(basename $(pwd))
 }
+alias dtitle="dirname-to-title"
 
 #
 # Mac OS X specific
