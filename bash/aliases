@@ -57,6 +57,10 @@ else
 fi
 alias rmpyc='find . -type f -name "*.pyc" -print0 | xargs -0 rm'
 
+# Django
+alias da="django-admin.py"
+alias dm="./manage.py"
+
 function cl() {
     cd $1; l
 }
