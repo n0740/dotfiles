@@ -5,6 +5,23 @@ __add_completion "django_bash_completion"
 # Completion for our git alias
 complete -o default -o nospace -F _git g
 
+# Completion for our django aliases
+function _da_django_completion()
+{
+    COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
+                   COMP_CWORD=$COMP_CWORD \
+	               DJANGO_AUTO_COMPLETE=1 django-admin.py ) )
+}
+
+function _dm_django_completion()
+{
+    COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
+                   COMP_CWORD=$COMP_CWORD \
+	               DJANGO_AUTO_COMPLETE=1 ./manage.py ) )
+}
+complete -F _da_django_completion -o default da
+complete -F _dm_django_completion -o default dm
+
 # Completion for Homebrew
 if ( __is_osx ); then
     if [[ -n `__which brew` ]]; then
