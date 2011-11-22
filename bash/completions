@@ -5,6 +5,9 @@ __add_completion "django_bash_completion"
 # Completion for our git alias
 complete -o default -o nospace -F _git g
 
+# Completion for our fab alias
+complete -o default -o nospace -F __fab_completion f
+
 # Completion for our django aliases
 function _da_django_completion()
 {
