@@ -60,6 +60,14 @@ function __parse_git_dirty {
     [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
 }
 
+function __parse_git_branch() {
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* //"
+}
+
+function __parse_git_branch_with_status() {
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(__parse_git_dirty)]/"
+}
+
 # Set prompt
 # To fix: __git_ps1 will appear only after we source completions file
 export PS1='\h:\W$(__git_ps1 "[\[$COLOR_GREEN\]%s\[$NO_COLOR\]\[$COLOR_YELLOW\]$(__parse_git_dirty)\[$NO_COLOR\]]")$ '
