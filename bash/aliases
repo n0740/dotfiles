@@ -26,6 +26,8 @@ if ( __is_osx ); then
     alias mm='mate .'
     alias e='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n'
     alias em='open -a Emacs'
+    alias v='mvim'
+    alias vv='mvim .'
 else
     alias e='emacsclient -n -a emacs'
     alias em='emacs'
