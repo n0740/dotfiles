@@ -16,6 +16,8 @@ alias G='egrep'
 alias L='less'
 alias M='more'
 
+alias tf='tail -f'
+
 # Processes
 alias tu='top -o cpu' # cpu
 alias tm='top -o vsize' # memory
