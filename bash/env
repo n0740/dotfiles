@@ -1,3 +1,6 @@
+# user's "bin" dir
+__append_to_path_if_exists "$HOME/bin"
+
 if ( __is_osx ); then
     # Fix PATH for homebrew's python: move /usr/local/bin at first position.
     # But it's ugly. Use another varian below.
@@ -26,6 +29,9 @@ if ( __is_osx ); then
     # export TNS_ADMIN="/usr/local/oracle/network/admin"
     # export NLS_LANG="AMERICAN_AMERICA.UTF8"
     # __append_to_path_if_exists $DYLD_LIBRARY_PATH
+
+    # For CVS of OS X Lion
+    __append_to_path_if_exists "/Developer/usr/bin"
 fi
 
 # RVM
