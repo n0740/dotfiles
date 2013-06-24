@@ -1,4 +1,5 @@
 __source_if_exists "/usr/local/etc/bash_completion.d/git-completion.bash"
+__source_if_exists "/usr/local/etc/bash_completion.d/git-prompt.sh"
 __add_completion "fabric-completion/fabric-completion.bash"
 __add_completion "django_bash_completion"
 
