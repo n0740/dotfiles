@@ -24,8 +24,10 @@ alias tm='top -o vsize' # memory
 
 # Text editors
 if ( __is_osx ); then
-    alias m='mate'
-    alias mm='mate .'
+    # Create symlink before
+    # ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl
+    alias m='subl'
+    alias mm='m .'
     alias e='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n'
     alias em='open -a Emacs'
 else

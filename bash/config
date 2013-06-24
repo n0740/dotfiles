@@ -50,9 +50,8 @@ SYMBOL_PLUSMINUS="±"
 
 # Default editor
 if ( __is_osx ); then
-    export EDITOR="mate -w"
-    export VISUAL="mate -w"
-    export SVN_EDITOR="mate -w"
+    export EDITOR="subl -w"
+    export VISUAL="subl -w"
 fi
 
 # Git status in current dir for prompt

@@ -9,7 +9,7 @@ Aliases for
 
 * usual commands like ls, cd, etc.
 * git
-* editors (TextMate, Emacs)
+* editors (Sublime Text, Emacs)
 * others, see `bash/aliases`
 
 Tab completions for
