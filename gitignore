@@ -3,3 +3,5 @@
 CVS
 *~
 .idea
+.class
+*.komodoproject
