@@ -3,7 +3,7 @@
     email = <%= print("Your email: "); STDOUT.flush; STDIN.gets.chomp %>
 [alias]
     s = status
-    st = status -sb
+    ss = status -sb
     ci = commit
     cv = commit -v
     b = branch
@@ -18,6 +18,10 @@
     lp = log -p
     pl = pull
     ps = push
+    m = merge --no-ff
+    mm = merge
+    f = flow
+    st = stash
 [color]
     ui = auto
     diff = auto
