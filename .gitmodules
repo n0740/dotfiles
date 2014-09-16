@@ -1,3 +1,0 @@
-[submodule "bash/completion_scripts/fabric-completion"]
-	path = bash/completion_scripts/fabric-completion
-	url = git@github.com:underself/fabric-completion.git
