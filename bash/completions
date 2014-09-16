@@ -1,30 +1,12 @@
 __source_if_exists "/usr/local/etc/bash_completion.d/git-completion.bash"
 __source_if_exists "/usr/local/etc/bash_completion.d/git-prompt.sh"
 __add_completion "fabric-completion/fabric-completion.bash"
-__add_completion "django_bash_completion"
 
 # Completion for our git alias
 complete -o default -o nospace -F _git g
 
 # Completion for our fab alias
 complete -o default -o nospace -F __fab_completion f
-
-# Completion for our django aliases
-function _da_django_completion()
-{
-    COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
-                   COMP_CWORD=$COMP_CWORD \
-	               DJANGO_AUTO_COMPLETE=1 django-admin.py ) )
-}
-
-function _dm_django_completion()
-{
-    COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
-                   COMP_CWORD=$COMP_CWORD \
-	               DJANGO_AUTO_COMPLETE=1 ./manage.py ) )
-}
-complete -F _da_django_completion -o default da
-complete -F _dm_django_completion -o default dm
 
 # Completion for Homebrew
 if ( __is_osx ); then
