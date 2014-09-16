@@ -1,39 +1,6 @@
 # user's "bin" dir
 __append_to_path_if_exists "$HOME/bin"
 
-if ( __is_osx ); then
-    # Fix PATH for homebrew's python: move /usr/local/bin at first position.
-    # But it's ugly. Use another varian below.
-    # PATH=`python -S -c "import sys; from os import environ as e; p = e['PATH'].split(':'); p.insert(0, p.pop(p.index('/usr/local/bin'))); sys.stdout.write(':'.join(p))"`
-    # __unshift_to_path_if_exists "/usr/local/share/python"
-
-    if [[ -n `__which brew` ]]; then
-        # Find a Homebrew-built Python
-        local python_bin=$(brew --cellar python)/*/bin
-        python_bin=`echo $python_bin`
-        __unshift_to_path_if_exists $python_bin
-        __unshift_to_path_if_exists "/usr/local/share/python"
-
-        # Find a Homebrew-built Ruby
-        # local ruby_bin=$(brew --cellar ruby)/*/bin
-        # ruby_bin=`echo $ruby_bin`
-        # __unshift_to_path_if_exists $ruby_bin
-    fi
-
-    # MySQL
-    __append_to_path_if_exists "/usr/local/mysql/bin"
-
-    # Oracle
-    # export DYLD_LIBRARY_PATH="/usr/local/oracle/instantclient_10_2"
-    # export SQLPATH="/usr/local/oracle/instantclient_10_2"
-    # export TNS_ADMIN="/usr/local/oracle/network/admin"
-    # export NLS_LANG="AMERICAN_AMERICA.UTF8"
-    # __append_to_path_if_exists $DYLD_LIBRARY_PATH
-
-    # For CVS of OS X Lion
-    __append_to_path_if_exists "/Developer/usr/bin"
-fi
-
 # RVM
 __source_if_exists "$HOME/.rvm/scripts/rvm"
 
