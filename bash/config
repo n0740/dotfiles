@@ -68,13 +68,15 @@ function __parse_git_branch_with_status() {
 }
 
 # Set prompt
-# To fix: __git_ps1 will appear only after we source completions file
-export PS1='\h:\W$(__git_ps1 "[\[$COLOR_GREEN\]%s\[$NO_COLOR\]\[$COLOR_YELLOW\]$(__parse_git_dirty)\[$NO_COLOR\]]")$ '
+# FIXME: __git_ps1 will appear only after we source completions file
+export PS1='\h:\[\e[01;34m\]\W\e[0m$(__git_ps1 "[\[$COLOR_GREEN\]%s\[$NO_COLOR\]\[$COLOR_YELLOW\]\[$NO_COLOR\]]")$ '
+
 
 # History
 export HISTCONTROL=erasedups
 export HISTSIZE=1000
 shopt -s histappend
+
 
 # No ._ files in archives
 if ( __is_osx ); then
