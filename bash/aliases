@@ -5,7 +5,7 @@ if ( __is_osx ); then
 else
     alias ls='ls --color=auto'
 fi
-alias l='ls -lh'
+alias l='ls -lhT'
 alias ll='ls -lha'
 
 alias grep='grep --color=auto'
@@ -44,11 +44,21 @@ alias gdc='git diff --cached'
 alias gl='git lg -20'
 alias gll='git lg'
 alias gco='git checkout'
-alias gb='git branch'
-alias gba='git branch -a'
+alias gb='git branch -vv'
+alias gba='git branch -avv'
+alias gbm="git branch --no-merged "
+alias gpl='git pull --rebase && git remote prune origin'
+alias gps='git push'
+alias gm="git merge --no-ff"
+alias gmm="git merge"
+alias gf="git flow feature"
+alias gfs="git flow feature start"
+alias gff="git flow feature finish"
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
 if ( __is_osx ); then
-    alias gx='gitx'
+    if which stree > /dev/null 2>&1; then
+      alias gx='stree .'
+    fi
 fi
 
 # Python
@@ -60,7 +70,7 @@ else
     alias lssitepackages='lssitepackages -lh --color=auto'
 fi
 alias rmpyc='find . -type f -name "*.pyc" -print0 | xargs -0 rm'
-alias f='fab'
+# alias f='fab'
 
 # Django
 alias da="django-admin.py"
@@ -74,6 +84,8 @@ function take() {
     mkdir -p "$1"
     cd "$1"
 }
+
+alias 'd'='cd ~/Downloads/'
 
 # Start ssh-agent and load key(s).
 # May be useful when our key uses passphrase.
@@ -175,5 +187,17 @@ if ( __is_osx ); then
           activate
         end tell
 END
+    }
+fi
+
+
+
+if ( __is_osx ); then
+    function rpmunpack() {
+        /usr/local/Cellar/rpm2cpio/1.3/bin/rpm2cpio.pl $1 | cpio -ivd
+    }
+else
+    function rpmunpack() {
+        rpm2cpio $1 | cpio -ivd
     }
 fi
