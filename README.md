@@ -24,14 +24,16 @@ Other configs for PATH, prompt, history, etc.
 
 ## Installation
 
-    git clone git://github.com/underself/dotfiles ~/.dotfiles
-    cd ~/.dotfiles
-    rake install
+```bash
+git clone https://github.com/kbakulin/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+rake install
+```
 
 
 ## Environment
 
-I successfully use it on Mac OS X and Linux.
+I use it on Mac OS X and Linux.
 
 
 ## Thanks to
