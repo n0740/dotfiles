@@ -7,7 +7,10 @@ __source_if_exists "$HOME/.rvm/scripts/rvm"
 # Python virtualenvwrapper
 export WORKON_HOME="$HOME/.virtualenvs"
 export PROJECT_HOME="$HOME/code"
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 __source_if_exists "`__which virtualenvwrapper.sh`"
 
-# Prevent re-downloading the same packages repeatedly for pip
+# Python pip
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+export PIP_RESPECT_VIRTUALENV=true
 export PIP_DOWNLOAD_CACHE="$HOME/.pip_download_cache"
