@@ -48,24 +48,13 @@ SYMBOL_RECYCLE="♺"
 SYMBOL_MIDDOT="•"
 SYMBOL_PLUSMINUS="±"
 
+
 # Default editor
 if ( __is_osx ); then
     export EDITOR="subl -w"
     export VISUAL="subl -w"
 fi
 
-# Git status in current dir for prompt
-function __parse_git_dirty {
-    [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
-}
-
-function __parse_git_branch() {
-    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* //"
-}
-
-function __parse_git_branch_with_status() {
-    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(__parse_git_dirty)]/"
-}
 
 # Set prompt
 # FIXME: __git_ps1 will appear only after we source completions file
