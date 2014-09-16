@@ -1,4 +1,5 @@
-# user's "bin" dir
+# PATH
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 __append_to_path_if_exists "$HOME/bin"
 
 # RVM
