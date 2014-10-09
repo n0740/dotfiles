@@ -70,11 +70,7 @@ else
     alias lssitepackages='lssitepackages -lh --color=auto'
 fi
 alias rmpyc='find . -type f -name "*.pyc" -print0 | xargs -0 rm'
-# alias f='fab'
 
-# Django
-alias da="django-admin.py"
-alias dm="./manage.py"
 
 function cl() {
     cd $1; l
