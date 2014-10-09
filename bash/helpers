@@ -26,6 +26,6 @@ function __append_to_path_if_exists() {
 
 # Source script from completion_scripts dir
 function __add_completion() {
-    local completion_dir="$HOME/.bash/completion_scripts"
+    local completion_dir="$HOME/.bash/completions.d"
     __source_if_exists "$completion_dir/$1"
 }
