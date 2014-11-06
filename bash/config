@@ -1,5 +1,6 @@
 # Colors from http://wiki.archlinux.org/index.php/Color_Bash_Prompt
-NO_COLOR='\e[0m' #disable any colors
+NO_COLOR='\e[0m'    # disable any colors
+COLOR_RESET='\e[0m' # again
 # regular colors
 COLOR_BLACK='\e[0;30m'
 COLOR_RED='\e[0;31m'
@@ -48,6 +49,7 @@ SYMBOL_RECYCLE="♺"
 SYMBOL_MIDDOT="•"
 SYMBOL_PLUSMINUS="±"
 
+export TERM=xterm-256color
 
 # Default editor
 if ( __is_osx ); then
@@ -57,7 +59,6 @@ fi
 
 
 # Set prompt
-# FIXME: __git_ps1 will appear only after we source completions file
 export PS1='\h:\[\e[01;34m\]\W\e[0m$(__git_ps1 "[\[$COLOR_GREEN\]%s\[$NO_COLOR\]\[$COLOR_YELLOW\]\[$NO_COLOR\]]")$ '
 
 
@@ -71,3 +72,55 @@ shopt -s histappend
 if ( __is_osx ); then
    export COPYFILE_DISABLE=true
 fi
+
+
+# LSCOLORS The value of this variable describes what color to use
+# for which attribute when colors are enabled with
+# CLICOLOR. This string is a concatenation of pairs of the
+# format fb, where f is the foreground color and b is the
+# background color.
+#
+# The color designators are as follows:
+#
+# a black
+# b red
+# c green
+# d brown
+# e blue
+# f magenta
+# g cyan
+# h light grey
+# A bold black, usually shows up as dark grey
+# B bold red
+# C bold green
+# D bold brown, usually shows up as yellow
+# E bold blue
+# F bold magenta
+# G bold cyan
+# H bold light grey; looks like bright white
+# x default foreground or background
+#
+# Note that the above are standard ANSI colors. The actual
+# display may differ depending on the color capabilities of
+# the terminal in use.
+#
+# The order of the attributes are as follows:
+#
+# 1. directory
+# 2. symbolic link
+# 3. socket
+# 4. pipe
+# 5. executable
+# 6. block special
+# 7. character special
+# 8. executable with setuid bit set
+# 9. executable with setgid bit set
+# 10. directory writable to others, with sticky bit
+# 11. directory writable to others, without sticky bit
+#
+# The default is "exfxcxdxbxegedabagacad", i.e. blue fore-
+# ground and default background for regular directories,
+# black foreground and red background for setuid executa-
+# bles, etc.
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
