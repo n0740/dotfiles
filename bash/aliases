@@ -149,7 +149,7 @@ if ( __is_osx ); then
     }
 
     # Copy name of current dir to system clipboard
-    function dircopyname() {
+    function dirnamecopy() {
         basename $(pwd) | tr -d '\n' | pbcopy
     }
 
