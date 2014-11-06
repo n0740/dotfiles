@@ -1,17 +1,13 @@
 # Check if current OS is Mac OS X
-[[ `uname` == "Darwin" ]] && __IS_DARWIN_RETVAL=0 || __IS_DARWIN_RETVAL=1
+[[ $(uname) == "Darwin" ]] && __IS_DARWIN_RETVAL=0 || __IS_DARWIN_RETVAL=1
+
 function __is_osx() {
     return $__IS_DARWIN_RETVAL
 }
 
 # Source file only if it exists
 function __source_if_exists() {
-    [[ -s "$1" ]] && . "$1"
-}
-
-# Call which and suppress stderr output
-function __which() {
-    echo `which $1 2> /dev/null`
+    [[ -s "$1" ]] && source "$1"
 }
 
 # Insert dir to front of PATH if exists
