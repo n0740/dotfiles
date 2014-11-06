@@ -11,17 +11,13 @@ alias ll='ls -lha'
 alias grep='grep -a --color=auto'
 alias egrep='egrep -a --color=auto'
 alias tree='tree -a -I ".git|.svn|CVS|.DS_Store|*.pyc"'
-alias t='tree -C'
 alias G='egrep'
 alias GP='grep -P'
+
 alias L='less'
 alias M='more'
 
 alias tf='tail -f'
-
-# Processes
-alias tu='top -o cpu' # cpu
-alias tm='top -o vsize' # memory
 
 # Text editors
 if ( __is_osx ); then
@@ -154,15 +150,6 @@ if ( __is_osx ); then
     # Copy name of current dir to system clipboard
     function dircopyname() {
         basename $(pwd) | tr -d '\n' | pbcopy
-    }
-
-    # Open github page for specified user.
-    function ghub() {
-        local user=$1
-        if [ -z "$1" ]; then
-            user="underself"
-        fi
-        open "https://github.com/$user"
     }
 
     # Open a manpage in Preview, which can be saved to PDF
