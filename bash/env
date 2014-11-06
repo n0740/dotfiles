@@ -9,7 +9,7 @@ __source_if_exists "$HOME/.rvm/scripts/rvm"
 export WORKON_HOME="$HOME/.virtualenvs"
 export PROJECT_HOME="$HOME/code"
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
-__source_if_exists "`__which virtualenvwrapper.sh`"
+__source_if_exists "$(which virtualenvwrapper.sh)"
 
 # Python pip
 export PIP_VIRTUALENV_BASE=$WORKON_HOME

@@ -84,7 +84,7 @@ alias 'd'='cd ~/Downloads/'
 # May be useful when our key uses passphrase.
 function ssh-agent-start() {
     # Start ssh-agent with bash shell
-    eval `ssh-agent -s`
+    eval $(ssh-agent -s)
 
     # Add key(s). Will ask for passphrase if needed
     for f in `ls ~/.ssh | grep -e "^id_[r|d]sa[^.]*$"`

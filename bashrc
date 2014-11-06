@@ -9,7 +9,7 @@ function load_dotfiles() {
     source ~/.bash/completions
 
     # Use .localrc for settings specific to one system
-    __source_if_exists "$HOME/.localrc"
+    __source_if_exists ~/.localrc
 }
 
 load_dotfiles
