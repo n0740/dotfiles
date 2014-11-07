@@ -20,18 +20,17 @@ alias tree='tree -a -I ".git|.svn|CVS|.DS_Store|*.pyc"'
 alias tf='tail -f'
 
 # Text editors
+alias v='vim'
 if ( __is_osx ); then
-    # Create symlink before
-    # ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl
     alias m='subl'
-    alias mm='m .'
-    alias e='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n'
-    alias em='open -a Emacs'
+    alias e='gvim --remote-tab-silent'
 else
-    alias e='emacsclient -n -a emacs'
-    alias em='emacs'
+    alias e='vim'
+    alias m='vim'
 fi
+alias vv='v .'
 alias ee='e .'
+alias mm='m .'
 
 # Git
 alias g='git'
