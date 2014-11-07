@@ -21,3 +21,8 @@ __source_if_exists "$(which virtualenvwrapper.sh)"
 # Ruby RVM
 __source_if_exists "$HOME/.rvm/scripts/rvm"
 
+if which brew > /dev/null 2>&1; then
+    # Autojump
+    __source_if_exists $(brew --prefix)/etc/autojump.sh
+fi
+
