@@ -6,20 +6,12 @@ if which brew > /dev/null 2>&1; then
     __source_if_exists $(brew --prefix)/Library/Contributions/brew_bash_completion.sh
 fi
 
-# Completion for our fab alias
-complete -o default -o nospace -F __fab_completion f
-
-# Completion for Homebrew
-if ( __is_osx ); then
-    if [[ -n `__which brew` ]]; then
-        __source_if_exists "`brew --prefix`/Library/Contributions/brew_bash_completion.sh"
-    fi
-fi
+# Completion for our "git" alias
+complete -o default -o nospace -F _git g
 
 # Completion for pip
 # You can also use command like:
 #   [[ -n `which pip` ]] && eval "`pip completion --bash`"
-# But it's too slow for me.
 function _pip_completion() {
     COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
                    COMP_CWORD=$COMP_CWORD \
@@ -27,16 +19,25 @@ function _pip_completion() {
 }
 complete -o default -F _pip_completion pip
 
-# Completion for alias "c".
+# Completion for  "c" alias.
 function __code_dir_complete() {
-    local cur="$2"
-    COMPREPLY=( $(cd ~/code && compgen -d -- "${cur}" ) )
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=( $(cd ~/code && compgen -d -- "$cur" ) )
 }
-complete -o default -o nospace -F __code_dir_complete c
+complete -o dirnames -o nospace -F __code_dir_complete c
 
-# Completion for alias "ce".
+# Completion for "ce" alias.
 function __code_ext_dir_complete() {
-    local cur="$2"
-    COMPREPLY=( $(cd ~/code_ext && compgen -d -- "${cur}" ) )
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=( $(cd ~/code_ext && compgen -d -- "$cur" ) )
 }
-complete -o default -o nospace -F __code_ext_dir_complete ce
+complete -o dirnames -o nospace -F __code_ext_dir_complete ce
+
+# Completion for "d" alias.
+function __downloads_dir_complete() {
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    local IFS=$'\n'
+    COMPREPLY=( $( cd ~/Downloads && compgen -d -- "$cur" ) )
+
+}
+complete -o dirnames -o nospace -F __downloads_dir_complete d
