@@ -1,10 +1,10 @@
-__source_if_exists "/usr/local/etc/bash_completion.d/git-completion.bash"
-__source_if_exists "/usr/local/etc/bash_completion.d/git-prompt.sh"
-__source_if_exists "/usr/local/etc/bash_completion.d/git-flow-completion.bash"
-__add_completion "fabric-completion/fabric-completion.bash"
+if which brew > /dev/null 2>&1; then
+    # All existing completions
+    __source_if_exists $(brew --prefix)/etc/bash_completion
 
-# Completion for our git alias
-complete -o default -o nospace -F _git g
+    # Completion for Homebrew
+    __source_if_exists $(brew --prefix)/Library/Contributions/brew_bash_completion.sh
+fi
 
 # Completion for our fab alias
 complete -o default -o nospace -F __fab_completion f
