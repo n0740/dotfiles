@@ -13,7 +13,7 @@
     a = add
     l = log
     lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%ar) %C(cyan)<%%an>%Creset' --abbrev-commit --date=relative
-    ll = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%ar) %C(cyan)<%%an>%Creset' --abbrev-commit --date=relative -10
+    ll = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%ar) %C(cyan)<%%an>%Creset' --abbrev-commit --date=relative -20
     lp = log -p
     pl = pull --rebase
     ps = push
@@ -41,8 +41,5 @@
     new = green
 [core]
     excludesfile = <%= ENV['HOME'] %>/.gitignore
-[merge]
-    tool = opendiff
-[github]
-    user = <%= print("Github username: "); STDOUT.flush; STDIN.gets.chomp %>
-    token = <%= print("Github API token: "); STDOUT.flush; STDIN.gets.chomp %>
+[push]
+    default = simple
