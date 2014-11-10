@@ -161,6 +161,9 @@ set splitbelow
 nnoremap ; :
 nnoremap : ;
 
+" Use "jk" as of Esc
+inoremap jk <esc>
+
 " Move vertically by visual line (for very long lines)
 nnoremap j gj
 nnoremap k gk
