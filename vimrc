@@ -155,10 +155,11 @@ highlight ColorColumn ctermbg=DarkRed guibg=Brown
 set splitright
 set splitbelow
 
+" Use ; for : and vice versa in normal mode
 nnoremap ; :
 nnoremap : ;
 
-" For long lines
+" Move vertically by visual line (for very long lines)
 nnoremap j gj
 nnoremap k gk
 
