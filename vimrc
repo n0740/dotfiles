@@ -171,6 +171,9 @@ nnoremap k gk
 " Automatically reload file that has changed outside of Vim
 set autoread
 
+" Highlight last inserted text
+nnoremap gV `[v`]
+
 " Quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -195,6 +198,19 @@ let NERDTreeIgnore = ['\.pyc$', 'build', 'egg', 'egg-info/', 'dist']
 " Work with the system clipboard
 set clipboard=unnamed
 
+"
+" Leader Shortcuts
+"
+let mapleader=","
+
+nnoremap <leader>w :NERDTreeToggle<CR>
+
+" Turn off search highlight
+nnoremap <silent> <leader><space> :nohlsearch<CR>
+
+" Edit/load vimrc bindings
+nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
 " Local config
 if filereadable(expand("~/.vimrc.local"))
     source ~/.vimrc.local
