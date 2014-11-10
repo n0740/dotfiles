@@ -111,12 +111,12 @@ set background=dark
 
 color desert
 
-set cursorline
-highlight CursorLine term=bold cterm=bold guibg=Grey40
-
 " Switch syntax highlighting on
 syntax on
 
+" Highlight current line
+set cursorline
+highlight CursorLine cterm=underline guibg=Grey40
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
 
