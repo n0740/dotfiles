@@ -117,6 +117,11 @@ syntax on
 " Highlight current line
 set cursorline
 highlight CursorLine cterm=underline guibg=Grey40
+
+" Highlight column 80
+set colorcolumn=80
+highlight ColorColumn ctermbg=lightgrey guibg=Grey23
+
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
 
@@ -147,9 +152,6 @@ set noswapfile
 
 " Fix bad autoindent of pasted text
 set paste
-
-set colorcolumn=80
-highlight ColorColumn ctermbg=DarkRed guibg=Brown
 
 " Open new split panes to right and bottom, which feels more natural
 set splitright

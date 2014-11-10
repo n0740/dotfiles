@@ -21,6 +21,9 @@ if has("mouse")
    set mouse=a
 endif
 
+" Highlight column 80 as well as 120 and onward
+let &colorcolumn="80,".join(range(120,999),",")
+
 if filereadable(expand("/.gvimrc.local"))
     source ~/.gvimrc.local
 endif
