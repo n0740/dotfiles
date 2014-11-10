@@ -20,6 +20,9 @@ Plugin 'scrooloose/nerdtree'
 " A Git wrapper so awesome, it should be illegal
 Plugin 'tpope/vim-fugitive'
 
+" Plugin for The Silver Searcher (ag)
+Plugin 'rking/ag.vim'
+
 call vundle#end()
 
 filetype on
@@ -211,6 +214,10 @@ nnoremap <silent> <leader><space> :nohlsearch<CR>
 " Edit/load vimrc bindings
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
+
+" Open ag.vim
+nnoremap <leader>a :Ag<space>
+
 " Local config
 if filereadable(expand("~/.vimrc.local"))
     source ~/.vimrc.local
