@@ -17,7 +17,9 @@ set guioptions-=L
 set gcr=n:blinkon0
 
 " Enable the mouse in all modes
-set mouse=a
+if has("mouse")
+   set mouse=a
+endif
 
 if filereadable(expand("/.gvimrc.local"))
     source ~/.gvimrc.local
