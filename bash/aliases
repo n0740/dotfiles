@@ -182,3 +182,13 @@ else
         rpm2cpio $1 | cpio -ivd
     }
 fi
+
+# Install http://www.soimort.org/translate-shell before, for OS X
+# brew install http://www.soimort.org/translate-shell/translate-shell.rb
+function ru() {
+    trans ru:en "$*"
+}
+
+function en() {
+    trans en:ru "$*"
+}
