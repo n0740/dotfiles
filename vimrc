@@ -23,6 +23,9 @@ Plugin 'tpope/vim-fugitive'
 " Plugin for The Silver Searcher (ag)
 Plugin 'rking/ag.vim'
 
+" Lean & mean status/tabline for vim that's light as air
+" Install fonts before: https://github.com/Lokaltog/powerline-fonts.git
+Plugin 'bling/vim-airline'
 call vundle#end()
 
 filetype on
@@ -35,6 +38,9 @@ filetype plugin indent on
 "==============================================================================
 " General settings
 "==============================================================================
+
+" Character encoding used inside Vim, necessary to show Unicode glyphs
+set encoding=utf-8
 
 " Number of spaces that a <Tab> in the file counts for.
 set tabstop=4
@@ -216,7 +222,19 @@ nnoremap <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " Open ag.vim
-nnoremap <leader>a :Ag<space>
+nnoremap <leader>ag :Ag<space>
+
+" Others
+" autocmd vimenter * if !argc() | NERDTree | endif
+let g:NERDTreeWinPos = "left"
+
+let g:ctrlp_working_path_mode = 'a'
+
+" For nice looking symbols
+let g:airline_powerline_fonts=1
+
+" Automatically displays all buffers when there's only one tab open
+let g:airline#extensions#tabline#enabled = 1
 
 " Local config
 if filereadable(expand("~/.vimrc.local"))

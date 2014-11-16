@@ -28,6 +28,11 @@ set columns=999
 " Highlight column 80 as well as 120 and onward
 let &colorcolumn="80,".join(range(120,999),",")
 
+if has('gui_macvim')
+    "set guifont=Source\ Code\ Pro\ for\ Powerline
+    set guifont=Inconsolata\ for\ Powerline:h13
+endif
+
 if filereadable(expand("/.gvimrc.local"))
     source ~/.gvimrc.local
 endif
