@@ -204,7 +204,7 @@ set clipboard=unnamed
 "
 " Leader Shortcuts
 "
-let mapleader=","
+let mapleader=" "
 
 nnoremap <leader>w :NERDTreeToggle<CR>
 
