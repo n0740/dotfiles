@@ -159,9 +159,6 @@ set wildmode=list:longest,full
 " No swap files, use version control instead
 set noswapfile
 
-" Fix bad autoindent of pasted text
-set paste
-
 " Open new split panes to right and bottom, which feels more natural
 set splitright
 set splitbelow
