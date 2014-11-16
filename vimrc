@@ -26,6 +26,9 @@ Plugin 'rking/ag.vim'
 " Lean & mean status/tabline for vim that's light as air
 " Install fonts before: https://github.com/Lokaltog/powerline-fonts.git
 Plugin 'bling/vim-airline'
+
+" Full path fuzzy file, buffer, mru, tag, finder
+Plugin 'kien/ctrlp.vim'
 call vundle#end()
 
 filetype on
@@ -225,6 +228,7 @@ nnoremap <leader>ag :Ag<space>
 " autocmd vimenter * if !argc() | NERDTree | endif
 let g:NERDTreeWinPos = "left"
 
+" How CtrlP sets its local working directory when starts
 let g:ctrlp_working_path_mode = 'a'
 
 " For nice looking symbols
