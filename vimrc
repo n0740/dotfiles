@@ -29,6 +29,10 @@ Plugin 'bling/vim-airline'
 
 " Full path fuzzy file, buffer, mru, tag, finder
 Plugin 'kien/ctrlp.vim'
+
+" Python-mode. PyLint, Rope, Pydoc, breakpoints from box.
+Plugin 'klen/python-mode'
+
 call vundle#end()
 
 filetype on
@@ -238,7 +242,11 @@ let g:ctrlp_working_path_mode = 'a'
 let g:airline_powerline_fonts=1
 
 " Automatically displays all buffers when there's only one tab open
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
+
+let g:pymode_folding = 0
+let g:pymode_rope = 0
+let g:pymode_rope_lookup_project = 0
 
 " Local config
 if filereadable(expand("~/.vimrc.local"))
