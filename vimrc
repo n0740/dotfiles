@@ -207,6 +207,9 @@ let NERDTreeIgnore = ['\.pyc$', 'build', 'egg', 'egg-info/', 'dist']
 " Work with the system clipboard
 set clipboard=unnamed
 
+" Toggle between modes almost instantly
+set ttimeoutlen=0
+
 "
 " Leader Shortcuts
 "
