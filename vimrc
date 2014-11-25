@@ -225,7 +225,7 @@ nnoremap <leader>ev :vsp $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " Open ag.vim
-nnoremap <leader>ag :Ag<space>
+nnoremap <leader>a :Ag<space>
 
 " Others
 " autocmd vimenter * if !argc() | NERDTree | endif
