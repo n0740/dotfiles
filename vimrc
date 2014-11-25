@@ -33,6 +33,9 @@ Plugin 'kien/ctrlp.vim'
 " Python-mode. PyLint, Rope, Pydoc, breakpoints from box.
 Plugin 'klen/python-mode'
 
+" Display tags in a separate window
+Plugin 'majutsushi/tagbar'
+
 call vundle#end()
 
 filetype on
