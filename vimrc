@@ -213,7 +213,7 @@ set ttimeoutlen=0
 "
 " Leader Shortcuts
 "
-let mapleader=" "
+let mapleader=","
 
 nnoremap <leader>w :NERDTreeToggle<CR>
 
