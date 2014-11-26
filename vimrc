@@ -177,6 +177,7 @@ set splitbelow
 nnoremap ; :
 nnoremap : ;
 
+" Use "jj" as of Esc
 " Use "jk" as of Esc
 inoremap jk <esc>
 
