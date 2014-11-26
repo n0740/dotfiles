@@ -209,8 +209,6 @@ cnoremap <C-F> <Right>
 " Set global list of ignored files
 set wildignore+=.git,*.o,*.pyc,.DS_Store
 
-let NERDTreeIgnore = ['\.pyc$', 'build', 'egg', 'egg-info/', 'dist']
-
 " Work with the system clipboard
 set clipboard=unnamed
 
@@ -237,12 +235,13 @@ nnoremap <leader>a :Ag<space>
 " Others
 " autocmd vimenter * if !argc() | NERDTree | endif
 let g:NERDTreeWinPos = "left"
+let NERDTreeIgnore = ['\.pyc$', 'egg', 'egg-info/', 'dist']
 
 " How CtrlP sets its local working directory when starts
 let g:ctrlp_working_path_mode = 'a'
 
 " For nice looking symbols
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts = 1
 
 " Automatically displays all buffers when there's only one tab open
 " let g:airline#extensions#tabline#enabled = 1
