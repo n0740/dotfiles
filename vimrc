@@ -178,6 +178,8 @@ nnoremap ; :
 nnoremap : ;
 
 " Use "jj" as of Esc
+inoremap jj <esc>
+
 " Use "jk" as of Esc
 inoremap jk <esc>
 
