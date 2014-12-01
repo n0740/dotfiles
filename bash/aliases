@@ -23,7 +23,8 @@ alias tf='tail -f'
 alias v='vim'
 if ( __is_osx ); then
     alias m='subl'
-    alias e='gvim --remote-tab-silent'
+    alias e='gvim'
+    alias et='gvim --remote-tab-silent'
 else
     alias e='vim'
     alias m='vim'
