@@ -209,6 +209,9 @@ cnoremap <C-B> <Left>
 cnoremap <C-E> <End>
 cnoremap <C-F> <Right>
 
+" Disable Ex mode
+nnoremap Q <nop>
+
 " Set global list of ignored files
 set wildignore+=.git,*.o,*.pyc,.DS_Store
 
