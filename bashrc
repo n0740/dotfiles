@@ -1,6 +1,7 @@
 # Don't do anything if not running interactively
 [ -z "$PS1" ] && return
 
+
 function load_dotfiles() {
     source ~/.bash/helpers
     source ~/.bash/env
@@ -12,4 +13,17 @@ function load_dotfiles() {
     __source_if_exists ~/.localrc
 }
 
+
+function greet() {
+    local greeting=$*
+    if which cowsay > /dev/null 2>&1; then
+        echo -en $greeting | cowsay
+    else
+        echo -en $greeting
+    fi
+    echo
+}
+
+
 load_dotfiles
+greet "Hi from $(hostname)!\n\n$(date)"
