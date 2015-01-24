@@ -36,6 +36,9 @@ Plugin 'klen/python-mode'
 " Display tags in a separate window
 Plugin 'majutsushi/tagbar'
 
+" Vim motion on speed!
+Plugin 'Lokaltog/vim-easymotion'
+
 call vundle#end()
 
 filetype on
@@ -240,6 +243,12 @@ nnoremap <leader>a :Ag<space>
 
 " Others
 " autocmd vimenter * if !argc() | NERDTree | endif
+" Jump to anywhere with only "s{char}{target}"
+nmap s <Plug>(easymotion-s)
+
+" Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 let g:NERDTreeWinPos = "left"
 let NERDTreeIgnore = ['\.pyc$', 'egg', 'egg-info/', 'dist']
 
@@ -255,6 +264,15 @@ let g:airline_powerline_fonts = 1
 let g:pymode_folding = 0
 let g:pymode_rope = 0
 let g:pymode_rope_lookup_project = 0
+
+" Turn on case sensitive feature
+let g:EasyMotion_smartcase = 1
+
+" Use uppercase target labels and type as a lower case
+let g:EasyMotion_use_upper = 1
+
+" Keep cursor colum when JK motion
+let g:EasyMotion_startofline = 0
 
 " Local config
 if filereadable(expand("~/.vimrc.local"))
