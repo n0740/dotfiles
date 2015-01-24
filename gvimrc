@@ -33,6 +33,6 @@ if has('gui_macvim')
     set guifont=Inconsolata\ for\ Powerline:h13
 endif
 
-if filereadable(expand("/.gvimrc.local"))
+if filereadable(expand("~/.gvimrc.local"))
     source ~/.gvimrc.local
 endif
