@@ -30,6 +30,9 @@ Plugin 'bling/vim-airline'
 " Full path fuzzy file, buffer, mru, tag, finder
 Plugin 'kien/ctrlp.vim'
 
+" Simple function navigator for ctrlp.vim
+Plugin 'tacahiroy/ctrlp-funky'
+
 " Python-mode. PyLint, Rope, Pydoc, breakpoints from box.
 Plugin 'klen/python-mode'
 
@@ -142,7 +145,7 @@ highlight CursorLine cterm=underline guibg=Grey40
 
 " Highlight column 80
 set colorcolumn=80
-highlight ColorColumn ctermbg=DarkRed guibg=Grey23
+highlight ColorColumn ctermbg=DarkGray guibg=Grey23
 
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
@@ -224,6 +227,7 @@ set clipboard=unnamed
 " Toggle between modes almost instantly
 set ttimeoutlen=0
 
+
 "
 " Leader Shortcuts
 "
@@ -249,6 +253,11 @@ nmap s <Plug>(easymotion-s)
 " Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+
+nnoremap <Leader>fu :CtrlPFunky<Cr>
+" Narrow the list down with a word under cursor
+nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+
 let g:NERDTreeWinPos = "left"
 let NERDTreeIgnore = ['\.pyc$', 'egg', 'egg-info/', 'dist']
 
@@ -274,6 +283,8 @@ let g:EasyMotion_use_upper = 1
 
 " Keep cursor colum when JK motion
 let g:EasyMotion_startofline = 0
+
+let g:ctrlp_funky_syntax_highlight = 1
 
 " Local config
 if filereadable(expand("~/.vimrc.local"))
