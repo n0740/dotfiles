@@ -82,6 +82,9 @@ set showcmd
 " Show line numbers.
 set number
 
+" Show the line number relative to the line with the cursor
+set relativenumber
+
 " When a bracket is inserted, briefly jump to the matching
 " one. The jump is only done if the match can be seen on the
 " screen. The time to show the match can be set with
