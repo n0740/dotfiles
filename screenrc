@@ -1,0 +1,36 @@
+# Disable the startup message
+startup_message off
+
+shell -$SHELL
+
+activity "Activity in window %n (%t)^G^G"
+
+bell_msg "Bell in window %n (%t)^G"
+
+# Turn on monitoring
+defmonitor on
+
+# Automatically detach upon hangup
+autodetach on
+
+# Set a large scrollback buffer
+defscrollback 10000
+
+# Always start utf-8 enabled
+defutf8 on
+
+term xterm-256color
+
+# Status line
+hardstatus alwayslastline '%{= kg}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%= %{g}]'
+
+# Navigation
+bind j focus down
+bind k focus up
+bind t focus top
+bind b focus bottom
+
+bind ` select 0
+bind k kill
+bind K kill
+bind X remove
