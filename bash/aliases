@@ -153,23 +153,7 @@ if ( __is_osx ); then
 
     # Open a manpage in Preview, which can be saved to PDF
     function pman() {
-       man -t "${1}" | open -f -a "/Applications/Preview.app"
-    }
-
-    # Open a manpage in the browser
-    function bman() {
-      man "${1}" | man2html | browser
-    }
-
-    # Reveal current or provided folder in Path Finder
-    function pf() {
-      local target_path="$(cd ${1:-"$PWD"} && PWD)"
-      osascript 2>/dev/null <<-END
-        tell app "Path Finder"
-          reveal POSIX file("$target_path")
-          activate
-        end tell
-END
+        man -t "${1}" | open -f -a "/Applications/Preview.app"
     }
 fi
 
