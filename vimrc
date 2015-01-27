@@ -258,8 +258,14 @@ nnoremap <Leader>fu :CtrlPFunky<Cr>
 " Narrow the list down with a word under cursor
 nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 
+
+"
+" Plugin's settings
+"
+
 let g:NERDTreeWinPos = "left"
 let NERDTreeIgnore = ['\.pyc$', 'egg', 'egg-info/', 'dist']
+let NERDTreeChDirMode = 0
 
 " How CtrlP sets its local working directory when starts
 let g:ctrlp_working_path_mode = 'a'
