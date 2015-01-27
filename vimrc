@@ -132,15 +132,14 @@ set autoindent
 "           to comments)
 " set formatoptions=c,q,r,t
 
-" When set to "dark", Vim will try to use colors that look good on
-" a dark background. When set to "light", Vim will
-" try to use colors that look good on a light background.
-set background=dark
-
-color desert
-
 " Switch syntax highlighting on
 syntax on
+" syntax enable
+
+set background=dark
+
+" Color scheme
+color desert
 
 " Highlight current line
 set cursorline
@@ -248,8 +247,6 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 " Open ag.vim
 nnoremap <leader>a :Ag<space>
 
-" Others
-" autocmd vimenter * if !argc() | NERDTree | endif
 " Jump to anywhere with only "s{char}{target}"
 nmap s <Plug>(easymotion-s)
 
