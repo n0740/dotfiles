@@ -143,11 +143,11 @@ color desert
 
 " Highlight current line
 set cursorline
-highlight CursorLine cterm=underline guibg=Grey40
+highlight CursorLine cterm=None ctermbg=234 guibg=Grey30
 
 " Highlight column 80
 set colorcolumn=80
-highlight ColorColumn ctermbg=DarkGray guibg=Grey23
+highlight ColorColumn ctermbg=233 guibg=Grey23
 
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
