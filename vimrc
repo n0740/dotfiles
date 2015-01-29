@@ -42,6 +42,9 @@ Plugin 'majutsushi/tagbar'
 " Vim motion on speed!
 Plugin 'Lokaltog/vim-easymotion'
 
+" Toggle between relative and absolute line numbers automatically
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+
 call vundle#end()
 
 filetype on
