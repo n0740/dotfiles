@@ -241,7 +241,7 @@ let mapleader=","
 nnoremap <leader>w :NERDTreeToggle<CR>
 
 " Turn off search highlight
-nnoremap <silent> <leader><space> :nohlsearch<CR>
+nnoremap <silent> <CR> :nohlsearch<CR>
 
 " Edit/load vimrc bindings
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
