@@ -53,7 +53,7 @@ export TERM=xterm-256color
 
 # Default editor
 if ( __is_osx ); then
-    export EDITOR="subl -w"
+    export EDITOR="vim"
     export VISUAL="subl -w"
 fi
 
