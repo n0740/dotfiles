@@ -226,9 +226,6 @@ nnoremap Q <nop>
 " Set global list of ignored files
 set wildignore+=.git,*.o,*.pyc,.DS_Store
 
-" Work with the system clipboard
-set clipboard=unnamed
-
 " Toggle between modes almost instantly
 set ttimeoutlen=0
 
