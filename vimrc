@@ -45,6 +45,9 @@ Plugin 'Lokaltog/vim-easymotion'
 " Toggle between relative and absolute line numbers automatically
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
+" Go (golang) support
+Plugin 'fatih/vim-go'
+
 call vundle#end()
 
 filetype on
@@ -231,14 +234,15 @@ set ttimeoutlen=0
 
 
 "
-" Leader Shortcuts
+" Leader shortcuts
 "
 let mapleader=","
 
 nnoremap <leader>w :NERDTreeToggle<CR>
 
 " Turn off search highlight
-nnoremap <silent> <CR> :nohlsearch<CR>
+" nnoremap <silent> <CR> :nohlsearch<CR>
+nnoremap <silent><leader><space> :nohlsearch<CR>
 
 " Edit/load vimrc bindings
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
