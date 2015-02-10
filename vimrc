@@ -255,12 +255,12 @@ nnoremap <leader>a :Ag<space>
 nmap s <Plug>(easymotion-s)
 
 " Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
+map <leader>j <Plug>(easymotion-j)
+map <leader>k <Plug>(easymotion-k)
 
-nnoremap <Leader>fu :CtrlPFunky<Cr>
+nnoremap <leader>fu :CtrlPFunky<Cr>
 " Narrow the list down with a word under cursor
-nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+nnoremap <leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 
 
 "
