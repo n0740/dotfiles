@@ -296,6 +296,8 @@ let g:EasyMotion_startofline = 0
 
 let g:ctrlp_funky_syntax_highlight = 1
 
+let g:tagbar_sort = 0
+
 
 " The Silver Searcher
 if executable('ag')
