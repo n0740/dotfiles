@@ -258,9 +258,9 @@ nmap s <Plug>(easymotion-s)
 map <leader>j <Plug>(easymotion-j)
 map <leader>k <Plug>(easymotion-k)
 
-nnoremap <leader>fu :CtrlPFunky<Cr>
+nnoremap <leader>f :CtrlPFunky<CR>
 " Narrow the list down with a word under cursor
-nnoremap <leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+nnoremap <leader>F :execute 'CtrlPFunky ' . expand('<cword>')<CR>
 
 
 "
