@@ -11,15 +11,15 @@
     d = diff
     a = add
     l = log
-    lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%ar) %C(cyan)<%%an>%Creset' --abbrev-commit --date=relative
-    ll = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%ar) %C(cyan)<%%an>%Creset' --abbrev-commit --date=relative -20
+    lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%ar) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
+    ll = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%ar) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative -20
     lp = log -p
-    pl = pull --rebase
+    pl = pull
     ps = push
     m = merge --no-ff
     mm = merge
-    f = flow
     st = stash
+    f = flow
 [color]
     ui = auto
     diff = auto
@@ -41,8 +41,6 @@
 [fetch]
     prune = true
 [core]
-    excludesfile = <%= ENV['HOME'] %>/.gitignore
-[push]
-    default = simple
+    excludesfile = ~/.gitignore
 [include]
     path = ~/.gitconfig.local
