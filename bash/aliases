@@ -124,11 +124,15 @@ function mkproject-no-site-packages() {
 
 # Set the terminal's title
 function title() {
-    case $TERM in
-        *xterm*|ansi)
-            echo -ne '\033]0;'"$@"'\a'
-            ;;
-    esac
+    if [[ -n "${TMUX+set}" ]]; then
+        tmux rename-window "$@"
+    else
+        case $TERM in
+            *xterm*|ansi)
+                echo -ne '\033]0;'"$@"'\a'
+                ;;
+        esac
+    fi
 }
 
 # Set terminal's title to current dir name
