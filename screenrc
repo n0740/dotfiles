@@ -14,7 +14,7 @@ defmonitor on
 autodetach on
 
 # Set a large scrollback buffer
-defscrollback 10000
+defscrollback 30000
 
 # Always start utf-8 enabled
 defutf8 on
