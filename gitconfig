@@ -10,7 +10,7 @@
     df = diff
     d = diff
     a = add
-    l = log
+    l = log --pretty=fuller --stat
     lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%ar) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
     ll = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%ar) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative -20
     lp = log -p
