@@ -65,8 +65,7 @@ if ( __is_osx ); then
 else
     alias lssitepackages='lssitepackages -lh --color=auto'
 fi
-alias rmpyc='find . -type f -name "*.pyc" -print0 | xargs -0 rm'
-
+alias rmpyc='find . -type f -iname "*.pyc" -delete'
 
 function cl() {
     cd $1; l
