@@ -232,16 +232,17 @@ set wildignore+=.git,*.o,*.pyc,.DS_Store
 " Toggle between modes almost instantly
 set ttimeoutlen=0
 
+set pastetoggle=<F12>
+
+nnoremap <silent><F2> :NERDTreeToggle<CR>
+nnoremap <silent><F3> :TagbarToggle<CR>
 
 "
 " Leader shortcuts
 "
 let mapleader=","
 
-nnoremap <leader>w :NERDTreeToggle<CR>
-
 " Turn off search highlight
-" nnoremap <silent> <CR> :nohlsearch<CR>
 nnoremap <silent><leader><space> :nohlsearch<CR>
 
 " Edit/load vimrc bindings
@@ -259,8 +260,17 @@ map <leader>j <Plug>(easymotion-j)
 map <leader>k <Plug>(easymotion-k)
 
 nnoremap <leader>f :CtrlPFunky<CR>
+
 " Narrow the list down with a word under cursor
 nnoremap <leader>F :execute 'CtrlPFunky ' . expand('<cword>')<CR>
+
+nnoremap <leader>\ :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+nnoremap <leader>] :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
+nnoremap <leader>q :bp <BAR> bd #<CR>
+
+nnoremap <leader>bb :CtrlPBuffer<CR>
+nnoremap <leader>bm :CtrlPMRU<CR>
 
 
 "
@@ -316,6 +326,11 @@ else
     " Grep word under cursor
     nnoremap <leader>k :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 endif
+autocmd FileType python nnoremap <F7> :PymodeLintToggle<CR>
+autocmd FileType python nnoremap <F8> :PymodeLint<CR>
+autocmd FileType python nnoremap <F9> :PymodeLintAuto<CR>
+
+
 " Local config
 if filereadable(expand("~/.vimrc.local"))
     source ~/.vimrc.local
