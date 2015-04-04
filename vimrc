@@ -232,6 +232,9 @@ set wildignore+=.git,*.o,*.pyc,.DS_Store
 " Toggle between modes almost instantly
 set ttimeoutlen=0
 
+" Don't complete from tags
+set complete-=t
+
 set pastetoggle=<F12>
 
 nnoremap <silent><F2> :NERDTreeToggle<CR>
