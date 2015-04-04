@@ -287,11 +287,12 @@ let NERDTreeChDirMode = 0
 " How CtrlP sets its local working directory when starts
 let g:ctrlp_working_path_mode = 'a'
 
+let g:ctrlp_funky_syntax_highlight = 1
+
 " For nice looking symbols
 let g:airline_powerline_fonts = 1
 
-" Automatically displays all buffers when there's only one tab open
-" let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#virtualenv#enabled = 0
 
 let g:pymode_folding = 0
 let g:pymode_rope = 0
@@ -306,8 +307,6 @@ let g:EasyMotion_use_upper = 1
 
 " Keep cursor colum when JK motion
 let g:EasyMotion_startofline = 0
-
-let g:ctrlp_funky_syntax_highlight = 1
 
 let g:tagbar_sort = 0
 
