@@ -191,15 +191,34 @@ set splitbelow
 nnoremap ; :
 nnoremap : ;
 
-" Use "jj" as of Esc
-inoremap jj <esc>
-
-" Use "jk" as of Esc
-inoremap jk <esc>
-
 " Move vertically by visual line (for very long lines)
 nnoremap j gj
 nnoremap k gk
+
+" Use as Esc in insert mode
+inoremap jj <Esc>
+inoremap jk <Esc>
+
+" Go to just before the first non-blank text of the line
+inoremap ii <Esc>I
+
+" Go to the end of the line
+inoremap aa <Esc>A
+
+" Start editing on a new line above the current line
+inoremap oo <Esc>O
+
+" Change what is on the right of the cursor
+inoremap CC <Esc>C
+
+" Change the whole line
+inoremap SS <Esc>S
+
+" Delete the current line
+inoremap DD <Esc>dd
+
+" Undo
+inoremap UU <Esc>u
 
 " Automatically reload file that has changed outside of Vim
 set autoread
@@ -294,10 +313,10 @@ let g:airline_powerline_fonts = 1
 
 let g:airline#extensions#virtualenv#enabled = 0
 
+let g:pymode_lint_on_fly = 1
 let g:pymode_folding = 0
 let g:pymode_rope = 0
 let g:pymode_rope_lookup_project = 0
-let g:pymode_lint_on_fly = 1
 
 " Turn on case sensitive feature
 let g:EasyMotion_smartcase = 1
