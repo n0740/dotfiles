@@ -31,6 +31,6 @@ bind t focus top
 bind b focus bottom
 
 bind ` select 0
-bind k kill
-bind K kill
 bind X remove
+bind x kill
+bind , title
