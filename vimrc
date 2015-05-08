@@ -48,6 +48,10 @@ Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 " Go (golang) support
 Plugin 'fatih/vim-go'
 
+" Navigate seamlessly between vim and tmux splits using a consistent set of
+" hotkeys
+Plugin 'christoomey/vim-tmux-navigator'
+
 call vundle#end()
 
 filetype on
