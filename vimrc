@@ -50,7 +50,7 @@ Plugin 'fatih/vim-go'
 
 " Navigate seamlessly between vim and tmux splits using a consistent set of
 " hotkeys
-Plugin 'christoomey/vim-tmux-navigator'
+" Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
 
