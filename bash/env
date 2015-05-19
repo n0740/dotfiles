@@ -10,12 +10,13 @@ export LANG=en_US.UTF-8
 # Python pip
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
-export PIP_DOWNLOAD_CACHE="$HOME/.pip_download_cache"
+# Download-cache has been deprecated and will be removed in the future.
+# Pip now automatically uses and configures its cache
+# export PIP_DOWNLOAD_CACHE="$HOME/.pip_download_cache"
 
 # Python virtualenvwrapper
 export WORKON_HOME="$HOME/.virtualenvs"
 export PROJECT_HOME="$HOME/code"
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 __source_if_exists "$(which virtualenvwrapper.sh)"
 
 # Ruby RVM
