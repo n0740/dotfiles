@@ -22,7 +22,7 @@ defutf8 on
 term xterm-256color
 
 # Status line
-hardstatus alwayslastline '%{= kg}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%= %{g}]'
+hardstatus alwayslastline "%{= kg}[%{G}%H%{g}]%= %{-b kc}%u %-Lw%{= rW}%n*%f %t%{-}%+Lw %="
 
 # Navigation
 bind j focus down
