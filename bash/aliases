@@ -14,7 +14,6 @@ alias G='egrep'
 alias GP='grep -P'
 
 alias L='less'
-alias M='more'
 
 alias tree='tree -a -I ".git|.svn|CVS|.DS_Store|*.pyc"'
 alias tf='tail -f'
@@ -24,7 +23,6 @@ if ( __is_osx ); then
     alias m='subl'
     alias e='vim'
     alias ge='gvim --remote-tab-silent'
-    alias gew='gvim'
 else
     alias e='vim'
     alias m='vim'
@@ -110,17 +108,6 @@ function d() {
     cd ~/Downloads/$1;
 }
 
-# Create virtualenv with --no-site-packages option by default
-function mkvirtualenv-no-site-packages() {
-    mkvirtualenv --no-site-packages $*
-}
-
-# Create virtualenv and project for it with --no-site-packages option
-# by default
-function mkproject-no-site-packages() {
-    mkproject --no-site-packages $*
-}
-
 # Set the terminal's title
 function title() {
     if [[ -n "${TMUX+set}" ]]; then
@@ -170,13 +157,3 @@ else
         rpm2cpio $1 | cpio -ivd
     }
 fi
-
-# Install http://www.soimort.org/translate-shell before, for OS X
-# brew install http://www.soimort.org/translate-shell/translate-shell.rb
-function ru() {
-    trans ru:en "$*"
-}
-
-function en() {
-    trans en:ru "$*"
-}
