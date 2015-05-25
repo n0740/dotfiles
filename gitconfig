@@ -16,10 +16,10 @@
     lp = log -p
     pl = pull
     ps = push
-    m = merge --no-ff
-    mm = merge
     st = stash
     f = flow
+	m = merge
+	mm = merge --no-ff
 [color]
     ui = auto
     diff = auto
@@ -44,3 +44,6 @@
     excludesfile = ~/.gitignore
 [include]
     path = ~/.gitconfig.local
+[merge]
+	conflictstyle = diff3
+	tool = vimdiff
