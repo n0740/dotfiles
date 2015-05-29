@@ -50,6 +50,8 @@ alias gmm="git mm"
 alias gf="git flow feature"
 alias gfs="git flow feature start"
 alias gff="git flow feature finish"
+
+alias git-new-workdir="/usr/local/share/git-core/contrib/workdir/git-new-workdir"
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
 
 if which stree > /dev/null 2>&1; then
