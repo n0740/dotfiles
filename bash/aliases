@@ -21,12 +21,11 @@ alias tf='tail -f'
 # Text editors
 if ( __is_osx ); then
     alias m='subl'
-    alias e='vim'
     alias ge='gvim --remote-tab-silent'
 else
-    alias e='vim'
     alias m='vim'
 fi
+alias e='vim'
 alias ee='e .'
 alias mm='m .'
 
