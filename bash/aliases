@@ -58,6 +58,10 @@ if which stree > /dev/null 2>&1; then
   alias gx='stree .'
 fi
 
+if which tig > /dev/null 2>&1; then
+  alias gt='tig .'
+fi
+
 # Python
 alias p='python'
 alias pp='ipython'
