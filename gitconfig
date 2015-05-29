@@ -4,22 +4,21 @@
     s = status
     ci = commit
     cv = commit -v
-    b = branch
     ba = branch -a
     co = checkout
-    df = diff
     d = diff
     a = add
     l = log --pretty=fuller --stat
     lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%ar) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
-    ll = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%ar) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative -20
     lp = log -p
-    pl = pull
     ps = push
-    st = stash
-    f = flow
+	b = branch -vv
+	bm = branch --no-merged
+	pl = pull --rebase
 	m = merge
 	mm = merge --no-ff
+	st = stash
+	f = flow
 [color]
     ui = auto
     diff = auto
