@@ -55,7 +55,7 @@ alias git-new-workdir="/usr/local/share/git-core/contrib/workdir/git-new-workdir
 alias ungit="find . -name '.git' -exec rm -rf {} \;"
 
 if which stree > /dev/null 2>&1; then
-  alias gx='stree .'
+  alias gx='stree $(git rev-parse --show-toplevel)'
 fi
 
 if which tig > /dev/null 2>&1; then
