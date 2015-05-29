@@ -1,48 +1,48 @@
 [push]
-    default = current
+	default = current
 [alias]
-    s = status
-    ci = commit
-    cv = commit -v
-    ba = branch -a
-    co = checkout
-    d = diff
-    a = add
-    l = log --pretty=fuller --stat
-    lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%ar) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
-    lp = log -p
-    ps = push
+	s = status
+	ci = commit
+	cv = commit -v
 	b = branch -vv
+	ba = branch -a
 	bm = branch --no-merged
+	co = checkout
+	d = diff
+	a = add
+	l = log --pretty=fuller --stat
+	lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%ar) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
+	lp = log -p
 	pl = pull --rebase
+	ps = push
 	m = merge
 	mm = merge --no-ff
 	st = stash
 	f = flow
 [color]
-    ui = auto
-    diff = auto
-    status = auto
-    branch = auto
+	ui = auto
+	diff = auto
+	status = auto
+	branch = auto
 [color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
+	added = yellow
+	changed = green
+	untracked = cyan
 [color "branch"]
-    current = yellow reverse
-    local = green
-    remote = red
+	current = yellow reverse
+	local = green
+	remote = red
 [color "diff"]
-    meta = yellow
-    frag = cyan
-    old = red
-    new = green
+	meta = yellow
+	frag = cyan
+	old = red
+	new = green
 [fetch]
-    prune = true
+	prune = true
 [core]
-    excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore
 [include]
-    path = ~/.gitconfig.local
+	path = ~/.gitconfig.local
 [merge]
 	conflictstyle = diff3
 	tool = vimdiff
