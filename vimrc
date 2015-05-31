@@ -304,7 +304,7 @@ nnoremap <leader>bm :CtrlPMRU<CR>
 "
 
 let g:NERDTreeWinPos = "left"
-let NERDTreeIgnore = ['\.pyc$', 'egg', 'egg-info/', 'dist']
+let NERDTreeIgnore = ['\.pyc$', 'egg', 'egg-info/', 'dist', '\.$o']
 let NERDTreeChDirMode = 0
 
 " How CtrlP sets its local working directory when starts
