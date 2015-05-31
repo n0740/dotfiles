@@ -7,6 +7,7 @@ function load_dotfiles() {
     source ~/.bash/env
     source ~/.bash/config
     source ~/.bash/aliases
+    source ~/.bash/osx.aliases
     source ~/.bash/completions
 
     # Use .localrc for settings specific to one system

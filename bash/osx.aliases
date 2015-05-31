@@ -1,0 +1,74 @@
+if [ "$(uname)" = "Darwin" ]; then
+    alias safari="open -a safari"
+    alias firefox="open -a firefox"
+    alias chrome="open -a google\ chrome"
+    alias f="open -a Finder "
+
+    # Lock OSX
+    alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
+
+    # Start screen saver
+    alias screensaver='open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
+    alias ss='screensaver'
+
+    # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
+    alias update='sudo softwareupdate -i -a; brew update; brew outdated; brew upgrade --all; brew cleanup'
+
+    # Empty the Trash on all mounted volumes and the main HDD
+    # Also, clear Apple’s System Logs to improve shell startup speed
+    alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+
+    # Recursively delete `.DS_Store` files
+    alias mac-ds-store-cleanup="find . -name '*.DS_Store' -type f -ls -delete"
+
+    mac-who-runs-shit-without-my-command () {
+        # loop over all folders and give a list
+        #   ~/Library/LaunchAgents
+        #   /Library/LaunchAgents
+        #   /Library/LaunchDaemons
+        #   /Library/StartupItems
+        #   crontab -l 2> /dev/null
+        #   login items
+        # - /System/Library/LaunchAgents
+        # - /System/Library/LaunchDaemons
+
+        locations="$HOME/Library/LaunchAgents /Library/LaunchAgents /Library/LaunchDaemons /Library/StartupItems"
+        for loc in $locations; do
+            echo "$loc"
+            ls -1 "$loc" | awk '{ gsub(/.plist/, ""); print }'
+        done;
+
+        echo "========================= crontab ========================="
+        crontab -l 2> /dev/null
+
+        echo "======================= Login Items ======================="
+        osascript -e 'tell application "System Events" to get the name of every login item' | sed -e  $'s/, /\\\n/g'
+    }
+
+    # Copy current dir path to system clipboard
+    function pwdcopy() {
+        pwd | tr -d '\n' | pbcopy
+    }
+
+    # Copy name of current dir to system clipboard
+    function dirnamecopy() {
+        basename $(pwd) | tr -d '\n' | pbcopy
+    }
+
+    # Open a manpage in Preview, which can be saved to PDF
+    function pman() {
+        man -t "${1}" | open -f -a "/Applications/Preview.app"
+    }
+
+    fantastical() {
+        osascript -- <<EOF
+        tell application "Fantastical"
+            parse sentence "$@"
+        end tell
+EOF
+    }
+
+    todo() {
+        fantastical todo "$@"
+    }
+fi

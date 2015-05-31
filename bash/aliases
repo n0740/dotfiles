@@ -137,26 +137,6 @@ function dirname-to-title() {
 }
 alias dtitle="dirname-to-title"
 
-#
-# Mac OS X specific
-#
-if ( __is_osx ); then
-    # Copy current dir path to system clipboard
-    function pwdcopy() {
-        pwd | tr -d '\n' | pbcopy
-    }
-
-    # Copy name of current dir to system clipboard
-    function dirnamecopy() {
-        basename $(pwd) | tr -d '\n' | pbcopy
-    }
-
-    # Open a manpage in Preview, which can be saved to PDF
-    function pman() {
-        man -t "${1}" | open -f -a "/Applications/Preview.app"
-    }
-fi
-
 
 if which brew > /dev/null 2>&1; then
     function rpmunpack() {
