@@ -45,12 +45,22 @@ Plugin 'Lokaltog/vim-easymotion'
 " Toggle between relative and absolute line numbers automatically
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
-" Go (golang) support
-Plugin 'fatih/vim-go'
+" A better JSON support
+Plugin 'elzr/vim-json'
 
 " Navigate seamlessly between vim and tmux splits using a consistent set of
 " hotkeys
 " Plugin 'christoomey/vim-tmux-navigator'
+
+" Comment stuff out. Then uncomment it later.
+Plugin 'tpope/vim-commentary'
+
+" Provides several pairs of bracket maps
+Plugin 'tpope/vim-unimpaired'
+
+" It's  all about "surroundings": parentheses, brackets, quotes, XML tags, and
+" more
+Plugin 'tpope/vim-surround'
 
 call vundle#end()
 
