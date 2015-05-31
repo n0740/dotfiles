@@ -41,3 +41,13 @@ function __downloads_dir_complete() {
 
 }
 complete -o dirnames -o nospace -F __downloads_dir_complete d
+
+
+# Completion for "db" alias.
+function ___dropbox_complete() {
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    local IFS=$'\n'
+    COMPREPLY=( $( cd ~/Dropbox && compgen -d -- "$cur" ) )
+
+}
+complete -o dirnames -o nospace -F ___dropbox_complete db

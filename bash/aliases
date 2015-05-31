@@ -3,6 +3,7 @@ alias reload="exec $SHELL -l"
 
 alias ..='cd ..'
 alias ...='cd ../..'
+alias ....='cd ../../..'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -75,10 +76,6 @@ alias pp='ipython'
 alias lssitepackages="lssitepackages -lh ${colorflag}"
 alias rmpyc='find . -type f -iname "*.pyc" -delete'
 
-function cl() {
-    cd $1; l
-}
-
 function take() {
     mkdir -p "$1"
     cd "$1"
@@ -116,6 +113,10 @@ function ce() {
 
 function d() {
     cd ~/Downloads/$1;
+}
+
+function db() {
+    cd ~/Dropbox/$1;
 }
 
 # Set the terminal's title
