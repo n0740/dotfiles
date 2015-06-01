@@ -173,6 +173,11 @@ highlight CursorLine cterm=None ctermbg=234 guibg=Grey30
 set colorcolumn=80
 highlight ColorColumn ctermbg=233 guibg=Grey23
 
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
 
