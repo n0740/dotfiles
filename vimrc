@@ -300,6 +300,7 @@ nmap s <Plug>(easymotion-s)
 map <leader>j <Plug>(easymotion-j)
 map <leader>k <Plug>(easymotion-k)
 
+" Switch between functions in file
 nnoremap <leader>f :CtrlPFunky<CR>
 
 " Narrow the list down with a word under cursor
@@ -310,7 +311,10 @@ nnoremap <leader>] :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 nnoremap <leader>q :bp <BAR> bd #<CR>
 
+" Switch between opened buffers
 nnoremap <leader>bb :CtrlPBuffer<CR>
+
+" Switch between most recently used buffers
 nnoremap <leader>bm :CtrlPMRU<CR>
 
 
@@ -346,6 +350,7 @@ let g:EasyMotion_use_upper = 1
 " Keep cursor colum when JK motion
 let g:EasyMotion_startofline = 0
 
+" Tags sorted according to their order in the source file
 let g:tagbar_sort = 0
 
 
