@@ -161,6 +161,10 @@ set background=dark
 " Color scheme
 color desert
 
+" Make sure that unsaved buffers that are to be put in the background are
+" allowed to go in there (ie. the "must save first" error doesn't come up)
+set hidden
+
 " Highlight current line
 set cursorline
 highlight CursorLine cterm=None ctermbg=234 guibg=Grey30
