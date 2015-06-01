@@ -273,6 +273,11 @@ set pastetoggle=<F12>
 nnoremap <silent><F2> :NERDTreeToggle<CR>
 nnoremap <silent><F3> :TagbarToggle<CR>
 
+" Enable TAB indent and SHIFT-TAB unindent
+vnoremap <silent> <TAB> >gv
+vnoremap <silent> <S-TAB> <gv
+
+
 "
 " Leader shortcuts
 "
