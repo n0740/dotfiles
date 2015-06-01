@@ -342,6 +342,7 @@ let g:airline#extensions#virtualenv#enabled = 0
 
 let g:pymode_lint_on_fly = 1
 let g:pymode_folding = 0
+let g:pymode_breakpoint = 0
 let g:pymode_rope = 0
 let g:pymode_rope_lookup_project = 0
 
