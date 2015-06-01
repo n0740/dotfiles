@@ -376,6 +376,9 @@ else
     " Grep word under cursor
     nnoremap <leader>w :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 endif
+" Check if any buffers were changed outside of Vim.
+autocmd CursorHold * checktime
+
 autocmd FileType python nnoremap <F7> :PymodeLintToggle<CR>
 autocmd FileType python nnoremap <F8> :PymodeLint<CR>
 autocmd FileType python nnoremap <F9> :PymodeLintAuto<CR>
