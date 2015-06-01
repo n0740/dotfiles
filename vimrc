@@ -223,8 +223,8 @@ inoremap ii <Esc>I
 " Go to the end of the line
 inoremap aa <Esc>A
 
-" Start editing on a new line above the current line
-inoremap oo <Esc>O
+" Begin a new line above the cursor and insert text
+inoremap OO <Esc>O
 
 " Change what is on the right of the cursor
 inoremap CC <Esc>C
