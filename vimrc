@@ -376,12 +376,21 @@ else
     " Grep word under cursor
     nnoremap <leader>w :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 endif
+
+
+autocmd BufRead,BufNewFile *.conf set filetype=yaml
+
 " Check if any buffers were changed outside of Vim.
 autocmd CursorHold * checktime
+
+" Delete whitespaces at the end of lines
+autocmd BufWritePre * :%s/\s\+$//e
 
 autocmd FileType python nnoremap <F7> :PymodeLintToggle<CR>
 autocmd FileType python nnoremap <F8> :PymodeLint<CR>
 autocmd FileType python nnoremap <F9> :PymodeLintAuto<CR>
+
+autocmd Filetype gitcommit setlocal spell textwidth=72
 
 
 " Local config
