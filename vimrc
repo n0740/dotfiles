@@ -364,7 +364,7 @@ if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
 
     " Grep word under cursor
-    nnoremap <leader>k :Ag<space> "\b<C-R><C-W>\b"<CR>:cw<CR>
+    nnoremap <leader>w :Ag<space> "\b<C-R><C-W>\b"<CR>:cw<CR>
 
     " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
@@ -373,7 +373,7 @@ if executable('ag')
     let g:ctrlp_use_caching = 0
 else
     " Grep word under cursor
-    nnoremap <leader>k :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+    nnoremap <leader>w :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 endif
 autocmd FileType python nnoremap <F7> :PymodeLintToggle<CR>
 autocmd FileType python nnoremap <F8> :PymodeLint<CR>
