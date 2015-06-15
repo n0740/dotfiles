@@ -309,6 +309,15 @@ nmap s <Plug>(easymotion-s)
 map <leader>j <Plug>(easymotion-j)
 map <leader>k <Plug>(easymotion-k)
 
+" Switch between opened buffers
+nnoremap <leader>bb :CtrlPBuffer<CR>
+
+" Switch between most recently used buffers
+nnoremap <leader>bm :CtrlPMRU<CR>
+
+" Search for a tag and jump to the definition
+nnoremap <leader>t :CtrlPTag<CR>
+
 " Switch between functions in file
 nnoremap <leader>f :CtrlPFunky<CR>
 
@@ -320,11 +329,6 @@ nnoremap <leader>] :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 nnoremap <leader>q :bp <BAR> bd #<CR>
 
-" Switch between opened buffers
-nnoremap <leader>bb :CtrlPBuffer<CR>
-
-" Switch between most recently used buffers
-nnoremap <leader>bm :CtrlPMRU<CR>
 
 
 "
