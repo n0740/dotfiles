@@ -119,7 +119,7 @@ set hlsearch
 set incsearch
 
 " Ignore case in search patterns.
-set ignorecase
+" set ignorecase
 
 " Override the 'ignorecase' option if the search pattern
 " contains upper case characters.
