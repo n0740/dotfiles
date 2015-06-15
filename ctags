@@ -1,8 +1,8 @@
 -R
 --exclude=.git
+--exclude=.tox
 --exclude=tmp
---exclude=log
 --exclude=*/build/*
 --exclude=*/*.egg-info/*
 --python-kinds=-i
---languages=-javascript,-sql
+--languages=-javascript,sql
