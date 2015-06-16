@@ -285,6 +285,7 @@ set complete-=t
 
 set pastetoggle=<F12>
 
+nnoremap <silent><F1> :NERDTreeFind<CR>
 nnoremap <silent><F2> :NERDTreeToggle<CR>
 nnoremap <silent><F3> :TagbarToggle<CR>
 nnoremap <silent><F4> :GitGutterToggle<CR>
