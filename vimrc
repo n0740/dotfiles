@@ -62,6 +62,12 @@ Plugin 'tpope/vim-unimpaired'
 " more
 Plugin 'tpope/vim-surround'
 
+
+" Shows a git diff in the 'gutter' (sign column). It shows whether each line
+" has been added, modified, and where lines have been removed.
+" You can also stage and revert individual hunks.
+Plugin 'airblade/vim-gitgutter'
+
 call vundle#end()
 
 filetype on
@@ -281,6 +287,7 @@ set pastetoggle=<F12>
 
 nnoremap <silent><F2> :NERDTreeToggle<CR>
 nnoremap <silent><F3> :TagbarToggle<CR>
+nnoremap <silent><F4> :GitGutterToggle<CR>
 
 " Enable TAB indent and SHIFT-TAB unindent
 vnoremap <silent> <TAB> >gv
