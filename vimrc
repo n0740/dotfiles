@@ -62,6 +62,8 @@ Plugin 'tpope/vim-unimpaired'
 " more
 Plugin 'tpope/vim-surround'
 
+" Plugin will search for terms using the Dash.app http://kapeli.com/
+Plugin 'rizzatti/dash.vim'
 
 " Shows a git diff in the 'gutter' (sign column). It shows whether each line
 " has been added, modified, and where lines have been removed.
@@ -337,6 +339,9 @@ nnoremap <leader>] :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 nnoremap <leader>q :bp <BAR> bd #<CR>
 
+" Search APIs with Dash.app
+nmap <silent> <leader>da <Plug>DashSearch
+nmap <silent> <leader>Da <Plug>DashGlobalSearch
 
 
 "
