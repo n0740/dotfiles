@@ -343,6 +343,8 @@ nnoremap <leader>q :bp <BAR> bd #<CR>
 nmap <silent> <leader>da <Plug>DashSearch
 nmap <silent> <leader>Da <Plug>DashGlobalSearch
 
+" Look up words in Dictionary.app
+nnoremap <silent> <leader>di :!open dict://<cword><CR><CR>
 
 "
 " Plugin's settings
