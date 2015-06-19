@@ -337,7 +337,11 @@ nnoremap <leader>F :execute 'CtrlPFunky ' . expand('<cword>')<CR>
 nnoremap <leader>\ :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 nnoremap <leader>] :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
+" Close current budder
 nnoremap <leader>q :bp <BAR> bd #<CR>
+
+" cd to the directory containing the file in the buffer
+nnoremap <silent> <leader>cd :lcd %:h<CR>
 
 " Search APIs with Dash.app
 nmap <silent> <leader>da <Plug>DashSearch
