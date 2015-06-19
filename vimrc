@@ -277,7 +277,7 @@ cnoremap <C-F> <Right>
 nnoremap Q <nop>
 
 " Set global list of ignored files
-set wildignore+=.git,*.o,*.pyc,.DS_Store
+set wildignore+=.git,*.o,*.pyc,.DS_Store,*.egg-info
 
 " Toggle between modes almost instantly
 set ttimeoutlen=0
@@ -355,7 +355,7 @@ nnoremap <silent> <leader>di :!open dict://<cword><CR><CR>
 "
 
 let g:NERDTreeWinPos = "left"
-let NERDTreeIgnore = ['\.pyc$', 'egg', 'egg-info/', 'dist', '\.$o']
+let NERDTreeIgnore = ['\.pyc$', '__pycache__', '*.egg-info/', 'dist', '\.$o']
 let NERDTreeChDirMode = 0
 
 " How CtrlP sets its local working directory when starts
