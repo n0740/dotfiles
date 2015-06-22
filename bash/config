@@ -63,9 +63,28 @@ export PS1='\h:\[\e[01;34m\]\W\e[0m$(__git_ps1 "[\[$COLOR_GREEN\]%s\[$NO_COLOR\]
 
 
 # History
-export HISTCONTROL=erasedups
-export HISTSIZE=1000
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000
+
+# Don't put duplicate lines in the history
+export HISTCONTROL=ignoreboth:erasedups
+
+# Append to the history file, don't overwrite it
 shopt -s histappend
+
+# Check the window size after each command and, if necessary, update the values
+# of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# Correct minor errors in the spelling of a directory component in a cd command
+shopt -s cdspell
+
+# Save all lines of a multiple-line command in the same history entry
+# (allows easy re-editing of multi-line commands)
+shopt -s cmdhist
+
+
+export PAGER=less
 
 
 # No ._ files in archives
