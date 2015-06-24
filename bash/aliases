@@ -90,7 +90,7 @@ function ssh-agent-start() {
     eval $(ssh-agent -s)
 
     # Add key(s). Will ask for passphrase if needed
-    for f in $(ls ~/.ssh | grep -e "^id_[r|d]sa[^.]*$"`
+    for f in $(ls ~/.ssh | grep -e "^id_[r|d]sa[^.]*$")
     do
         ssh-add -k "~/.ssh/$f"
     done
