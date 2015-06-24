@@ -52,7 +52,7 @@ if [ "$(uname)" = "Darwin" ]; then
 
     # Copy name of current dir to system clipboard
     function dirnamecopy() {
-        basename $(pwd) | tr -d '\n' | pbcopy
+        basename $PWD | tr -d '\n' | pbcopy
     }
 
     # Open a manpage in Preview, which can be saved to PDF

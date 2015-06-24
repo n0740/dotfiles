@@ -133,10 +133,9 @@ function title() {
 }
 
 # Set terminal's title to current dir name
-function dirname-to-title() {
-    title $(basename $(pwd))
+function dtitle() {
+    title $(basename $PWD)
 }
-alias dtitle="dirname-to-title"
 
 
 if which brew > /dev/null 2>&1; then
