@@ -147,3 +147,17 @@ else
         rpm2cpio $1 | cpio -ivd
     }
 fi
+
+
+# Install http://www.soimort.org/translate-shell before
+# For OS X
+# brew install http://www.soimort.org/translate-shell/translate-shell.rb
+if which trans > /dev/null 2>&1; then
+    function ru() {
+        trans en:ru "$*"
+    }
+
+    function en() {
+        trans ru:en "$*"
+    }
+fi
