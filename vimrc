@@ -355,7 +355,7 @@ nnoremap <silent> <leader>di :!open dict://<cword><CR><CR>
 "
 
 let g:NERDTreeWinPos = "left"
-let NERDTreeIgnore = ['\.pyc$', '__pycache__', '.*egg-info/', 'dist', '\.o$']
+let NERDTreeIgnore = ['\.pyc$', '__pycache__', '.*\.egg-info', 'dist', '\.o$']
 let NERDTreeChDirMode = 0
 
 " How CtrlP sets its local working directory when starts
