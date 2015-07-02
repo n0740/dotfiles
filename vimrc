@@ -223,8 +223,8 @@ nnoremap ; :
 nnoremap : ;
 
 " Move vertically by visual line (for very long lines)
-nnoremap j gj
-nnoremap k gk
+nnoremap <silent>j gj
+nnoremap <silent>k gk
 
 " Use as Esc in insert mode
 inoremap jj <Esc>
