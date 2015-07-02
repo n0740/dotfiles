@@ -26,7 +26,7 @@ alias GP='grep -P'
 alias L='less'
 
 alias tree='tree -a -I ".git|.svn|CVS|.DS_Store|*.pyc"'
-alias tf='tail -f'
+alias t='tail'
 
 # Text editors
 if ( __is_osx ); then
