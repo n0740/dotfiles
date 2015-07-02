@@ -27,6 +27,7 @@ alias L='less'
 
 alias tree='tree -a -I ".git|.svn|CVS|.DS_Store|*.pyc"'
 alias t='tail'
+alias j='jobs'
 
 # Text editors
 if ( __is_osx ); then
