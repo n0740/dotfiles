@@ -1,7 +1,8 @@
 # PATH
 # Initial PATH on OS X: /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
-__append_to_path_if_exists "$HOME/.bin"
+[ -d "$HOME/.bin" ] && export PATH="$HOME/.bin:$PATH"
+# __unshift_to_path_if_exists = "$HOME/.bin"
 
 # Locale
 export LC_ALL=en_US.UTF-8
