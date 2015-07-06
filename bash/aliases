@@ -29,6 +29,16 @@ alias tree='tree -a -I ".git|.svn|CVS|.DS_Store|*.pyc"'
 alias t='tail'
 alias j='jobs'
 
+# Find file by template
+ff() {
+    find . -type f -iname '*'$*'*' -ls ;
+}
+
+ # Find file by template and execute command
+fe() {
+    find . -type f -iname '*'$1'*' -exec "${2:-file}" {} \; ;
+}
+
 # Text editors
 if ( __is_osx ); then
     alias m='subl'
