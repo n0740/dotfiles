@@ -41,29 +41,36 @@ alias ee='e .'
 alias mm='m .'
 
 # Git
+# Check "gitconfig" file for full aliases
 alias g='git'
+alias ga='git a'
+alias gap='git ap'
+alias gb='git b'
+alias gba='git ba'
+alias gbm='git bm'
+alias gc='git c'
+alias gca='git ca'
+alias gci='git ci'
+alias gco='git co'
+alias gd='git d'
+alias gdc='git dc'
+alias gf='git flow'
+alias gfff='git fff'
+alias gffs='git fss'
 alias gg='git status -sb'
-alias gd='git diff'
-alias gdc='git diff --cached'
 alias gl='git lg -30'
 alias gll='git lg'
-alias glp="git lp"
-alias gco='git co'
-alias gci='git ci'
-alias gb='git b'
-alias gba='git branch -avv'
-alias gbm="git branch --no-merged"
+alias glp='git lp'
+alias gm='git m'
+alias gmm='git mm'
 alias gpl='git pl && git remote prune origin'
 alias gps='git push'
-alias gm="git m"
-alias gmm="git mm"
+alias gr='git r'
+alias gra='git ra'
+alias grc='git rc'
 
-alias gf="git flow feature"
-alias gfs="git flow feature start"
-alias gff="git flow feature finish"
-
-alias git-new-workdir="/usr/local/share/git-core/contrib/workdir/git-new-workdir"
-alias ungit="find . -name '.git' -exec rm -rf {} \;"
+alias git-new-workdir='/usr/local/share/git-core/contrib/workdir/git-new-workdir'
+alias ungit='find . -name '.git' -exec rm -rf {} \;'
 
 if which stree > /dev/null 2>&1; then
   alias gx='stree $(git rev-parse --show-toplevel)'

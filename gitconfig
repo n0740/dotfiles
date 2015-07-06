@@ -1,24 +1,32 @@
 [push]
 	default = current
 [alias]
-	s = status
-	ci = commit
-	cv = commit -v
+	a = add
+	ap = add -p
 	b = branch -vv
-	ba = branch -a
+	ba = branch -a -vv
 	bm = branch --no-merged
+	c = commit -v
+	ca = commit -a -v
+	ci = commit -v
 	co = checkout
 	d = diff
-	a = add
+	dc = diff --cached
+	f = flow
+	fff = flow feature finish
+	ffs = flow feature start
 	l = log --pretty=fuller --stat
 	lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%ar) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
 	lp = log -p
-	pl = pull --rebase
-	ps = push
 	m = merge
 	mm = merge --no-ff
+	pl = pull --rebase
+	ps = push
+	r = rebase
+	ra = rebase --abort
+	rc = rebase --continue
+	s = status
 	st = stash
-	f = flow
 [color]
 	ui = auto
 	diff = auto
