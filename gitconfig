@@ -16,7 +16,7 @@
 	fff = flow feature finish
 	ffs = flow feature start
 	l = log --pretty=fuller --stat
-	lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%ar) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative
+	lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%ar, %ad) %C(cyan)<%an>%Creset' --abbrev-commit --date=short
 	lp = log -p
 	m = merge
 	mm = merge --no-ff
