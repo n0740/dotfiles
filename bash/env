@@ -24,11 +24,6 @@ fi
 # Ruby RVM
 __source_if_exists "$HOME/.rvm/scripts/rvm"
 
-if which brew > /dev/null 2>&1; then
-    # Autojump
-    __source_if_exists $(brew --prefix)/etc/autojump.sh
-fi
-
 if [[ -S "$SSH_AUTH_SOCK" && ! -h "$SSH_AUTH_SOCK" ]]; then
     ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock;
 fi
