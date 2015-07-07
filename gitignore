@@ -6,3 +6,4 @@ CVS
 .class
 *.komodoproject
 tags
+*.egg-info
