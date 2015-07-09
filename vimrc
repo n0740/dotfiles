@@ -376,7 +376,14 @@ let g:ctrlp_funky_syntax_highlight = 1
 " For nice looking symbols
 let g:airline_powerline_fonts = 1
 
+" Don't show virtualenv name
 let g:airline#extensions#virtualenv#enabled = 0
+
+" Dont' show gitgutter data
+let airline#extensions#hunks#enabled = 0
+
+" Show gitgutter data only if changes exist
+" let airline#extensions#hunks#non_zero_only = 1
 
 let g:pymode_lint_on_fly = 1
 let g:pymode_lint_on_write = 1
