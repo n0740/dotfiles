@@ -196,6 +196,10 @@ highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Re
 highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
 
+" Make sure that unsaved buffers that are to be put in the background are
+" allowed to go in there (ie. the "must save first" error doesn't come up)
+set hidden
+
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
 
