@@ -14,9 +14,17 @@ call vundle#begin()
 " Let Vundle manage Vundle
 Plugin 'gmarik/Vundle.vim'
 
+" Mappings that boost vim command line mode
+Plugin 'bruno-/vim-husk'
+
+" Let you enter command mode commands using Russian keyboard layout
+Plugin 'powerman/vim-plugin-ruscmd'
+
 " NERDTree file manager
 Plugin 'scrooloose/nerdtree'
 
+" A simple way to create, edit and save files and directories
+Plugin 'duggiefresh/vim-easydir'
 " A Git wrapper so awesome, it should be illegal
 Plugin 'tpope/vim-fugitive'
 
@@ -27,11 +35,17 @@ Plugin 'rking/ag.vim'
 " Install fonts before: https://github.com/Lokaltog/powerline-fonts.git
 Plugin 'bling/vim-airline'
 
+" Allows quickly and easily switch between buffers
+Plugin 'corntrace/bufexplorer'
+
 " Full path fuzzy file, buffer, mru, tag, finder
 Plugin 'kien/ctrlp.vim'
 
 " Simple function navigator for ctrlp.vim
 Plugin 'tacahiroy/ctrlp-funky'
+
+" Syntax checking hacks for vim
+Plugin 'scrooloose/syntastic'
 
 " Python-mode. PyLint, Rope, Pydoc, breakpoints from box.
 Plugin 'klen/python-mode'
@@ -47,10 +61,6 @@ Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
 " A better JSON support
 Plugin 'elzr/vim-json'
-
-" Navigate seamlessly between vim and tmux splits using a consistent set of
-" hotkeys
-" Plugin 'christoomey/vim-tmux-navigator'
 
 " Comment stuff out. Then uncomment it later.
 Plugin 'tpope/vim-commentary'
@@ -69,6 +79,10 @@ Plugin 'rizzatti/dash.vim'
 " has been added, modified, and where lines have been removed.
 " You can also stage and revert individual hunks.
 Plugin 'airblade/vim-gitgutter'
+
+" Color schemes
+" Plugin 'cocopon/iceberg.vim'
+" Plugin 'junegunn/seoul256.vim'
 
 call vundle#end()
 
@@ -168,10 +182,6 @@ set background=dark
 
 " Color scheme
 color desert
-
-" Make sure that unsaved buffers that are to be put in the background are
-" allowed to go in there (ie. the "must save first" error doesn't come up)
-set hidden
 
 " Highlight current line
 set cursorline
