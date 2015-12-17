@@ -97,6 +97,7 @@ fi
 # Python
 alias p='python'
 alias pp='ipython'
+alias p3='python3'
 alias lssitepackages="lssitepackages -lh ${colorflag}"
 alias rmpyc='find . -type f -iname "*.pyc" -delete'
 
