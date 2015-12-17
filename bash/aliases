@@ -15,7 +15,11 @@ else # OS X "ls"
 fi
 alias ls="command ls ${colorflag}"
 alias sl='ls'
-alias l='ls -lhT'
+if ls -T > /dev/null 2>&1; then
+    alias l='ls -lhT'
+else
+    alias l='ls -lh'
+fi
 alias ll='ls -lha'
 
 alias grep='grep -a --color=auto'
