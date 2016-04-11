@@ -187,3 +187,12 @@ if which trans > /dev/null 2>&1; then
         trans ru:en "$*"
     }
 fi
+
+
+function ctags-site-packages() {
+    if [[ -d $VIRTUAL_ENV ]]; then
+        ctags -R -f $VIRTUAL_ENV/tags $VIRTUAL_ENV/lib/python*/site-packages
+    else
+        echo "VIRTUAL_ENV not set"
+    fi
+}
