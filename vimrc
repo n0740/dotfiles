@@ -25,6 +25,7 @@ Plugin 'scrooloose/nerdtree'
 
 " A simple way to create, edit and save files and directories
 Plugin 'duggiefresh/vim-easydir'
+
 " A Git wrapper so awesome, it should be illegal
 Plugin 'tpope/vim-fugitive'
 
@@ -45,10 +46,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
 
 " Syntax checking hacks for vim
-Plugin 'scrooloose/syntastic'
-
-" Python-mode. PyLint, Rope, Pydoc, breakpoints from box.
-Plugin 'klen/python-mode'
+" Plugin 'scrooloose/syntastic'
 
 " Display tags in a separate window
 Plugin 'majutsushi/tagbar'
@@ -59,17 +57,14 @@ Plugin 'Lokaltog/vim-easymotion'
 " Toggle between relative and absolute line numbers automatically
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
-" A better JSON support
-Plugin 'elzr/vim-json'
-
 " Comment stuff out. Then uncomment it later.
 Plugin 'tpope/vim-commentary'
 
 " Provides several pairs of bracket maps
 Plugin 'tpope/vim-unimpaired'
 
-" It's  all about "surroundings": parentheses, brackets, quotes, XML tags, and
-" more
+" It's  all about "surroundings": parentheses, brackets, quotes, XML tags
+" and more
 Plugin 'tpope/vim-surround'
 
 " Plugin will search for terms using the Dash.app http://kapeli.com/
@@ -80,9 +75,15 @@ Plugin 'rizzatti/dash.vim'
 " You can also stage and revert individual hunks.
 Plugin 'airblade/vim-gitgutter'
 
-" Color schemes
-" Plugin 'cocopon/iceberg.vim'
-" Plugin 'junegunn/seoul256.vim'
+" Python-mode. PyLint, Rope, Pydoc, breakpoints from box.
+Plugin 'klen/python-mode'
+
+" A better JSON support
+Plugin 'elzr/vim-json'
+
+" Go (golang) support
+Plugin 'fatih/vim-go'
+
 
 call vundle#end()
 
