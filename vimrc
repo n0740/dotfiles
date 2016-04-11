@@ -397,9 +397,12 @@ let airline#extensions#hunks#enabled = 0
 let g:pymode_lint_on_fly = 1
 let g:pymode_lint_on_write = 1
 let g:pymode_folding = 0
-let g:pymode_breakpoint = 0
+let g:pymode_breakpoint = 1
 let g:pymode_rope = 0
 let g:pymode_rope_lookup_project = 0
+
+let g:pymode_breakpoint_bind = '<leader>B'
+let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace()  # XXX BREAKPOINT'
 
 " TODO: Check it
 let g:syntastic_enable_signs = 1
