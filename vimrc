@@ -401,6 +401,11 @@ let g:pymode_breakpoint = 0
 let g:pymode_rope = 0
 let g:pymode_rope_lookup_project = 0
 
+" TODO: Check it
+let g:syntastic_enable_signs = 1
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+
 " Turn on case sensitive feature
 let g:EasyMotion_smartcase = 1
 
