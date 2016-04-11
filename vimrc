@@ -279,16 +279,11 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " Emacs style jump to begin/end of line in insert mode
-imap <C-e> <C-o>A
-imap <C-a> <C-o>I
-
-" Allow line editing like Emacs in command-line mode
-cnoremap <C-A> <Home>
-cnoremap <C-B> <Left>
-cnoremap <C-E> <End>
-cnoremap <C-F> <Right>
+" imap <C-e> <C-o>A
+" imap <C-a> <C-o>I
 
 " Disable Ex mode
+map Q <nop>
 nnoremap Q <nop>
 
 " Set global list of ignored files
@@ -327,6 +322,8 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 " Open ag.vim
 nnoremap <leader>a :Ag<space>
 
+nnoremap <leader>t :Ag \(FIXME\)\\|\(TODO\)<cr>
+
 " Jump to anywhere with only "s{char}{target}"
 nmap s <Plug>(easymotion-s)
 
@@ -341,7 +338,7 @@ nnoremap <leader>bb :CtrlPBuffer<CR>
 nnoremap <leader>bm :CtrlPMRU<CR>
 
 " Search for a tag and jump to the definition
-nnoremap <leader>t :CtrlPTag<CR>
+" nnoremap <leader>t :CtrlPTag<CR>
 
 " Switch between functions in file
 nnoremap <leader>f :CtrlPFunky<CR>
