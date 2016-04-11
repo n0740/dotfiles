@@ -306,6 +306,8 @@ nnoremap <silent><F4> :GitGutterToggle<CR>
 vnoremap <silent> <TAB> >gv
 vnoremap <silent> <S-TAB> <gv
 
+set tags=./tags,tags,$VIRTUAL_ENV/tags
+
 
 "
 " Leader shortcuts
@@ -361,6 +363,11 @@ nmap <silent> <leader>Da <Plug>DashGlobalSearch
 
 " Look up words in Dictionary.app
 nnoremap <silent> <leader>di :!open dict://<cword><CR><CR>
+
+" Create tags file in current directory
+nnoremap <silent> <leader>R :!ctags -R .<CR><CR>
+" nnoremap <silent> <leader>R :!"[[ -d $VIRTUAL_ENV ]] && ctags -R -f ./tags . $VIRTUAL_ENV/lib/python*/site-packages || ctags -R ."<CR><CR>
+
 
 "
 " Plugin's settings
