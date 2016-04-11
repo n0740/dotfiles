@@ -27,7 +27,7 @@ Other configs for PATH, prompt, history, etc.
 ```bash
 git clone https://github.com/kbakulin/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-rake install
+./install.sh
 ```
 
 
