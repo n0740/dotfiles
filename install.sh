@@ -15,6 +15,8 @@ echo
 BACKUP_DIR="dotfiles.backup"
 SKIP_FILES_REGEXP="\.(sh|md|txt)$|^vim$"
 
+
+echo "Creating dotfiles"
 for name in *; do
     target="$HOME/.$name"
 
@@ -39,3 +41,8 @@ for name in *; do
         ln -s "$PWD/$name" "$target"
     fi
 done
+
+
+echo "Installing Vim plugins"
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
