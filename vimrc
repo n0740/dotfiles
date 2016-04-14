@@ -84,6 +84,8 @@ Plugin 'elzr/vim-json'
 " Go (golang) support
 Plugin 'fatih/vim-go'
 
+" Logstash syntax
+Plugin 'robbles/logstash.vim.git'
 
 call vundle#end()
 
