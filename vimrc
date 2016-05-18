@@ -87,6 +87,9 @@ Plugin 'fatih/vim-go'
 " Logstash syntax
 Plugin 'robbles/logstash.vim.git'
 
+" Vastly improved Javascript indentation and syntax support
+Plugin 'pangloss/vim-javascript'
+
 call vundle#end()
 
 filetype on
