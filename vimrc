@@ -369,6 +369,10 @@ nnoremap <silent> <leader>di :!open dict://<cword><CR><CR>
 nnoremap <silent> <leader>R :!ctags -R .<CR><CR>
 " nnoremap <silent> <leader>R :!"[[ -d $VIRTUAL_ENV ]] && ctags -R -f ./tags . $VIRTUAL_ENV/lib/python*/site-packages || ctags -R ."<CR><CR>
 
+" Copy/paste from system clipboard
+vmap <silent> <leader>y "*y
+nmap <silent> <leader>p "*p
+
 
 "
 " Plugin's settings
