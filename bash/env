@@ -1,8 +1,11 @@
 # PATH
+export GOPATH=$HOME/golang
+
 # Initial PATH on OS X: /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 [ -d "$HOME/.bin" ] && export PATH="$HOME/.bin:$PATH"
-# __unshift_to_path_if_exists = "$HOME/.bin"
+[ -d "/usr/local/opt/go/libexec/bin" ] && export PATH="$PATH:/usr/local/opt/go/libexec/bin"
+[ -d "$GOPATH/bin" ] && export PATH="$GOPATH/bin:$PATH"
 
 # Locale
 export LANG="en_US.UTF-8"
