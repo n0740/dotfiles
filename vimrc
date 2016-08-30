@@ -283,10 +283,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" Emacs style jump to begin/end of line in insert mode
-" imap <C-e> <C-o>A
-" imap <C-a> <C-o>I
-
 " Disable Ex mode
 map Q <nop>
 nnoremap Q <nop>
