@@ -459,6 +459,7 @@ autocmd FileType python nnoremap <F8> :PymodeLint<CR>
 autocmd FileType python nnoremap <F9> :PymodeLintAuto<CR>
 
 autocmd Filetype gitcommit setlocal spell textwidth=72
+autocmd FileType crontab setlocal bkc=yes
 
 
 " Local config
