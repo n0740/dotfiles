@@ -51,3 +51,9 @@ function ___dropbox_complete() {
 
 }
 complete -o dirnames -o nospace -F ___dropbox_complete db
+
+# Completion for aws
+if which aws > /dev/null 2>&1; then
+    complete -C aws_completer aws
+fi
+complete -C aws_completer a
