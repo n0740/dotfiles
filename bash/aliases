@@ -192,6 +192,11 @@ else
 fi
 
 
+if which aws > /dev/null 2>&1; then
+    alias a='aws'
+fi
+
+
 # Install http://www.soimort.org/translate-shell before
 # For OS X
 # brew install http://www.soimort.org/translate-shell/translate-shell.rb
