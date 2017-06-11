@@ -19,7 +19,7 @@ function greet() {
     local greeting=$*
 
     if which archey > /dev/null 2>&1; then
-        archey
+        archey --offline
         date
     else
         if which cowsay > /dev/null 2>&1; then
