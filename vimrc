@@ -307,7 +307,7 @@ nnoremap <silent><F4> :GitGutterToggle<CR>
 vnoremap <silent> <TAB> >gv
 vnoremap <silent> <S-TAB> <gv
 
-set tags=./tags,tags,$VIRTUAL_ENV/tags
+set tags=./tags,tags,$VIRTUAL_ENV/tags,$SPARK_HOME/python/pyspark/tags
 
 
 "
