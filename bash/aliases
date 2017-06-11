@@ -196,6 +196,10 @@ if which aws > /dev/null 2>&1; then
     alias a='aws'
 fi
 
+if which saws > /dev/null 2>&1; then
+    alias aa='saws'
+fi
+
 
 # Install http://www.soimort.org/translate-shell before
 # For OS X
@@ -217,4 +221,24 @@ function ctags-site-packages() {
     else
         echo "VIRTUAL_ENV not set"
     fi
+}
+
+
+function s3zcat() {
+    aws s3 cp "$@" - | gzip -d - | cat
+}
+
+
+function s3zless() {
+    aws s3 cp "$@" - | gzip -d - | less
+}
+
+
+function s3less() {
+    aws s3 cp "$@" - | less
+}
+
+
+function s3cat() {
+    aws s3 cp "$@" - | cat
 }
