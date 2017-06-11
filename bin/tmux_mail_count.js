@@ -14,6 +14,9 @@ function readJSONFile(file) {
 
 
 function readConfig() {
+    // Example:
+    // {"inbox":{"account":"Work","mailbox":"Inbox"},
+    //  "critical":{"account":"Work","mailbox":"@Monitoring"}}
     var configFile = $.getenv('HOME') + '/.tmux_mail_count.json';
     return readJSONFile(configFile);
 }
@@ -58,20 +61,20 @@ function run(argv) {
     if (!isApplicationRunning('com.apple.mail')) {
         return;
     }
-
-    var config = readConfig();
     var Mail = Application('Mail')
+    var config = readConfig();
 
     var inboxCount = Mail.inbox.unreadCount();
     var criticalCount = 0;
     if (config != undefined) {
         criticalCount = Mail.accounts
-            .byName("work")
+            .byName(config["critical"]["account"])
             .mailboxes
-            .byName("@Monitoring")
+            .byName(config["critical"]["mailbox"])
             .unreadCount();
     }
 
+    console.log(JSON.stringify(argv))
     var statusLine = makeStatusLine(inboxCount, criticalCount);
     if (statusLine.length > 0) {
         $.printf('%s', statusLine);

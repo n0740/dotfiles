@@ -5,7 +5,7 @@ ObjC.import('stdio')
 function run(argv) {
     var hour = new Date().getHours();
     var color = 'white';
-    if (hour < 9 || hour >= 22)
+    if (hour < 8 || hour >= 22)
         color = 'red';
     else if (hour >= 20)
         color = 'brightred';

@@ -2,13 +2,18 @@
 
 hour=$(date +"%H")
 
-color="white"
-if [ $hour -lt 9 ] || [ $hour -ge 22 ]; then
-    color="red"
+fg="white"
+bg="black"
+
+if [ $hour -ge 0 ] && [ $hour -lt 7 ]; then
+    fg="brightwhite"
+    bg="red"
+elif [ $hour -ge 22 ]; then
+    fg="red"
 elif [ $hour -ge 20 ]; then
-    color="brightred"
+    fg="brightred"
 elif [ $hour -ge 18 ]; then
-    color="yellow"
+    fg="yellow"
 fi
 
-echo "#[fg=${color}]"
+echo "#[bg=$bg]#[fg=${fg}]"
