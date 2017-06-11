@@ -351,6 +351,7 @@ nnoremap <leader>F :execute 'CtrlPFunky ' . expand('<cword>')<CR>
 
 nnoremap <leader>\ :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 nnoremap <leader>] :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+nnoremap <leader>} :sp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Close current budder
 nnoremap <leader>q :bp <BAR> bd #<CR>
@@ -370,8 +371,10 @@ nnoremap <silent> <leader>R :!ctags -R .<CR><CR>
 " nnoremap <silent> <leader>R :!"[[ -d $VIRTUAL_ENV ]] && ctags -R -f ./tags . $VIRTUAL_ENV/lib/python*/site-packages || ctags -R ."<CR><CR>
 
 " Copy/paste from system clipboard
+nmap <silent> <leader>y "*Y
 vmap <silent> <leader>y "*y
 nmap <silent> <leader>p "*p
+nmap <silent> <leader>P "*P
 
 
 "
