@@ -68,7 +68,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-surround'
 
 " Plugin will search for terms using the Dash.app http://kapeli.com/
-Plugin 'rizzatti/dash.vim'
+" Plugin 'rizzatti/dash.vim'
 
 " Shows a git diff in the 'gutter' (sign column). It shows whether each line
 " has been added, modified, and where lines have been removed.
@@ -85,7 +85,7 @@ Plugin 'elzr/vim-json'
 Plugin 'fatih/vim-go'
 
 " Logstash syntax
-Plugin 'robbles/logstash.vim.git'
+" Plugin 'robbles/logstash.vim.git'
 
 " Vastly improved Javascript indentation and syntax support
 Plugin 'pangloss/vim-javascript'
@@ -359,8 +359,8 @@ nnoremap <leader>q :bp <BAR> bd #<CR>
 nnoremap <silent> <leader>cd :lcd %:h<CR>
 
 " Search APIs with Dash.app
-nmap <silent> <leader>da <Plug>DashSearch
-nmap <silent> <leader>Da <Plug>DashGlobalSearch
+" nmap <silent> <leader>da <Plug>DashSearch
+" nmap <silent> <leader>Da <Plug>DashGlobalSearch
 
 " Look up words in Dictionary.app
 nnoremap <silent> <leader>di :!open dict://<cword><CR><CR>
