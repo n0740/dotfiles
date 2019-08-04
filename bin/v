@@ -1,7 +1,0 @@
-#!/bin/bash
-
-if [ $# == 0 ]; then
-  mvim --servername "$(basename $PWD)" 1>/dev/null 2>&1
-else
-  mvim --servername "$(basename $PWD)" --remote-tab-silent +"cd $PWD" "$@" 1>/dev/null 2>&1
-fi

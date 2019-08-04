@@ -36,7 +36,9 @@ alias ZC='zcat'
 
 alias tree='tree -a -I ".git|.svn|CVS|.DS_Store|*.pyc"'
 alias h='head'
+alias hh='head -n 1'
 alias t='tail'
+alias tt='tail -n 1'
 alias j='jobs'
 alias jj='jobs'
 
@@ -104,9 +106,9 @@ if which tig > /dev/null 2>&1; then
 fi
 
 # Python
-alias p='python'
+alias p='python3'
 alias pp='ipython'
-alias p3='python3'
+alias p2='python2'
 alias lssitepackages="lssitepackages -lh ${colorflag}"
 
 alias rmpyc='find . -type f -iname "*.pyc" -delete'
@@ -169,7 +171,7 @@ function title() {
 
 # Set terminal's title to current dir name
 function dtitle() {
-    title $(basename $PWD)
+    title $(basename $PWD | sed 's/[_ ]/-/g')
 }
 
 
@@ -215,20 +217,6 @@ if which saws > /dev/null 2>&1; then
 fi
 
 
-# Install http://www.soimort.org/translate-shell before
-# For OS X
-# brew install http://www.soimort.org/translate-shell/translate-shell.rb
-if which trans > /dev/null 2>&1; then
-    function to_ru() {
-        trans en:ru "$*"
-    }
-
-    function to_en() {
-        trans ru:en "$*"
-    }
-fi
-
-
 function ctags-site-packages() {
     if [[ -d $VIRTUAL_ENV ]]; then
         ctags -R -f $VIRTUAL_ENV/tags $VIRTUAL_ENV/lib/python*/site-packages
@@ -256,3 +244,17 @@ function s3less() {
 function s3cat() {
     aws s3 cp "$@" - | cat
 }
+
+
+function s3ls() {
+    path=$(printf "$1" | sed -e s'#^s3://##')
+    aws s3 ls --human-readable --summarize "s3://$path"
+}
+
+function s3cp() {
+    path=$(printf "$1" | sed -e s'#^s3://##')
+    aws s3 cp --recursive "s3://$path"
+}
+
+alias als=s3ls
+alias acp=s3ls

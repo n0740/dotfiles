@@ -1,7 +1,6 @@
 # Don't do anything if not running interactively
 [ -z "$PS1" ] && return
 
-
 function load_dotfiles() {
     source ~/.bash/helpers
     source ~/.bash/env

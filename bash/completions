@@ -6,6 +6,14 @@ if which brew > /dev/null 2>&1; then
     __source_if_exists $(brew --prefix)/Library/Contributions/brew_bash_completion.sh
 fi
 
+
+# Docker
+# Bash has built-in support for completion To activate completion for Docker commands, these files need to be copied or symlinked to your bash_completion.d/ directory. For example, if you installed bash via Homebrew:
+# etc=/Applications/Docker.app/Contents/Resources/etc
+# ln -s $etc/docker.bash-completion $(brew --prefix)/etc/bash_completion.d/docker
+# ln -s $etc/docker-machine.bash-completion $(brew --prefix)/etc/bash_completion.d/docker-machine
+# ln -s $etc/docker-compose.bash-completion $(brew --prefix)/etc/bash_completion.d/docker-compose
+
 # Completion for our "git" alias
 complete -o default -o nospace -F _git g
 

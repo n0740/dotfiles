@@ -1,11 +1,11 @@
 # PATH
-export GOPATH=$HOME/golang
+export GOPATH=$HOME/go
 
 # Initial PATH on OS X: /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
-[ -d "$HOME/.bin" ] && export PATH="$HOME/.bin:$PATH"
+[ -d "$HOME/local/bin" ] && export PATH="$PATH:$HOME/local/bin"
 [ -d "/usr/local/opt/go/libexec/bin" ] && export PATH="$PATH:/usr/local/opt/go/libexec/bin"
-[ -d "$GOPATH/bin" ] && export PATH="$GOPATH/bin:$PATH"
+[ -d "$GOPATH/bin" ] && export PATH="$PATH:$GOPATH/bin"
 
 # Locale
 export LANG="en_US.UTF-8"
@@ -25,6 +25,7 @@ export PIP_RESPECT_VIRTUALENV=true
 # export PIP_DOWNLOAD_CACHE="$HOME/.pip_download_cache"
 
 # Python virtualenvwrapper
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export WORKON_HOME="$HOME/.virtualenvs"
 export PROJECT_HOME="$HOME/code"
 if which virtualenvwrapper.sh > /dev/null 2>&1; then
