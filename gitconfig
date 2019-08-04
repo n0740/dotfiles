@@ -9,6 +9,7 @@
 	c = commit -v
 	ca = commit -a -v
 	ci = commit -v
+	cl = clone
 	co = checkout
 	d = diff
 	dc = diff --cached

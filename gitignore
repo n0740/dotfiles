@@ -8,3 +8,4 @@ CVS
 tags
 *.egg-info
 *.py[co]
+.mypy_cache/
