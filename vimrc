@@ -23,6 +23,8 @@ Plugin 'powerman/vim-plugin-ruscmd'
 " NERDTree file manager
 Plugin 'scrooloose/nerdtree'
 
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
 " A simple way to create, edit and save files and directories
 Plugin 'duggiefresh/vim-easydir'
 
@@ -46,7 +48,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
 
 " Syntax checking hacks for vim
-" Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
 
 " Display tags in a separate window
 Plugin 'majutsushi/tagbar'
@@ -67,28 +69,36 @@ Plugin 'tpope/vim-unimpaired'
 " and more
 Plugin 'tpope/vim-surround'
 
-" Plugin will search for terms using the Dash.app http://kapeli.com/
-" Plugin 'rizzatti/dash.vim'
-
 " Shows a git diff in the 'gutter' (sign column). It shows whether each line
 " has been added, modified, and where lines have been removed.
 " You can also stage and revert individual hunks.
 Plugin 'airblade/vim-gitgutter'
 
 " Python-mode. PyLint, Rope, Pydoc, breakpoints from box.
-Plugin 'klen/python-mode'
+" Plugin 'python-mode/python-mode'
 
 " A better JSON support
-Plugin 'elzr/vim-json'
+" Plugin 'elzr/vim-json'
 
 " Go (golang) support
-Plugin 'fatih/vim-go'
-
-" Logstash syntax
-" Plugin 'robbles/logstash.vim.git'
+" Plugin 'fatih/vim-go'
 
 " Vastly improved Javascript indentation and syntax support
-Plugin 'pangloss/vim-javascript'
+" Plugin 'pangloss/vim-javascript'
+
+Plugin 'ekalinin/Dockerfile.vim'
+
+Plugin 'hashivim/vim-terraform'
+
+Plugin 'qpkorr/vim-bufkill'
+
+Plugin 'w0rp/ale'
+
+" Plugin 'fisadev/vim-isort'
+
+Plugin 'nvie/vim-flake8'
+
+Plugin 'lifepillar/vim-solarized8'
 
 call vundle#end()
 
@@ -147,7 +157,7 @@ set hlsearch
 set incsearch
 
 " Ignore case in search patterns.
-" set ignorecase
+set ignorecase
 
 " Override the 'ignorecase' option if the search pattern
 " contains upper case characters.
@@ -184,10 +194,11 @@ set autoindent
 syntax on
 " syntax enable
 
-set background=dark
-
 " Color scheme
 color desert
+set background=dark
+" color solarized8
+" set background=light
 
 " Highlight current line
 set cursorline
@@ -329,6 +340,7 @@ nnoremap <leader>t :Ag \(FIXME\)\\|\(TODO\)<cr>
 
 " Jump to anywhere with only "s{char}{target}"
 nmap s <Plug>(easymotion-s)
+nmap t <Plug>(easymotion-t2)
 
 " Line motions
 map <leader>j <Plug>(easymotion-j)
@@ -376,6 +388,10 @@ vmap <silent> <leader>y "*y
 nmap <silent> <leader>p "*p
 nmap <silent> <leader>P "*P
 
+nmap <silent> <F7> <Plug>(ale_previous_wrap)
+nmap <silent> <F8> :ALELint<CR>
+nmap <silent> <F9> <Plug>(ale_next_wrap)
+
 
 "
 " Plugin's settings
@@ -402,7 +418,8 @@ let airline#extensions#hunks#enabled = 0
 " Show gitgutter data only if changes exist
 " let airline#extensions#hunks#non_zero_only = 1
 
-let g:pymode_lint_on_fly = 1
+let g:pymode_python = 'python3'
+let g:pymode_lint_on_fly = 0
 let g:pymode_lint_on_write = 1
 let g:pymode_folding = 0
 let g:pymode_breakpoint = 1
@@ -412,10 +429,17 @@ let g:pymode_rope_lookup_project = 0
 let g:pymode_breakpoint_bind = '<leader>B'
 let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace()  # XXX BREAKPOINT'
 
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] [%severity%] %code: %%s'
+" let g:ale_set_quickfix = 1
+let g:airline#extensions#ale#enabled = 1
+
+
 " TODO: Check it
-let g:syntastic_enable_signs = 1
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
+" let g:syntastic_enable_signs = 1
+" let g:syntastic_error_symbol = '✗'
+" let g:syntastic_warning_symbol = '⚠'
 
 " Turn on case sensitive feature
 let g:EasyMotion_smartcase = 1
@@ -429,6 +453,8 @@ let g:EasyMotion_startofline = 0
 " Tags sorted according to their order in the source file
 let g:tagbar_sort = 0
 
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 
 " The Silver Searcher
 if executable('ag')
@@ -457,9 +483,9 @@ autocmd CursorHold * checktime
 " Delete whitespaces at the end of lines
 autocmd BufWritePre * :%s/\s\+$//e
 
-autocmd FileType python nnoremap <F7> :PymodeLintToggle<CR>
-autocmd FileType python nnoremap <F8> :PymodeLint<CR>
-autocmd FileType python nnoremap <F9> :PymodeLintAuto<CR>
+" autocmd FileType python nnoremap <F7> :PymodeLintToggle<CR>
+" autocmd FileType python nnoremap <F8> :PymodeLint<CR>
+" autocmd FileType python nnoremap <F9> :PymodeLintAuto<CR>
 
 autocmd Filetype gitcommit setlocal spell textwidth=72
 autocmd FileType crontab setlocal bkc=yes
