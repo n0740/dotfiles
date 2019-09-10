@@ -6,3 +6,4 @@
 --exclude=*/*.egg-info/*
 --python-kinds=-i
 --languages=-javascript,sql
+--regex-make=/^([^# \t]*):/\1/t,target/

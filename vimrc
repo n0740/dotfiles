@@ -1,112 +1,101 @@
 set nocompatible
-filetype off
 
-
-"==============================================================================
-" Vundle settings
-"==============================================================================
-
-" Set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-
-call vundle#begin()
-
-" Let Vundle manage Vundle
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/bundle')
 
 " Mappings that boost vim command line mode
-Plugin 'bruno-/vim-husk'
+Plug 'bruno-/vim-husk'
 
 " Let you enter command mode commands using Russian keyboard layout
-Plugin 'powerman/vim-plugin-ruscmd'
+Plug 'powerman/vim-plugin-ruscmd'
 
 " NERDTree file manager
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
 
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': ['NERDTreeFind', 'NERDTreeToggle'] }
 
 " A simple way to create, edit and save files and directories
-Plugin 'duggiefresh/vim-easydir'
+Plug 'duggiefresh/vim-easydir'
 
 " A Git wrapper so awesome, it should be illegal
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
-" Plugin for The Silver Searcher (ag)
-Plugin 'rking/ag.vim'
+" Shows the message of the last commit in a 'popup window'
+Plug 'rhysd/git-messenger.vim'
+
+" Plug for The Silver Searcher (ag)
+Plug 'rking/ag.vim'
 
 " Lean & mean status/tabline for vim that's light as air
 " Install fonts before: https://github.com/Lokaltog/powerline-fonts.git
-Plugin 'bling/vim-airline'
+Plug 'bling/vim-airline'
 
 " Allows quickly and easily switch between buffers
-Plugin 'corntrace/bufexplorer'
+Plug 'corntrace/bufexplorer'
 
 " Full path fuzzy file, buffer, mru, tag, finder
-Plugin 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 
 " Simple function navigator for ctrlp.vim
-Plugin 'tacahiroy/ctrlp-funky'
+Plug 'tacahiroy/ctrlp-funky'
 
 " Syntax checking hacks for vim
-Plugin 'vim-syntastic/syntastic'
+Plug 'vim-syntastic/syntastic'
 
 " Display tags in a separate window
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
 " Vim motion on speed!
-Plugin 'Lokaltog/vim-easymotion'
+Plug 'Lokaltog/vim-easymotion'
 
 " Toggle between relative and absolute line numbers automatically
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 " Comment stuff out. Then uncomment it later.
-Plugin 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 
 " Provides several pairs of bracket maps
-Plugin 'tpope/vim-unimpaired'
+Plug 'tpope/vim-unimpaired'
 
 " It's  all about "surroundings": parentheses, brackets, quotes, XML tags
 " and more
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 " Shows a git diff in the 'gutter' (sign column). It shows whether each line
 " has been added, modified, and where lines have been removed.
 " You can also stage and revert individual hunks.
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
 " Python-mode. PyLint, Rope, Pydoc, breakpoints from box.
-" Plugin 'python-mode/python-mode'
+" Plug 'python-mode/python-mode', { 'for': 'python' }
+
+Plug 'fisadev/vim-isort', { 'for': 'python' }
+
+" Plug 'nvie/vim-flake8', { 'for': 'python' }
 
 " A better JSON support
-" Plugin 'elzr/vim-json'
+Plug 'elzr/vim-json', { 'for': 'json' }
 
 " Go (golang) support
-" Plugin 'fatih/vim-go'
+" Plug 'fatih/vim-go'
 
 " Vastly improved Javascript indentation and syntax support
-" Plugin 'pangloss/vim-javascript'
+" Plug 'pangloss/vim-javascript'
 
-Plugin 'ekalinin/Dockerfile.vim'
+Plug 'ekalinin/Dockerfile.vim', { 'for' : 'Dockerfile' }
 
-Plugin 'hashivim/vim-terraform'
+Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
+Plug 'juliosueiras/vim-terraform-completion', { 'for': 'terraform' }
 
-Plugin 'qpkorr/vim-bufkill'
+Plug 'martinda/Jenkinsfile-vim-syntax', { 'for': 'jenkinsfile' }
 
-Plugin 'w0rp/ale'
+Plug 'qpkorr/vim-bufkill'
 
-" Plugin 'fisadev/vim-isort'
+Plug 'w0rp/ale', { 'for': 'python' }
 
-Plugin 'nvie/vim-flake8'
+Plug 'sickill/vim-monokai'
+Plug 'cocopon/iceberg.vim'
 
-Plugin 'lifepillar/vim-solarized8'
-
-call vundle#end()
-
-filetype on
-filetype plugin on
-
-" Enable file type detection and do language-dependent indenting.
-filetype plugin indent on
+call plug#end()
 
 
 "==============================================================================
@@ -172,6 +161,10 @@ set backspace=2
 " Copy indent from current line when starting a new line
 set autoindent
 
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
 " Maximum width of text that is being inserted. A longer
 " line will be broken after white space to get this width.
 " set textwidth=79
@@ -190,23 +183,28 @@ set autoindent
 "           to comments)
 " set formatoptions=c,q,r,t
 
+
 " Switch syntax highlighting on
 syntax on
 " syntax enable
 
+
 " Color scheme
+set termguicolors
 color desert
+" color monokai
+" color iceberg
+
 set background=dark
-" color solarized8
 " set background=light
 
 " Highlight current line
 set cursorline
-highlight CursorLine cterm=None ctermbg=234 guibg=Grey30
+highlight CursorLine cterm=None ctermbg=233 guibg=Grey13
 
 " Highlight column 80
 set colorcolumn=80
-highlight ColorColumn ctermbg=233 guibg=Grey23
+highlight ColorColumn ctermbg=233 guibg=Grey13
 
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
@@ -298,6 +296,20 @@ nnoremap <C-l> <C-w>l
 map Q <nop>
 nnoremap Q <nop>
 
+nnoremap <silent><F1> :NERDTreeFind<CR>
+nnoremap <silent><F2> :NERDTreeToggle<CR>
+nnoremap <silent><F3> :TagbarToggle<CR>
+nnoremap <silent><F4> :GitGutterToggle<CR>
+
+" Enable TAB indent and SHIFT-TAB unindent
+vnoremap <silent> <TAB> >gv
+vnoremap <silent> <S-TAB> <gv
+
+" Enable folding with the spacebar
+nnoremap <space> za
+
+:nnoremap <silent> <C-n> :set relativenumber!<cr>
+
 " Set global list of ignored files
 set wildignore+=.git,*.o,*.pyc,.DS_Store,*.egg-info
 
@@ -308,15 +320,6 @@ set ttimeoutlen=0
 set complete-=t
 
 set pastetoggle=<F12>
-
-nnoremap <silent><F1> :NERDTreeFind<CR>
-nnoremap <silent><F2> :NERDTreeToggle<CR>
-nnoremap <silent><F3> :TagbarToggle<CR>
-nnoremap <silent><F4> :GitGutterToggle<CR>
-
-" Enable TAB indent and SHIFT-TAB unindent
-vnoremap <silent> <TAB> >gv
-vnoremap <silent> <S-TAB> <gv
 
 set tags=./tags,tags,$VIRTUAL_ENV/tags,$SPARK_HOME/python/pyspark/tags
 
@@ -371,10 +374,6 @@ nnoremap <leader>q :bp <BAR> bd #<CR>
 " cd to the directory containing the file in the buffer
 nnoremap <silent> <leader>cd :lcd %:h<CR>
 
-" Search APIs with Dash.app
-" nmap <silent> <leader>da <Plug>DashSearch
-" nmap <silent> <leader>Da <Plug>DashGlobalSearch
-
 " Look up words in Dictionary.app
 nnoremap <silent> <leader>di :!open dict://<cword><CR><CR>
 
@@ -389,7 +388,7 @@ nmap <silent> <leader>p "*p
 nmap <silent> <leader>P "*P
 
 nmap <silent> <F7> <Plug>(ale_previous_wrap)
-nmap <silent> <F8> :ALELint<CR>
+nmap <silent> <F8> <Plug>(ale_toggle_buffer)
 nmap <silent> <F9> <Plug>(ale_next_wrap)
 
 
@@ -416,7 +415,7 @@ let g:airline#extensions#virtualenv#enabled = 0
 let airline#extensions#hunks#enabled = 0
 
 " Show gitgutter data only if changes exist
-" let airline#extensions#hunks#non_zero_only = 1
+let airline#extensions#hunks#non_zero_only = 1
 
 let g:pymode_python = 'python3'
 let g:pymode_lint_on_fly = 0
@@ -426,20 +425,20 @@ let g:pymode_breakpoint = 1
 let g:pymode_rope = 0
 let g:pymode_rope_lookup_project = 0
 
-let g:pymode_breakpoint_bind = '<leader>B'
-let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace()  # XXX BREAKPOINT'
+" let g:pymode_breakpoint_bind = '<leader>B'
+" let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace()  # XXX BREAKPOINT'
 
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] [%severity%] %code: %%s'
 " let g:ale_set_quickfix = 1
-let g:airline#extensions#ale#enabled = 1
+" let g:airline#extensions#ale#enabled = 1
 
 
 " TODO: Check it
-" let g:syntastic_enable_signs = 1
-" let g:syntastic_error_symbol = '✗'
-" let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_enable_signs = 1
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
 
 " Turn on case sensitive feature
 let g:EasyMotion_smartcase = 1
@@ -450,11 +449,29 @@ let g:EasyMotion_use_upper = 1
 " Keep cursor colum when JK motion
 let g:EasyMotion_startofline = 0
 
-" Tags sorted according to their order in the source file
-let g:tagbar_sort = 0
-
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+
+" Tags sorted according to their order in the source file
+let g:tagbar_sort = 0
+let g:tagbar_type_make = {
+            \ 'kinds':[
+                \ 'm:macros',
+                \ 't:targets'
+            \ ]
+\}
+" let g:tagbar_type_terraform = {
+"             \ 'ctagstype' : 'terraform',
+"             \ 'kinds' : [
+"             \ 'r:resources',
+"             \ 'm:modules',
+"             \ 'o:outputs',
+"             \ 'v:variables',
+"             \ 'f:tfvars',
+"             \ 'd:data'
+"             \ ],
+"             \ 'sort' : 0
+"             \ }
 
 " The Silver Searcher
 if executable('ag')
@@ -483,13 +500,13 @@ autocmd CursorHold * checktime
 " Delete whitespaces at the end of lines
 autocmd BufWritePre * :%s/\s\+$//e
 
-" autocmd FileType python nnoremap <F7> :PymodeLintToggle<CR>
-" autocmd FileType python nnoremap <F8> :PymodeLint<CR>
-" autocmd FileType python nnoremap <F9> :PymodeLintAuto<CR>
-
 autocmd Filetype gitcommit setlocal spell textwidth=72
 autocmd FileType crontab setlocal bkc=yes
 
+" The Jenkinsfile
+autocmd BufNewFile,BufRead *.Jenkinsfile set ft=jenkinsfile
+autocmd BufNewFile,BufRead Jenkinsfile set ft=jenkinsfile
+autocmd BufNewFile,BufRead Jenkinsfile* set ft=jenkinsfile
 
 " Local config
 if filereadable(expand("~/.vimrc.local"))
