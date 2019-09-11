@@ -54,6 +54,18 @@ echo "Installing tmux tpm plugin"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 
+echo "Installing ~/local/bin"
+mkdir -p ~/local/bin
+for file in $(ls bin); do
+    target="$HOME/local/bin/$file"
+    if [ ! -e "$target" ]; then
+        echo "Creating file $target"
+        # echo "$PWD/bin/$file -> $target"
+        ln -s "$PWD/bin/$file" "$target"
+    fi
+done
+
+
 echo "Installing fonts"
 git clone https://github.com/powerline/fonts.git --depth=1
 cd fonts
