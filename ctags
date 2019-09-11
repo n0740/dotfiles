@@ -1,6 +1,9 @@
 -R
 --exclude=.git
 --exclude=.tox
+--exclude=.terraform
+--exclude=.idea
+--exclude=__pycache__
 --exclude=tmp
 --exclude=*/build/*
 --exclude=*/*.egg-info/*
