@@ -48,3 +48,15 @@ mkdir -p ~/.vim/bundle/
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +PlugInstall +qall
+
+
+echo "Installing tmux tpm plugin"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+
+echo "Installing fonts"
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
