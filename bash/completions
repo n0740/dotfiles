@@ -48,7 +48,7 @@ function __downloads_dir_complete() {
     COMPREPLY=( $( cd ~/Downloads && compgen -d -- "$cur" ) )
 
 }
-complete -o dirnames -o nospace -F __downloads_dir_complete d
+complete -o dirnames -o nospace -F __downloads_dir_complete dl
 
 
 # Completion for "db" alias.
@@ -65,3 +65,13 @@ if which aws > /dev/null 2>&1; then
     complete -C aws_completer aws
 fi
 complete -C aws_completer a
+
+
+# Completion for docker aliases
+if which docker > /dev/null 2>&1; then
+    complete -F _docker d
+fi
+
+if which docker-compose > /dev/null 2>&1; then
+    complete -F _docker_compose co
+fi

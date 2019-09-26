@@ -113,6 +113,9 @@ alias lssitepackages="lssitepackages -lh ${colorflag}"
 
 alias rmpyc='find . -type f -iname "*.pyc" -delete'
 
+alias d='docker'
+alias co='docker-compose'
+
 function take() {
     mkdir -p "$1"
     cd "$1"
@@ -148,7 +151,7 @@ function ce() {
     cd ~/code_ext/$1;
 }
 
-function d() {
+function dl() {
     cd ~/Downloads/$1;
 }
 
