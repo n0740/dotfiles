@@ -38,9 +38,6 @@ Plug 'kien/ctrlp.vim'
 " Simple function navigator for ctrlp.vim
 Plug 'tacahiroy/ctrlp-funky'
 
-" Syntax checking hacks for vim
-Plug 'vim-syntastic/syntastic'
-
 " Display tags in a separate window
 Plug 'majutsushi/tagbar'
 
@@ -65,21 +62,13 @@ Plug 'tpope/vim-surround'
 " You can also stage and revert individual hunks.
 Plug 'airblade/vim-gitgutter'
 
-" Python-mode. PyLint, Rope, Pydoc, breakpoints from box.
-" Plug 'python-mode/python-mode', { 'for': 'python' }
-
-Plug 'fisadev/vim-isort', { 'for': 'python' }
-
 " Plug 'nvie/vim-flake8', { 'for': 'python' }
 
 " A better JSON support
 Plug 'elzr/vim-json', { 'for': 'json' }
 
 " Go (golang) support
-" Plug 'fatih/vim-go'
-
-" Vastly improved Javascript indentation and syntax support
-" Plug 'pangloss/vim-javascript'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'ekalinin/Dockerfile.vim', { 'for' : 'Dockerfile' }
 
@@ -92,7 +81,7 @@ Plug 'qpkorr/vim-bufkill'
 
 Plug 'w0rp/ale', { 'for': 'python' }
 
-Plug 'sickill/vim-monokai'
+" Plug 'sickill/vim-monokai'
 Plug 'cocopon/iceberg.vim'
 
 call plug#end()
@@ -225,8 +214,11 @@ nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
 " Display extra whitespace
-" set list listchars=tab:▸\ ,eol:¬,trail:·
-set list listchars=tab:▸\ ,trail:·
+set list
+" set listchars=tab:▸\ ,eol:¬,trail:·
+set listchars=tab:▸\ ,trail:·
+" set listchars=tab:▒░,trail:▓,nbsp:░
+" set showbreak=↪
 
 " Always display the status line
 set laststatus=2
@@ -308,7 +300,7 @@ vnoremap <silent> <S-TAB> <gv
 " Enable folding with the spacebar
 nnoremap <space> za
 
-:nnoremap <silent> <C-n> :set relativenumber!<cr>
+nnoremap <silent> <C-n> :set relativenumber!<cr>
 
 " Set global list of ignored files
 set wildignore+=.git,*.o,*.pyc,.DS_Store,*.egg-info
@@ -391,6 +383,7 @@ nmap <silent> <F7> <Plug>(ale_previous_wrap)
 nmap <silent> <F8> <Plug>(ale_toggle_buffer)
 nmap <silent> <F9> <Plug>(ale_next_wrap)
 
+nnoremap <silent> <leader>l :set list!<cr>
 
 "
 " Plugin's settings
@@ -425,20 +418,11 @@ let g:pymode_breakpoint = 1
 let g:pymode_rope = 0
 let g:pymode_rope_lookup_project = 0
 
-" let g:pymode_breakpoint_bind = '<leader>B'
-" let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace()  # XXX BREAKPOINT'
-
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] [%severity%] %code: %%s'
 " let g:ale_set_quickfix = 1
 " let g:airline#extensions#ale#enabled = 1
-
-
-" TODO: Check it
-let g:syntastic_enable_signs = 1
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
 
 " Turn on case sensitive feature
 let g:EasyMotion_smartcase = 1
@@ -490,7 +474,6 @@ else
     " Grep word under cursor
     nnoremap <leader>w :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 endif
-
 
 autocmd BufRead,BufNewFile *.conf set filetype=yaml
 
