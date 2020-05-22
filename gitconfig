@@ -56,3 +56,15 @@
 [merge]
 	conflictstyle = diff3
 	tool = vimdiff
+
+# Configs below should be in the ~/.gitconfig.local
+#
+# [user]
+#     name = <name>
+#     email = <email>
+#
+# [includeIf "gitdir:~/path/to/company-1/"]
+#     path = ~/.gitconfig.company-1
+#
+# [includeIf "gitdir:~/path/to/company-2/"]
+#     path = ~/.gitconfig.company-2
