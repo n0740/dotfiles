@@ -116,6 +116,8 @@ alias rmpyc='find . -type f -iname "*.pyc" -delete'
 alias d='docker'
 alias co='docker-compose'
 
+alias M='make'
+
 function take() {
     mkdir -p "$1"
     cd "$1"
