@@ -250,10 +250,14 @@ function s3ls() {
     aws s3 ls --human-readable --summarize "s3://$path"
 }
 
-function s3cp() {
-    path=$(printf "$1" | sed -e s'#^s3://##')
-    aws s3 cp --recursive "s3://$path"
+alias als=s3ls
+
+
+function holidays_ru() {
+    gcal --holiday-list --cc-holidays=RU
 }
 
-alias als=s3ls
-alias acp=s3ls
+function holidays_de() {
+    gcal --holiday-list --cc-holidays=DE_BY
+}
+
