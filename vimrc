@@ -2,6 +2,9 @@ set nocompatible
 
 call plug#begin('~/.vim/bundle')
 
+" Adds file type icons to Vim plugins
+" Plug 'ryanoasis/vim-devicons'
+
 " Mappings that boost vim command line mode
 Plug 'bruno-/vim-husk'
 
