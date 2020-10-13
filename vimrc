@@ -62,8 +62,6 @@ Plug 'tpope/vim-surround'
 " You can also stage and revert individual hunks.
 Plug 'airblade/vim-gitgutter'
 
-" Plug 'nvie/vim-flake8', { 'for': 'python' }
-
 " A better JSON support
 Plug 'elzr/vim-json', { 'for': 'json' }
 
@@ -409,14 +407,6 @@ let airline#extensions#hunks#enabled = 0
 
 " Show gitgutter data only if changes exist
 let airline#extensions#hunks#non_zero_only = 1
-
-let g:pymode_python = 'python3'
-let g:pymode_lint_on_fly = 0
-let g:pymode_lint_on_write = 1
-let g:pymode_folding = 0
-let g:pymode_breakpoint = 1
-let g:pymode_rope = 0
-let g:pymode_rope_lookup_project = 0
 
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
