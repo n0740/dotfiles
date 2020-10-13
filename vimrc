@@ -73,11 +73,11 @@ Plug 'ekalinin/Dockerfile.vim', { 'for' : 'Dockerfile' }
 Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 Plug 'juliosueiras/vim-terraform-completion', { 'for': 'terraform' }
 
-Plug 'martinda/Jenkinsfile-vim-syntax', { 'for': 'jenkinsfile' }
+" Plug 'martinda/Jenkinsfile-vim-syntax', { 'for': 'jenkinsfile' }
 
 Plug 'qpkorr/vim-bufkill'
 
-Plug 'w0rp/ale', { 'for': 'python' }
+" Plug 'w0rp/ale', { 'for': 'python' }
 
 " Plug 'sickill/vim-monokai'
 Plug 'cocopon/iceberg.vim'
@@ -377,9 +377,9 @@ vmap <silent> <leader>y "*y
 nmap <silent> <leader>p "*p
 nmap <silent> <leader>P "*P
 
-nmap <silent> <F7> <Plug>(ale_previous_wrap)
-nmap <silent> <F8> <Plug>(ale_toggle_buffer)
-nmap <silent> <F9> <Plug>(ale_next_wrap)
+" nmap <silent> <F7> <Plug>(ale_previous_wrap)
+" nmap <silent> <F8> <Plug>(ale_toggle_buffer)
+" nmap <silent> <F9> <Plug>(ale_next_wrap)
 
 nnoremap <silent> <leader>l :set list!<cr>
 
