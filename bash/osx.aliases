@@ -60,14 +60,6 @@ if [ "$(uname)" = "Darwin" ]; then
         man -t "${1}" | open -f -a "/Applications/Preview.app"
     }
 
-    fantastical() {
-        osascript -- <<EOF
-        tell application "Fantastical"
-            parse sentence "$@"
-        end tell
-EOF
-    }
-
     cdf() {
         target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
         if [ "$target" != "" ]; then
@@ -75,9 +67,5 @@ EOF
         else
             echo 'No Finder window found' >&2
         fi
-    }
-
-    todo() {
-        fantastical todo "$@"
     }
 fi
