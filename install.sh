@@ -42,6 +42,11 @@ for name in *; do
     fi
 done
 
+echo "Installing oh-my-zsh"
+cd ..
+git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git oh-my-zsh
+ln -s $PWD/oh-my-zsh $HOME/.oh-my-zsh
+cd -
 
 echo "Installing Vim plugins"
 mkdir -p ~/.vim/bundle/
