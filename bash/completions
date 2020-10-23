@@ -41,15 +41,6 @@ function __code_ext_dir_complete() {
 }
 complete -o dirnames -o nospace -F __code_ext_dir_complete ce
 
-# Completion for "d" alias.
-function __downloads_dir_complete() {
-    local cur=${COMP_WORDS[COMP_CWORD]}
-    local IFS=$'\n'
-    COMPREPLY=( $( cd ~/Downloads && compgen -d -- "$cur" ) )
-
-}
-complete -o dirnames -o nospace -F __downloads_dir_complete dl
-
 
 # Completion for "db" alias.
 function ___dropbox_complete() {
@@ -59,6 +50,15 @@ function ___dropbox_complete() {
 
 }
 complete -o dirnames -o nospace -F ___dropbox_complete db
+
+
+function __work_dir_complete() {
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=( $(cd ~/work && compgen -d -- "$cur" ) )
+}
+complete -o dirnames -o nospace -F __work_dir_complete wo
+compctl -W ~/work/ -/ wo
+
 
 # Completion for aws
 if which aws > /dev/null 2>&1; then

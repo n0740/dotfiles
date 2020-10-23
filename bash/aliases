@@ -121,6 +121,11 @@ function take() {
     cd "$1"
 }
 
+function wo() {
+    cd ~/work/$1;
+}
+
+
 # Start ssh-agent and load key(s).
 # May be useful when our key uses passphrase.
 function ssh-agent-start() {
@@ -259,5 +264,16 @@ function holidays_ru() {
 
 function holidays_de() {
     gcal --holiday-list --cc-holidays=DE_BY
+}
+
+
+function weather() {
+    curl 'http://wttr.in/Moscow?lang=ru'
+}
+alias wt=weather
+
+
+function battery() {
+    pmset -g batt | egrep -o '\d+%'
 }
 

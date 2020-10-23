@@ -1,0 +1,40 @@
+# Completion for our "git" alias
+compdef g=git
+
+
+# Completion for pip
+# You can also use command like:
+#   [[ -n `which pip` ]] && eval "`pip completion --zsh`"
+function _pip_completion {
+  local words cword
+  read -Ac words
+  read -cn cword
+  reply=( $( COMP_WORDS="$words[*]" \
+             COMP_CWORD=$(( cword-1 )) \
+             PIP_AUTO_COMPLETE=1 $words[1] 2>/dev/null ))
+}
+compctl -K _pip_completion pip
+
+
+# Completion for  "c" alias.
+compctl -W ~/code/ -/ c
+
+# Completion for "ce" alias.
+compctl -W ~/code_ext/ -/ ce
+
+
+# Completion for "db" alias.
+compctl -W ~/Dropbox/ -/ db
+
+
+# Completion for docker aliases
+if which docker > /dev/null 2>&1; then
+    compdef d=docker
+fi
+
+if which docker-compose > /dev/null 2>&1; then
+    compdef co=docker-compose
+fi
+
+compctl -W ~/work/ -/ wo
+
