@@ -104,16 +104,16 @@ function load_dotfiles() {
 function greet() {
     local greeting=$*
 
-    if which archey > /dev/null 2>&1; then
-        archey --offline
-        date
-    else
+    # if which archey > /dev/null 2>&1; then
+    #     archey --offline
+    #     date
+    # else
         if which cowsay > /dev/null 2>&1; then
             echo -en $greeting | cowsay
         else
             echo -en $greeting
         fi
-    fi
+    # fi
     echo
 }
 
@@ -130,5 +130,5 @@ PROMPT+='%F{240}%* %B%F{yellow}%1~%f%b%(1j.%F{cyan} %j%f.)$(git_prompt_info) %# 
 # RPROMPT=''
 
 load_dotfiles
-greet "Hi from $(hostname)!\n\n$(date)"
+greet "Hi $USER!\n\n\nIt's $(date '+%H:%M, %Y.%m.%d') now"
 
