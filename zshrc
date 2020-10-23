@@ -1,6 +1,7 @@
 # Don't do anything if not running interactively
 [ -z "$PS1" ] && return
 
+# zmodload zsh/zprof
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
@@ -131,4 +132,5 @@ PROMPT+='%F{240}%* %B%F{yellow}%1~%f%b%(1j.%F{cyan} %j%f.)$(git_prompt_info) %# 
 
 load_dotfiles
 greet "Hi $USER!\n\n\nIt's $(date '+%H:%M, %Y.%m.%d') now"
+# zprof
 
