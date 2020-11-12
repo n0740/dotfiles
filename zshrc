@@ -65,7 +65,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
     # common-aliases
     osx
-    autojump
     docker
     docker-compose
 )
