@@ -474,7 +474,7 @@ autocmd BufRead,BufNewFile *.conf set filetype=yaml
 autocmd CursorHold * checktime
 
 " Delete whitespaces at the end of lines
-autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre *.py,*.go :%s/\s\+$//e
 
 autocmd Filetype gitcommit setlocal spell textwidth=72
 autocmd FileType crontab setlocal bkc=yes
