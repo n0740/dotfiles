@@ -91,14 +91,6 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 
 
-function load_dotfiles() {
-    source ~/.bash/helpers
-    source ~/.bash/env
-    source ~/.bash/aliases
-    source ~/.bash/osx.aliases
-    source ~/.zsh/completions
-    __source_if_exists ~/.localrc
-}
 
 
 function greet() {
@@ -133,7 +125,15 @@ PROMPT+=" %(?:%{$fg_bold[green]%}%#:%{$fg_bold[red]%}%#) "
 
 # RPROMPT=''
 
-load_dotfiles
+
+source ~/.bash/helpers
+source ~/.bash/env
+source ~/.bash/aliases
+source ~/.bash/osx.aliases
+source ~/.zsh/completions
+__source_if_exists ~/.localrc
+
+
 greet "Hi $USER!\n\n\nIt's $(date '+%H:%M, %Y.%m.%d') now"
 # zprof
 
