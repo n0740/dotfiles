@@ -135,8 +135,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 # PROMPT+='%F{240}%* %B%F{yellow}%1~%f%b$(git_prompt_info)%(1j.%F{cyan} %j%f.) %# '
 PROMPT='%F{240}%*$(git_prompt_info) %B%F{yellow}%1~%f%b'
 PROMPT+='%(1j.%F{cyan} %j%f.)'
-PROMPT+=" %(?:%{$fg_bold[green]%}%#:%{$fg_bold[red]%}%#) "
-
+PROMPT+=" %(?:%{$fg_bold[green]%}%#:%{$fg_bold[red]%}%#)%b%f "
 
 # RPROMPT=''
 
