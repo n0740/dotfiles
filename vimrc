@@ -80,7 +80,8 @@ Plug 'juliosueiras/vim-terraform-completion', { 'for': 'terraform' }
 
 Plug 'qpkorr/vim-bufkill'
 
-" Plug 'w0rp/ale', { 'for': 'python' }
+" Plug 'dense-analysis/ale', { 'for': 'python' }
+Plug 'dense-analysis/ale'
 
 " Plug 'sickill/vim-monokai'
 Plug 'cocopon/iceberg.vim'
@@ -382,9 +383,9 @@ vmap <silent> <leader>y "*y
 nmap <silent> <leader>p "*p
 nmap <silent> <leader>P "*P
 
-" nmap <silent> <F7> <Plug>(ale_previous_wrap)
-" nmap <silent> <F8> <Plug>(ale_toggle_buffer)
-" nmap <silent> <F9> <Plug>(ale_next_wrap)
+nmap <silent> <F7> <Plug>(ale_previous_wrap)
+nmap <silent> <F8> <Plug>(ale_toggle_buffer)
+nmap <silent> <F9> <Plug>(ale_next_wrap)
 
 nnoremap <silent> <leader>l :set list!<cr>
 
@@ -406,6 +407,8 @@ let g:airline_powerline_fonts = 1
 
 " Don't show virtualenv name
 let g:airline#extensions#virtualenv#enabled = 0
+
+let g:ale_linters = {'go': ['gofmt', 'golint', 'go vet', 'gometalinter'], 'perl': ['perl','perlcritic'] }
 
 " Dont' show gitgutter data
 let airline#extensions#hunks#enabled = 0
