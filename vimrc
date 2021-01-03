@@ -85,6 +85,8 @@ Plug 'qpkorr/vim-bufkill'
 " Plug 'sickill/vim-monokai'
 Plug 'cocopon/iceberg.vim'
 
+Plug 'mannih/vim-perl-variable-highlighter'
+
 call plug#end()
 
 
@@ -467,6 +469,8 @@ else
     " Grep word under cursor
     nnoremap <leader>w :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 endif
+
+highlight PerlVarHiLight ctermbg=black guifg=#ff0000 guibg=#000000 ctermfg=LightRed gui=bold
 
 autocmd BufRead,BufNewFile *.conf set filetype=yaml
 
