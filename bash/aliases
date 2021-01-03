@@ -20,7 +20,7 @@ if ls -T > /dev/null 2>&1; then
 else
     alias l='ls -lh'
 fi
-alias ll='ls -lha'
+alias ll='ls -lhA'
 
 alias grep='grep -a --color=auto'
 alias egrep='egrep -a --color=auto'
