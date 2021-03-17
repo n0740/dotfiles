@@ -178,18 +178,14 @@ set foldlevel=99
 
 
 " Switch syntax highlighting on
-syntax on
-" syntax enable
+syntax enable
+
+" set background=dark
 
 
 " Color scheme
 set termguicolors
 color desert
-" color monokai
-" color iceberg
-
-set background=dark
-" set background=light
 
 " Highlight current line
 set cursorline
@@ -203,6 +199,10 @@ highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Re
 highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+
+" Workaround for sign area for gitgutter
+highlight! link SignColumn LineNr
+
 
 " Make sure that unsaved buffers that are to be put in the background are
 " allowed to go in there (ie. the "must save first" error doesn't come up)
@@ -420,7 +420,10 @@ let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] [%severity%] %code: %%s'
 " let g:ale_set_quickfix = 1
-" let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#ale#enabled = 1
+
+" Enable vim-gitgutter by default
+let g:gitgutter_enabled = 1
 
 " Turn on case sensitive feature
 let g:EasyMotion_smartcase = 1
