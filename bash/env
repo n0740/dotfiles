@@ -8,6 +8,11 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 [ -d "$HOME/go" ] && export GOPATH="$HOME/go"
 [ -d "$GOPATH/bin" ] && export PATH="$GOPATH/bin:$PATH"
 
+if which go > /dev/null 2>&1; then
+    export GOROOT=$(go env GOROOT)
+fi
+
+
 # Locale
 export LANG="en_US.UTF-8"
 export LC_COLLATE="en_US.UTF-8"
@@ -34,7 +39,7 @@ if which virtualenvwrapper.sh > /dev/null 2>&1; then
 fi
 
 # Ruby RVM
-__source_if_exists "$HOME/.rvm/scripts/rvm"
+# __source_if_exists "$HOME/.rvm/scripts/rvm"
 
 if [[ -S "$SSH_AUTH_SOCK" && ! -h "$SSH_AUTH_SOCK" ]]; then
     ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock;
