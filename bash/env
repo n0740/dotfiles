@@ -27,19 +27,75 @@ export LC_TIME="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
 # Python pip
-export PIP_VIRTUALENV_BASE=$WORKON_HOME
-export PIP_RESPECT_VIRTUALENV=true
-# Download-cache has been deprecated and will be removed in the future.
-# Pip now automatically uses and configures its cache
-# export PIP_DOWNLOAD_CACHE="$HOME/.pip_download_cache"
+# export PIP_VIRTUALENV_BASE=$WORKON_HOME
+# export PIP_RESPECT_VIRTUALENV=true
 
 # Python virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-export WORKON_HOME="$HOME/.virtualenvs"
-export PROJECT_HOME="$HOME/code"
-if which virtualenvwrapper.sh > /dev/null 2>&1; then
-    source $(which virtualenvwrapper.sh)
-fi
+# export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+# export WORKON_HOME="$HOME/.virtualenvs"
+# export PROJECT_HOME="$HOME/code"
+# if which virtualenvwrapper.sh > /dev/null 2>&1; then
+#     source $(which virtualenvwrapper.sh)
+# fi
+
+export VENV_HOME="$HOME/.venvs"
+[[ -d $VENV_HOME ]] || mkdir $VENV_HOME
+
+lsvenv() {
+    ls -1 $VENV_HOME
+}
+
+venv() {
+    if [ $# -eq 0 ]; then
+        lsvenv
+    else
+        source "$VENV_HOME/$1/bin/activate"
+        if [[ $SHELL =~ "zsh" ]]; then
+            rehash
+        fi
+        # local  site_packages="$VIRTUAL_ENV/lib/python*/site-packages"
+        # if [[ -d $site_packages ]]; then
+        #     ctags -R -f $VIRTUAL_ENV/tags $site_packages
+        # fi
+    fi
+}
+
+mkvenv() {
+    if [ $# -eq 0 ]; then
+        echo "Please provide venv name"
+    else
+        python -m venv $VENV_HOME/$1
+    fi
+}
+
+rmvenv() {
+    if [ $# -eq 0 ]; then
+        lsvenv
+    else
+        [[ -d "$VENV_HOME/$1" ]] && rm -r "$VENV_HOME/$1"
+    fi
+}
+
+cdsitepackages() {
+    if [ -z "$VIRTUAL_ENV" ]; then
+        echo "venv is not activated"
+    else
+        cd $(find $VIRTUAL_ENV -name site-packages -d)
+    fi
+}
+
+
+lssitepackages() {
+    if [ -z "$VIRTUAL_ENV" ]; then
+        echo "venv is not activated"
+    else
+        ls -lh $(find $VIRTUAL_ENV -name site-packages -d)
+    fi
+}
+
+compctl -W $VENV_HOME/ -/ venv
+compctl -W $VENV_HOME/ -/ rmvenv
+compctl -W $VENV_HOME/ -/ mkvenv
 
 
 if [[ -S "$SSH_AUTH_SOCK" && ! -h "$SSH_AUTH_SOCK" ]]; then
