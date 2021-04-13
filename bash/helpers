@@ -7,7 +7,7 @@ function __is_osx() {
 
 # Source file only if it exists
 function __source_if_exists() {
-    [[ -s "$1" ]] && source "$1"
+    [[ -f "$1" ]] && source "$1"
 }
 
 # Source script from completion_scripts dir
