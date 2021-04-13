@@ -15,6 +15,7 @@ if which go > /dev/null 2>&1; then
     export GOROOT=$(go env GOROOT)
 fi
 
+__source_if_exists "$HOME/.cargo/env"
 
 # Locale
 export LANG="en_US.UTF-8"
