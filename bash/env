@@ -8,6 +8,9 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 [ -d "$HOME/go" ] && export GOPATH="$HOME/go"
 [ -d "$GOPATH/bin" ] && export PATH="$GOPATH/bin:$PATH"
 
+__source_if_exists "$HOME/.asdf/asdf.sh"
+__source_if_exists "$HOME/.asdf/completions/asdf.bash"
+
 if which go > /dev/null 2>&1; then
     export GOROOT=$(go env GOROOT)
 fi
