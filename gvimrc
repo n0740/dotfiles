@@ -29,8 +29,8 @@ set columns=999
 let &colorcolumn="80,".join(range(120,999),",")
 
 if has('gui_macvim')
-    "set guifont=Source\ Code\ Pro\ for\ Powerline
-    set guifont=Inconsolata\ for\ Powerline:h13
+    set macligatures
+    set guifont=Fira\ Code:h12
 endif
 
 if filereadable(expand("~/.gvimrc.local"))
