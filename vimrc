@@ -187,6 +187,8 @@ syntax enable
 set termguicolors
 color desert
 
+set t_Co=256
+
 " Highlight current line
 set cursorline
 highlight CursorLine cterm=None ctermbg=233 guibg=Grey13
@@ -195,10 +197,16 @@ highlight CursorLine cterm=None ctermbg=233 guibg=Grey13
 set colorcolumn=80
 highlight ColorColumn ctermbg=233 guibg=Grey13
 
-highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
-highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
-highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
-highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+highlight DiffAdd       ctermfg=231  ctermbg=22   cterm=NONE
+highlight DiffChange    ctermfg=231  ctermbg=30   cterm=NONE
+highlight DiffDelete    ctermfg=196  ctermbg=88   cterm=NONE
+highlight DiffText      ctermfg=16   ctermbg=214  cterm=NONE
+
+if &diff
+    " highlight CursorLine cterm=underline
+    map ] ]c
+    map [ [c
+endif
 
 " Workaround for sign area for gitgutter
 highlight! link SignColumn LineNr
