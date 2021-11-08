@@ -203,9 +203,11 @@ highlight DiffDelete    ctermfg=196  ctermbg=88   cterm=NONE
 highlight DiffText      ctermfg=16   ctermbg=214  cterm=NONE
 
 if &diff
-    " highlight CursorLine cterm=underline
+    highlight CursorLine cterm=underline
     map ] ]c
     map [ [c
+    map <F7> [c
+    map <F9> ]c
 endif
 
 " Workaround for sign area for gitgutter
