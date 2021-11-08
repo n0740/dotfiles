@@ -10,11 +10,6 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 
 __source_if_exists "$HOME/.asdf/asdf.sh"
 __source_if_exists "$HOME/.asdf/completions/asdf.bash"
-
-if which go > /dev/null 2>&1; then
-    export GOROOT=$(go env GOROOT)
-fi
-
 __source_if_exists "$HOME/.cargo/env"
 
 # Locale
