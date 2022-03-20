@@ -45,7 +45,7 @@ done
 echo "Installing oh-my-zsh"
 cd ..
 git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git oh-my-zsh
-ln -s $PWD/oh-my-zsh $HOME/.oh-my-zsh
+ln -s "$PWD/oh-my-zsh" "$HOME/.oh-my-zsh"
 cd -
 
 echo "Installing Vim plugins"
@@ -61,7 +61,8 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo "Installing ~/local/bin"
 mkdir -p ~/local/bin
-for file in $(ls bin); do
+for file in $(find bin -type f -maxdepth 1); do
+    file="$(basename "$file")"
     target="$HOME/local/bin/$file"
     if [ ! -e "$target" ]; then
         echo "Creating file $target"
