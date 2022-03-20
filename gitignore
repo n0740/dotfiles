@@ -9,4 +9,3 @@ tags
 *.egg-info
 *.py[co]
 .mypy_cache/
-.tool-versions
