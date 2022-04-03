@@ -21,9 +21,7 @@ alias ll='ls -lhA'
 
 alias grep='grep -a --color=auto'
 alias egrep='egrep -a --color=auto'
-alias G='egrep'
-alias GP='grep -Pa'
-alias ZG='zgrep -ea'
+alias G='grep -Pa --color=auto'
 
 alias L='less -r'
 alias zl='zless'
