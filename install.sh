@@ -46,6 +46,8 @@ echo "Installing oh-my-zsh"
 cd ..
 git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git oh-my-zsh
 ln -s "$PWD/oh-my-zsh" "$HOME/.oh-my-zsh"
+mkdir -p oh-my-zsh/custom/plugins
+git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 cd -
 
 echo "Installing Vim plugins"

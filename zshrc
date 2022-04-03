@@ -67,6 +67,7 @@ plugins=(
     macos
     docker
     docker-compose
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -84,12 +85,6 @@ fi
 # Additionally, if you receive "zsh compinit: insecure directories" warnings when attempting
 # to load these completions, you may need to run this:
 # chmod go-w '/usr/local/share'
-
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# If you receive "highlighters directory not found" error message,
-# you may need to add the following to your .zshenv:
-# export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
-
 
 SAVEHIST=10000000
 
