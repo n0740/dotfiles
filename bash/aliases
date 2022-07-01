@@ -21,7 +21,11 @@ alias ll='ls -lhA'
 
 alias grep='grep -a --color=auto'
 alias egrep='egrep -a --color=auto'
-alias G='grep -Pa --color=auto'
+if ( __is_osx ); then
+    alias G='ggrep -Pa --color=auto'
+else
+    alias G='grep -Pa --color=auto'
+fi
 
 alias L='less -r'
 alias zl='zless'
