@@ -65,8 +65,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
     # common-aliases
     macos
-    docker
-    docker-compose
     zsh-syntax-highlighting
 )
 
