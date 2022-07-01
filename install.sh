@@ -81,6 +81,8 @@ cd fonts
 cd ..
 rm -rf fonts
 
+echo "TODO: Install fonts from https://github.com/tonsky/FiraCode"
+
 if [ "$(uname)" = "Darwin" ]; then
     echo "Install asdf"
     git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
