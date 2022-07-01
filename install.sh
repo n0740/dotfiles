@@ -80,3 +80,10 @@ cd fonts
 ./install.sh
 cd ..
 rm -rf fonts
+
+if [ "$(uname)" = "Darwin" ]; then
+    echo "Install asdf"
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
+    asdf plugin-add python
+    asdf plugin-add golang
+fi
