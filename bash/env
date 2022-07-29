@@ -41,7 +41,7 @@ lsvenv() {
     ls -1 $VENV_HOME
 }
 
-venv() {
+activateenv() {
     if [ $# -eq 0 ]; then
         lsvenv
     else
@@ -49,9 +49,6 @@ venv() {
         if [[ $SHELL =~ "zsh" ]]; then
             rehash
         fi
-        # local  site_packages="$VIRTUAL_ENV/lib/python*/site-packages"
-        # if [[ -d $site_packages ]]; then
-        #     ctags -R -f $VIRTUAL_ENV/tags $site_packages
         # fi
     fi
 }
@@ -89,7 +86,17 @@ lssitepackages() {
     fi
 }
 
+cdsitepackages() {
+    if [ -z "$VIRTUAL_ENV" ]; then
+        echo "venv is not activated"
+    else
+        cd $(find $VIRTUAL_ENV -name site-packages -d)
+    fi
+}
+
+
 compctl -W $VENV_HOME/ -/ venv
+compctl -W $VENV_HOME/ -/ activateenv
 compctl -W $VENV_HOME/ -/ rmvenv
 compctl -W $VENV_HOME/ -/ mkvenv
 
