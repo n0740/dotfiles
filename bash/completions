@@ -57,7 +57,7 @@ function __work_dir_complete() {
     COMPREPLY=( $(cd ~/work && compgen -d -- "$cur" ) )
 }
 complete -o dirnames -o nospace -F __work_dir_complete wo
-compctl -W ~/work/ -/ wo
+compctl -W ~/work -/ wo
 
 
 # Completion for aws

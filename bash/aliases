@@ -167,11 +167,11 @@ function db() {
 # Set the terminal's title
 function title() {
     if [[ -n "${TMUX+set}" ]]; then
-        tmux rename-window "$@"
+        tmux rename-window -- "$*"
     else
         case $TERM in
             *xterm*|ansi)
-                echo -ne '\033]0;'"$@"'\a'
+                echo -ne '\033]0;'"$*"'\a'
                 ;;
         esac
     fi
