@@ -74,10 +74,11 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 " Go (golang) support
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+" Plug 'sheerun/vim-polyglot'
 Plug 'ekalinin/Dockerfile.vim', { 'for' : 'Dockerfile' }
 
-Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
-Plug 'juliosueiras/vim-terraform-completion', { 'for': 'terraform' }
+" Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
+" Plug 'juliosueiras/vim-terraform-completion', { 'for': 'terraform' }
 
 " Plug 'martinda/Jenkinsfile-vim-syntax', { 'for': 'jenkinsfile' }
 
