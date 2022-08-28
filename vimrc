@@ -30,7 +30,10 @@ Plug 'rking/ag.vim'
 
 " Lean & mean status/tabline for vim that's light as air
 " Install fonts before: https://github.com/Lokaltog/powerline-fonts.git
-Plug 'bling/vim-airline'
+" Plug 'bling/vim-airline'
+
+" A light and configurable statusline/tabline plugin for Vim
+Plug 'itchyny/lightline.vim'
 
 " Allows quickly and easily switch between buffers
 Plug 'corntrace/bufexplorer'
@@ -413,24 +416,24 @@ let g:ctrlp_working_path_mode = 'a'
 let g:ctrlp_funky_syntax_highlight = 1
 
 " For nice looking symbols
-let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 1
 
 " Don't show virtualenv name
-let g:airline#extensions#virtualenv#enabled = 0
+" let g:airline#extensions#virtualenv#enabled = 0
 
 let g:ale_linters = {'go': ['gofmt', 'golint', 'go vet', 'gometalinter'], 'perl': ['perl','perlcritic'] }
 
 " Dont' show gitgutter data
-let airline#extensions#hunks#enabled = 0
+" let airline#extensions#hunks#enabled = 0
 
 " Show gitgutter data only if changes exist
-let airline#extensions#hunks#non_zero_only = 1
+" let airline#extensions#hunks#non_zero_only = 1
 
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] [%severity%] %code: %%s'
 " let g:ale_set_quickfix = 1
-let g:airline#extensions#ale#enabled = 1
+" let g:airline#extensions#ale#enabled = 1
 
 " Enable vim-gitgutter by default
 let g:gitgutter_enabled = 1
