@@ -75,6 +75,8 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Plug 'sheerun/vim-polyglot'
+Plug 'pangloss/vim-javascript'
+
 Plug 'ekalinin/Dockerfile.vim', { 'for' : 'Dockerfile' }
 
 " Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
@@ -507,6 +509,8 @@ autocmd FileType crontab setlocal bkc=yes
 autocmd BufNewFile,BufRead *.Jenkinsfile set ft=jenkinsfile
 autocmd BufNewFile,BufRead Jenkinsfile set ft=jenkinsfile
 autocmd BufNewFile,BufRead Jenkinsfile* set ft=jenkinsfile
+
+autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab
 
 " Local config
 if filereadable(expand("~/.vimrc.local"))
