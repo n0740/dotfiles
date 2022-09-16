@@ -1,9 +1,19 @@
 export TERM="xterm-256color"
 
+if ( __is_osx ); then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # Initial PATH on OS X: /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+# export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 [ -d "$HOME/local/bin" ] && export PATH="$HOME/local/bin:$PATH"
 [ -d "/usr/local/opt/go/libexec/bin" ] && export PATH="$PATH:/usr/local/opt/go/libexec/bin"
+if ( __is_osx ); then
+    export PATH="$PATH:/Applications/Sublime Text.app/Contents/SharedSupport/bin"
+
+    # Rancher Desktop
+    # [ -d "$HOME/.rd/bin" ] && export PATH="$PATH:$HOME/.rd/bin"
+fi
 
 [ -d "$HOME/go" ] && export GOPATH="$HOME/go"
 [ -d "$GOPATH/bin" ] && export PATH="$GOPATH/bin:$PATH"

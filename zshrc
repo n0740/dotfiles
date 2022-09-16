@@ -65,6 +65,8 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
     # common-aliases
     macos
+    docker
+    docker-compose
     zsh-syntax-highlighting
 )
 
@@ -139,6 +141,17 @@ source ~/.bash/env
 source ~/.bash/aliases
 source ~/.bash/osx.aliases
 source ~/.zsh/completions
+
+# No need to do, there is a plugin zsh-syntax-highlighting included above
+#
+# To activate the syntax highlighting, add the following at the end of your .zshrc:
+#   source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# If you receive "highlighters directory not found" error message,
+# you may need to add the following to your .zshenv:
+#   export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
+# source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
+
 __source_if_exists ~/.localrc
 
 

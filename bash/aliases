@@ -18,6 +18,7 @@ else
     alias l='ls -lh'
 fi
 alias ll='ls -lhA'
+alias lt='l -t | head'
 
 alias grep='grep -a --color=auto'
 alias egrep='egrep -a --color=auto'
@@ -95,8 +96,12 @@ alias grc='git rc'
 alias git-new-workdir='/usr/local/share/git-core/contrib/workdir/git-new-workdir'
 alias ungit='find . -name '.git' -exec rm -rf {} \;'
 
-if which stree > /dev/null 2>&1; then
-  alias gx='stree $(git rev-parse --show-toplevel)'
+# stree='/Applications/Sourcetree.app/Contents/Resources/stree'
+# if which stree > /dev/null 2>&1; then
+#   alias gx='stree $(git rev-parse --show-toplevel)'
+# fi
+if ( __is_osx ); then
+    alias gx='/Applications/Sourcetree.app/Contents/Resources/stree $(git rev-parse --show-toplevel)'
 fi
 
 if which tig > /dev/null 2>&1; then
