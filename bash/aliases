@@ -56,13 +56,14 @@ fe() {
 if ( __is_osx ); then
     alias m='subl'
     alias ge='gvim --remote-tab-silent'
+    alias v='"/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"'
+    alias vv='v .'
 else
     alias m='vim'
 fi
 alias e='vim'
 alias ee='e .'
 alias mm='m .'
-alias ed='vimdiff'
 
 # Git
 # Check "gitconfig" file for full aliases
