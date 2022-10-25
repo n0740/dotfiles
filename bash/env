@@ -1,7 +1,11 @@
 export TERM="xterm-256color"
 
 if ( __is_osx ); then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+    if [ -x "/opt/homebrew/bin/brew" ]; then
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+    elif [ -x /usr/local/bin/brew ]; then
+        eval "$(/usr/local/bin/brew shellenv)"
+    fi
 fi
 
 # Initial PATH on OS X: /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
