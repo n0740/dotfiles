@@ -88,4 +88,5 @@ if [ "$(uname)" = "Darwin" ]; then
     git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
     asdf plugin-add python
     asdf plugin-add golang
+    asdf plugin-add nodejs
 fi
