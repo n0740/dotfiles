@@ -72,7 +72,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'elzr/vim-json', { 'for': 'json' }
 
 " Go (golang) support
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Plug 'sheerun/vim-polyglot'
 Plug 'pangloss/vim-javascript'
