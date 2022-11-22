@@ -109,6 +109,10 @@ if which tig > /dev/null 2>&1; then
   alias gt='tig .'
 fi
 
+if which rg > /dev/null 2>&1; then
+  alias rb=rg
+fi
+
 # Python
 alias p='python3'
 alias pp='ipython'
