@@ -44,12 +44,12 @@ alias cal='gcal --starting-day=1'
 
 # Find file by template
 ff() {
-    find . -type f -iname '*'$*'*' -ls ;
+    find . -type f -iname '*'"$*"'*' -ls ;
 }
 
  # Find file by template and execute command
 fe() {
-    find . -type f -iname '*'$1'*' -exec "${2:-file}" {} \; ;
+    find . -type f -iname '*'"$1"'*' -exec "${2:-file}" {} \; ;
 }
 
 # Text editors
