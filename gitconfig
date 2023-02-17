@@ -68,3 +68,5 @@
 #
 # [includeIf "gitdir:~/path/to/company-2/"]
 #     path = ~/.gitconfig.company-2
+[init]
+	defaultBranch = main
