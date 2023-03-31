@@ -70,3 +70,5 @@
 #     path = ~/.gitconfig.company-2
 [init]
 	defaultBranch = main
+[status]
+	submoduleSummary = true
