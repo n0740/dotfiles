@@ -82,7 +82,7 @@ Plug 'ekalinin/Dockerfile.vim', { 'for' : 'Dockerfile' }
 " Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 " Plug 'juliosueiras/vim-terraform-completion', { 'for': 'terraform' }
 
-" Plug 'martinda/Jenkinsfile-vim-syntax', { 'for': 'jenkinsfile' }
+Plug 'martinda/Jenkinsfile-vim-syntax', { 'for': 'Jenkinsfile' }
 
 Plug 'qpkorr/vim-bufkill'
 
