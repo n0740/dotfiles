@@ -2,15 +2,16 @@
 [ -z "$PS1" ] && return
 
 function load_dotfiles() {
-    source ~/.bash/helpers
-    source ~/.bash/env
-    source ~/.bash/config
-    source ~/.bash/aliases
-    source ~/.bash/osx.aliases
-    source ~/.bash/completions
+    source "$HOME/.bash/helpers"
+    source "$HOME/.bash/env"
+    source "$HOME/.bash/config"
+    source "$HOME/.bash/aliases"
+    source "$HOME/.bash/osx.aliases"
+    source "$HOME/.bash/completions"
+    source "$HOME/.cargo/env"
 
     # Use .localrc for settings specific to one system
-    __source_if_exists ~/.localrc
+    __source_if_exists "$HOME/.localrc"
 }
 
 
