@@ -23,9 +23,9 @@ function greet() {
         date
     else
         if which cowsay > /dev/null 2>&1; then
-            echo -en $greeting | cowsay
+            echo -en "$greeting" | cowsay
         else
-            echo -en $greeting
+            echo -en "$greeting"
         fi
     fi
     echo
