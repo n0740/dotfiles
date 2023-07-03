@@ -25,6 +25,9 @@
 	rc = rebase --continue
 	s = status
 	st = stash
+	undo = reset HEAD~1
+	redo = commit --no-edit --amend
+
 [color]
 	ui = auto
 	diff = auto
