@@ -68,11 +68,19 @@ activateenv() {
     if [ $# -eq 0 ]; then
         lsvenv
     else
+        # set -x
         source "$VENV_HOME/$1/bin/activate"
         if [[ $SHELL =~ "zsh" ]]; then
             rehash
         fi
+        # if [ $# -gt 1 ] && [ -n "$2" ]; then
+        #     # TODO: python* doesn't work, use full dir name
+        #     local  site_packages="$VIRTUAL_ENV/lib/python*/site-packages"
+        #     if [[ -d $site_packages ]]; then
+        #         ctags -R -f $VIRTUAL_ENV/tags $site_packages
+        #     fi
         # fi
+        # set +x
     fi
 }
 
