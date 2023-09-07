@@ -117,6 +117,10 @@ if which rg > /dev/null 2>&1; then
   alias rb=rg
 fi
 
+if which lazygit > /dev/null 2>&1; then
+  alias lg=lazygit
+fi
+
 # Python
 alias p='python3'
 alias pp='ipython'
