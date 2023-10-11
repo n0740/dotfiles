@@ -27,6 +27,7 @@
 	st = stash
 	undo = reset HEAD~1
 	redo = commit --no-edit --amend
+	re = remote --verbose
 
 [color]
 	ui = auto
