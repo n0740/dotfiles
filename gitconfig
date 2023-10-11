@@ -78,3 +78,8 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+[blame]
+	# Mark any lines that have had a commit skipped using --ignore-rev with a `?`
+	markIgnoredLines = true
+    # Mark any lines that were added in a skipped commit and can not be attributed with a `*`
+	markUnblamableLines = true
