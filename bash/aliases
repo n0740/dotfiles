@@ -71,6 +71,8 @@ fi
 alias e='vim'
 alias ee='e .'
 alias mm='m .'
+alias n='nvim'
+alias nn='nvim .'
 
 # Git
 # Check "gitconfig" file for full aliases
