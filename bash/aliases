@@ -300,3 +300,6 @@ function fix-esc-key() {
     sudo pkill TouchBarServer
 }
 
+function flush-dns() {
+    sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder
+}
