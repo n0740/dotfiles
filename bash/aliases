@@ -62,7 +62,6 @@ fe() {
 # Text editors
 if ( __is_osx ); then
     alias m='subl'
-    alias ge='gvim --remote-tab-silent'
     alias v='"/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"'
     alias vv='v .'
 else
@@ -70,6 +69,7 @@ else
 fi
 alias e='vim'
 alias ee='e .'
+alias vd='vimdiff'
 alias mm='m .'
 alias n='nvim'
 alias nn='nvim .'
