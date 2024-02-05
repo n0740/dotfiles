@@ -270,7 +270,7 @@ function s3cat() {
 
 
 function s3ls() {
-    path=$(printf "$1" | sed -e s'#^s3://##')
+    path=$(echo "$1" | sed -e s'#^s3://##')
     aws s3 ls --human-readable --summarize "s3://$path"
 }
 
@@ -293,7 +293,7 @@ alias wt=weather
 
 
 function battery() {
-    pmset -g batt | egrep -o '\d+%'
+    pmset -g batt | grep -Eao '\d+%'
 }
 
 function fix-esc-key() {
