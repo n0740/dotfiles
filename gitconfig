@@ -13,11 +13,15 @@
 	co = checkout
 	d = diff
 	dc = diff --cached
+	f = fetch
+	fu = fetch upstream
 	l = log --pretty=fuller --stat
 	lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%ar, %ad) %C(cyan)<%an>%Creset' --abbrev-commit --date=short
 	lp = log -p
 	m = merge
 	mm = merge --no-ff
+    ma = merge upstream/main
+    mas = merge upstream/master
 	pl = pull --rebase
 	ps = push
 	r = rebase
