@@ -8,8 +8,8 @@ if [ "$(uname)" = "Darwin" ]; then
     alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 
     # Start screen saver
-    alias screensaver='open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
-    alias ss='screensaver'
+    # alias screensaver='open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
+    # alias ss='screensaver'
 
     # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
     alias update='sudo softwareupdate -i -a; brew update; brew outdated; brew upgrade --all; brew cleanup'
