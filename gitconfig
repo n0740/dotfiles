@@ -20,8 +20,7 @@
 	lp = log -p
 	m = merge
 	mm = merge --no-ff
-    ma = merge upstream/main
-    mas = merge upstream/master
+	mu = merge upstream/main
 	pl = pull --rebase
 	ps = push
 	r = rebase
