@@ -68,4 +68,6 @@ if [ "$(uname)" = "Darwin" ]; then
             echo 'No Finder window found' >&2
         fi
     }
+
+    alias meld="open -W -a Meld $@"
 fi
