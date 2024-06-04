@@ -303,3 +303,16 @@ function fix-esc-key() {
 function flush-dns() {
     sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder
 }
+
+get-listening-ports() {
+    lsof -P -n -iTCP -sTCP:LISTEN \
+    | grep -E 'python|node' \
+    | awk '{if (NR > 1) {print $2, $1, $9;}}' \
+    | sort -k 3,2 \
+    | while read pid command port; do
+        ps -p "$pid" -o pid,start,command | \
+        tail -n 1 | \
+        awk -v port="\033[33m$port\033[0m" '{print port, $0}';
+    done \
+    | grep -Ev 'rapportd|SharePoint.app|Docker.app|Dropbox|JetBrains|PyCharm|pyspark.daemon|Jupyter'
+}
