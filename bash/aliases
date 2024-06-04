@@ -308,7 +308,7 @@ get-listening-ports() {
     lsof -P -n -iTCP -sTCP:LISTEN \
     | grep -E 'python|node' \
     | awk '{if (NR > 1) {print $2, $1, $9;}}' \
-    | sort -k 3,2 \
+    | sort -k 1,3 \
     | while read pid command port; do
         ps -p "$pid" -o pid,start,command | \
         tail -n 1 | \
