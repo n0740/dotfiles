@@ -107,18 +107,22 @@ unsetopt SHARE_HISTORY
 
 
 function greet() {
+    # local message="\
+# ██╗  ██╗██╗       ██╗  ██╗ ██████╗ ███╗   ██╗███████╗████████╗ █████╗ ███╗   ██╗████████╗██╗███╗   ██╗
+# ██║  ██║██║       ██║ ██╔╝██╔═══██╗████╗  ██║██╔════╝╚══██╔══╝██╔══██╗████╗  ██║╚══██╔══╝██║████╗  ██║
+# ███████║██║       █████╔╝ ██║   ██║██╔██╗ ██║███████╗   ██║   ███████║██╔██╗ ██║   ██║   ██║██╔██╗ ██║
+# ██╔══██║██║       ██╔═██╗ ██║   ██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║╚██╗██║   ██║   ██║██║╚██╗██║
+# ██║  ██║██║▄█╗    ██║  ██╗╚██████╔╝██║ ╚████║███████║   ██║   ██║  ██║██║ ╚████║   ██║   ██║██║ ╚████║
+# ╚═╝  ╚═╝╚═╝╚═╝    ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚═╝╚═╝  ╚═══╝
+# "
+    # echo "$message"
     local greeting=$*
 
-    # if which archey > /dev/null 2>&1; then
-    #     archey --offline
-    #     date
-    # else
-        if which cowsay > /dev/null 2>&1; then
-            echo -en $greeting | cowsay
-        else
-            echo -en $greeting
-        fi
-    # fi
+    if which cowsay > /dev/null 2>&1; then
+        echo -en $greeting | cowsay
+    else
+        echo -en $greeting
+    fi
     echo
 }
 
