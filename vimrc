@@ -77,7 +77,7 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 " Plug 'sheerun/vim-polyglot'
 Plug 'pangloss/vim-javascript'
 
-Plug 'rust-lang/rust.vim'
+" Plug 'rust-lang/rust.vim'
 
 Plug 'ekalinin/Dockerfile.vim', { 'for' : 'Dockerfile' }
 
