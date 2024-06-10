@@ -94,7 +94,7 @@ Plug 'dense-analysis/ale'
 " Plug 'sickill/vim-monokai'
 Plug 'cocopon/iceberg.vim'
 
-Plug 'mannih/vim-perl-variable-highlighter'
+" Plug 'mannih/vim-perl-variable-highlighter'
 
 call plug#end()
 
