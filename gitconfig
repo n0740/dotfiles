@@ -23,6 +23,9 @@
 	mu = merge upstream/main
 	pl = pull --rebase
 	ps = push
+	psf = push --force-with-lease
+	pso = push origin
+	psu = push upstream
 	r = rebase
 	ra = rebase --abort
 	rc = rebase --continue
