@@ -314,5 +314,5 @@ get-listening-ports() {
         tail -n 1 | \
         awk -v port="\033[33m$port\033[0m" '{print port, $0}';
     done \
-    | grep -Ev 'rapportd|SharePoint.app|Docker.app|Dropbox|JetBrains|PyCharm|pyspark.daemon|Jupyter'
+    | grep -Ev 'rapportd|SharePoint.app|Docker.app|Dropbox|JetBrains|PyCharm|pyspark.daemon|[Jj]upyter'
 }
